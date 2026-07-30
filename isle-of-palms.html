@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Best Restaurants on Isle of Palms, SC | Charleston Food Insider</title>
+  <meta name="description" content="Discover the best restaurants on Isle of Palms, South Carolina, including oceanfront seafood, waterfront sunsets, breakfast, Lowcountry cuisine, Italian dining and restaurants in Wild Dunes.">
+  <meta name="keywords" content="best restaurants Isle of Palms, Isle of Palms restaurants, Isle of Palms seafood, Front Beach restaurants, Wild Dunes dining, Charleston Food Insider">
+  <meta name="author" content="Charleston Food Insider">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --iop-navy: #12313a;
+      --iop-ocean: #217786;
+      --iop-seafoam: #dff1ee;
+      --iop-sand: #f3eadc;
+      --iop-sunset: #e2764d;
+      --iop-cream: #fffaf3;
+      --iop-ink: #29383d;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--iop-ink);
+      background: var(--iop-cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.72;
+    }
+
+    .navbar {
+      background: rgba(18, 49, 58, .97);
+      backdrop-filter: blur(9px);
+    }
+
+    .navbar-brand {
+      font-weight: 850;
+      letter-spacing: .01em;
+    }
+
+    .navbar-brand span {
+      color: #ffb18d;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(10, 37, 46, .94), rgba(10, 37, 46, .38)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2100&q=86") center/cover no-repeat;
+    }
+
+    .hero-kicker {
+      color: #ffc5a8;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 980px;
+      font-size: clamp(2.7rem, 6.9vw, 5.8rem);
+      font-weight: 900;
+      line-height: .98;
+    }
+
+    .hero .lead {
+      max-width: 770px;
+      font-size: 1.16rem;
+    }
+
+    .btn-iop {
+      color: white;
+      background: var(--iop-sunset);
+      border-color: var(--iop-sunset);
+      font-weight: 750;
+    }
+
+    .btn-iop:hover {
+      color: white;
+      background: #bf5d39;
+      border-color: #bf5d39;
+    }
+
+    .section-label {
+      color: var(--iop-sunset);
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .intro-panel {
+      position: relative;
+      z-index: 2;
+      margin-top: -58px;
+      border: 0;
+      border-radius: 1.35rem;
+      box-shadow: 0 1rem 3rem rgba(18, 49, 58, .15);
+    }
+
+    .quick-box {
+      color: white;
+      background: var(--iop-navy);
+      border-radius: 1rem;
+    }
+
+    .quick-box i {
+      color: #ffb18d;
+      font-size: 1.25rem;
+    }
+
+    .restaurant-card {
+      height: 100%;
+      overflow: hidden;
+      background: white;
+      border: 0;
+      border-radius: 1.15rem;
+      box-shadow: 0 .8rem 2rem rgba(18, 49, 58, .10);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .restaurant-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 1.25rem 2.7rem rgba(18, 49, 58, .18);
+    }
+
+    .restaurant-card img {
+      height: 225px;
+      object-fit: cover;
+    }
+
+    .restaurant-card .card-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .restaurant-card .card-text {
+      flex-grow: 1;
+    }
+
+    .badge-food {
+      color: #1e626b;
+      background: var(--iop-seafoam);
+      font-weight: 750;
+    }
+
+    .badge-vibe {
+      color: #855039;
+      background: #f8e6dc;
+      font-weight: 750;
+    }
+
+    .area-guide {
+      background: var(--iop-sand);
+      border-radius: 1.3rem;
+    }
+
+    .area-card {
+      height: 100%;
+      background: white;
+      border: 0;
+      border-top: 4px solid var(--iop-sunset);
+      border-radius: .9rem;
+      box-shadow: 0 .55rem 1.4rem rgba(18, 49, 58, .07);
+    }
+
+    .planning-banner {
+      color: white;
+      background:
+        linear-gradient(rgba(18, 49, 58, .93), rgba(18, 49, 58, .93)),
+        url("https://images.unsplash.com/photo-1476673160081-cf065607f449?auto=format&fit=crop&w=1800&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    .newsletter {
+      color: white;
+      background:
+        linear-gradient(rgba(33, 119, 134, .91), rgba(18, 49, 58, .95)),
+        url("https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1800&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    footer {
+      color: #bed0d4;
+      background: #092129;
+    }
+
+    footer a {
+      color: #ffb18d;
+    }
+
+    .editorial-note {
+      color: #64777b;
+      font-size: .92rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .hero {
+        min-height: 70vh;
+      }
+
+      .intro-panel {
+        margin-top: -30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#top">Charleston<span>FoodInsider</span></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+          <li class="nav-item"><a class="nav-link" href="#areas">Dining Areas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#planning">Beach-Day Tips</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-iop btn-sm px-3" href="#newsletter">Get the Guide</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container py-5">
+      <p class="hero-kicker mb-3">Ocean views, fresh seafood and island flavor</p>
+      <h1 class="mb-4">The Best Restaurants on Isle of Palms</h1>
+      <p class="lead mb-4">
+        Explore breakfast cafés, Lowcountry favorites, oceanfront decks, marina sunsets,
+        Italian seafood and resort dining across one of Charleston’s favorite barrier islands.
+      </p>
+
+      <div class="d-flex flex-wrap gap-3">
+        <a class="btn btn-iop btn-lg px-4" href="#restaurants">Explore the Restaurants</a>
+        <a class="btn btn-outline-light btn-lg px-4" href="#planning">Plan Your Beach Day</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="card intro-panel p-4 p-lg-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <p class="section-label mb-2">Isle of Palms Dining Guide</p>
+            <h2 class="display-6 fw-bold">Beach-town dining with more variety than visitors expect</h2>
+            <p class="mb-0">
+              Isle of Palms is known first for its wide beach, vacation homes and relaxed coastal
+              rhythm, but the island also offers a dining scene that can carry an entire weekend.
+              Visitors can begin with a local breakfast, stop for seafood in sandy clothes, reserve
+              an elegant Italian dinner overlooking the Atlantic or watch the sunset beside Breach
+              Inlet and the marina. Front Beach provides the most concentrated collection of casual
+              restaurants and nightlife, while Palm Boulevard, the Isle of Palms Marina and Wild Dunes
+              each deliver a different atmosphere. Charleston Food Insider created this guide as a
+              useful starting point rather than a strict numerical ranking. Every restaurant below
+              serves a different occasion, from a fast family lunch to a special dinner for two.
+            </p>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="quick-box p-4">
+              <h3 class="h5 fw-bold mb-3">Island dining checklist</h3>
+              <p class="mb-2"><i class="bi bi-sun me-2"></i>Plan around beach traffic</p>
+              <p class="mb-2"><i class="bi bi-water me-2"></i>Reserve sunset tables early</p>
+              <p class="mb-2"><i class="bi bi-p-circle me-2"></i>Review parking rules</p>
+              <p class="mb-0"><i class="bi bi-clock me-2"></i>Verify seasonal hours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="restaurants">
+      <div class="container py-4">
+        <div class="text-center mx-auto mb-5" style="max-width: 790px;">
+          <p class="section-label mb-2">The Island List</p>
+          <h2 class="display-5 fw-bold">Ten Isle of Palms restaurants worth knowing</h2>
+          <p>
+            The selections include longstanding local favorites, waterfront restaurants and resort
+            dining. Menus, hours, reservation policies and live-entertainment schedules can change,
+            so check the official website before visiting.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Fresh handmade pasta with herbs">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Italian Seafood</span>
+                  <span class="badge badge-vibe">Special Occasion</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Coda del Pesce</h3>
+                <p class="card-text">
+                  Coda del Pesce is the island’s destination for a refined Italian dinner influenced
+                  by the nearby sea. Located on the second floor along Ocean Boulevard, the intimate
+                  restaurant pairs handmade pasta and seasonal seafood with views toward the Atlantic.
+                  Chef-driven preparations and a focused dining room make it especially appropriate
+                  for anniversaries, date nights and visitors who want one polished meal during a
+                  beach vacation. The restaurant is not designed as a quick walk-in stop after a day
+                  in the sand. Dress for dinner, reserve well in advance and allow enough time to enjoy
+                  several courses. The compact setting is part of the appeal, but it also means
+                  availability can disappear quickly during busy travel periods.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://codadelpesce.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Lowcountry shrimp and grits">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Lowcountry Cuisine</span>
+                  <span class="badge badge-vibe">Casual Local Favorite</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Acme Lowcountry Kitchen</h3>
+                <p class="card-text">
+                  Acme Lowcountry Kitchen is one of the most recognizable dining stops near Front
+                  Beach. The restaurant combines traditional coastal flavors with an approachable
+                  atmosphere that works for breakfast, brunch, lunch or dinner. Seafood, Southern
+                  comfort food and Lowcountry specialties give first-time visitors an accessible
+                  introduction to the region. Acme is useful for families and mixed groups because
+                  diners do not need to agree on one narrow style of food. The restaurant keeps a
+                  significant amount of seating available for walk-ins, but that does not guarantee
+                  an immediate table during summer weekends. Arrive early, expect a possible wait and
+                  use the surrounding Front Beach area as a place to walk while your table is prepared.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://acmelowcountrykitchen.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Coastal restaurant dining room with warm lighting">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Fresh Seafood</span>
+                  <span class="badge badge-vibe">Sunset Views</span>
+                </div>
+
+                <h3 class="h4 fw-bold">The Boathouse at Breach Inlet</h3>
+                <p class="card-text">
+                  The Boathouse occupies one of the island’s most memorable dining locations at the
+                  edge of Breach Inlet. The restaurant sources seafood and produce with an emphasis
+                  on the South Carolina coast, but the view is almost as important as the menu. Guests
+                  come for marsh scenery, passing boats and dramatic sunsets between Isle of Palms
+                  and Sullivan’s Island. The Boathouse works for romantic dinners, family celebrations
+                  and travelers who want a recognizable Lowcountry waterfront experience. Sunset
+                  timing creates heavy demand, so reservations are valuable. Arrive before the light
+                  begins to change, request an outdoor or water-facing area when available and keep
+                  weather in mind when choosing between deck seating and the main dining room.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://boathouserestaurants.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Fresh oysters served over ice">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Seafood & Raw Bar</span>
+                  <span class="badge badge-vibe">Marina Hangout</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Islander 71 Fish House and Raw Bar</h3>
+                <p class="card-text">
+                  Islander 71 brings an energetic waterfront restaurant to the Isle of Palms Marina.
+                  Its marina views, open-air spaces, seafood menu and handcrafted drinks make it a
+                  strong choice for sunset gatherings and relaxed group dinners. The atmosphere feels
+                  more like an island hangout than a formal dining room, which helps families and
+                  larger parties settle in comfortably. Diners can build a meal around raw-bar items,
+                  coastal appetizers and seafood entrées while watching boats return to the docks.
+                  Islander 71 also hosts events and live entertainment, so the mood can change from a
+                  calm afternoon to a lively evening. Check the event calendar and make a reservation
+                  when the timing of the meal matters.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.islander71.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Comfortable neighborhood restaurant dining room">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Seafood & American</span>
+                  <span class="badge badge-vibe">Neighborhood Bistro</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Long Island Cafe</h3>
+                <p class="card-text">
+                  Long Island Cafe has the character of a neighborhood restaurant rather than a
+                  high-traffic beach bar. Located on Palm Boulevard, it serves fresh seafood and
+                  American fare in a comfortable dining room that attracts both residents and repeat
+                  visitors. This is a good choice when the group wants a complete sit-down meal away
+                  from the busiest section of Ocean Boulevard. The menu is broad enough for lunch or
+                  dinner, yet the restaurant still feels personal and locally rooted. Long Island
+                  Cafe is especially useful for couples, older travelers and families who value
+                  attentive service and a quieter setting. Reservations are worth considering during
+                  peak vacation weeks or when dining with a larger party.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://longislandcafesc.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Modern American restaurant interior">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">American Bistro</span>
+                  <span class="badge badge-vibe">Breakfast to Dinner</span>
+                </div>
+
+                <h3 class="h4 fw-bold">The Refuge</h3>
+                <p class="card-text">
+                  The Refuge offers a versatile American menu in a location removed from the busiest
+                  Front Beach blocks. The restaurant can serve several different needs during a
+                  vacation, including coffee and breakfast in the morning, lunch with friends or a
+                  more complete dinner later in the day. Its calm setting makes it useful when the
+                  group wants a break from loud beach bars and crowded sidewalks. Diners can expect
+                  familiar dishes presented with enough creativity to keep the experience interesting.
+                  The Refuge is particularly convenient for guests staying near central Palm Boulevard
+                  or anyone coordinating a meal with people of different ages. Check the schedule
+                  before visiting because meal periods and menus may vary by day.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://refugeiop.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Breakfast plate with eggs, toast and potatoes">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Breakfast & Brunch</span>
+                  <span class="badge badge-vibe">Local Institution</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Sea Biscuit Cafe</h3>
+                <p class="card-text">
+                  Sea Biscuit Cafe is a small breakfast and lunch spot with the easygoing personality
+                  many visitors hope to find in a beach town. Its longtime reputation rests on hearty
+                  morning plates, rotating specials and a casual dining room close to Front Beach.
+                  The cafe is a natural first stop before several hours on the sand, but its limited
+                  size means patience may be necessary. Arriving early gives diners the best chance
+                  to avoid the busiest brunch period. Sea Biscuit is not about polished resort service
+                  or oceanfront scenery; it is about a familiar neighborhood breakfast experience.
+                  Confirm payment policies and current hours before visiting, because smaller local
+                  cafés may operate differently from full-service restaurants.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.facebook.com/seabiscuitcafeiop/" target="_blank" rel="noopener">
+                  View Restaurant Page <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Open-air beach restaurant with casual seating">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Seafood & American</span>
+                  <span class="badge badge-vibe">Oceanfront Family Dining</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Coconut Joe’s Beach Grill</h3>
+                <p class="card-text">
+                  Coconut Joe’s delivers the classic beach-vacation combination of casual seafood,
+                  burgers, frozen drinks and ocean views. The restaurant sits on Ocean Boulevard and
+                  welcomes guests for lunch and dinner, with weekend brunch adding another useful
+                  option. Families appreciate the broad menu, while adults can enjoy the rooftop bar
+                  and live entertainment when scheduled. Coconut Joe’s is most enjoyable when diners
+                  embrace the relaxed atmosphere rather than expecting a quiet, formal dinner. Sandy
+                  clothes, children and vacation energy are all part of the setting. Call-ahead or
+                  reservation options may help during peak periods, but visitors should still allow
+                  extra time when Front Beach is crowded.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.coconutjoesbeachgrill.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Live music performance near the beach">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Beach-Bar Food</span>
+                  <span class="badge badge-vibe">Live Music</span>
+                </div>
+
+                <h3 class="h4 fw-bold">The Windjammer</h3>
+                <p class="card-text">
+                  The Windjammer is as much a music venue and beach institution as it is a place to
+                  eat. Located directly at Front Beach, it has hosted live performances and beachside
+                  gatherings for decades. The food menu includes casual options suited to a bar and
+                  concert setting, making the venue a useful stop when entertainment is the main event.
+                  Diners should review the concert calendar before arriving because ticketing, age
+                  policies and crowd levels can affect the experience. On a quieter afternoon, the
+                  deck provides a laid-back place for food and drinks near the ocean. On show nights,
+                  plan around entry rules and do not expect the pace of a conventional restaurant.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://the-windjammer.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Coastal-inspired fine dining plate">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Coastal Resort Dining</span>
+                  <span class="badge badge-vibe">Wild Dunes</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Oystercatcher at Wild Dunes</h3>
+                <p class="card-text">
+                  Oystercatcher gives Wild Dunes guests and island visitors a sophisticated coastal
+                  restaurant within the resort. The dinner menu blends seafood with global influences,
+                  using small plates and shareable entrées to create a flexible experience for couples
+                  or groups. The restaurant also serves breakfast, making it convenient for resort
+                  guests who prefer to remain within the property. Oystercatcher is a strong option
+                  when the occasion calls for polished surroundings but the group does not want to
+                  drive back toward Front Beach or Charleston. Resort access, parking and seasonal
+                  operating details should be reviewed before arrival. Reservations are recommended
+                  for dinner, especially during weddings, holidays and high-occupancy weekends.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.wilddunesresort.com/dine/signature-dining/oystercatcher/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="areas">
+      <div class="container">
+        <div class="area-guide p-4 p-lg-5">
+          <div class="text-center mx-auto mb-5" style="max-width: 780px;">
+            <p class="section-label mb-2">Know the Island</p>
+            <h2 class="display-6 fw-bold">Choose a restaurant by dining area</h2>
+            <p class="mb-0">
+              Isle of Palms is narrow, but summer traffic and limited parking can make short distances
+              take longer than expected. Grouping your meal with the beach, marina or resort area you
+              already plan to visit will make the day easier.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="card area-card p-4">
+                <i class="bi bi-umbrella-beach fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h5 fw-bold">Front Beach</h3>
+                <p class="mb-0">
+                  Acme, Sea Biscuit, Coconut Joe’s, Coda del Pesce and The Windjammer are concentrated
+                  near Ocean Boulevard and J.C. Long Boulevard. This is the easiest area for combining
+                  a meal with public beach access and nightlife.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="card area-card p-4">
+                <i class="bi bi-sunset fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h5 fw-bold">Breach Inlet</h3>
+                <p class="mb-0">
+                  The Boathouse is the main dining destination near the inlet. Choose it for seafood,
+                  marsh scenery and sunset views, but never walk or swim in the inlet because of its
+                  powerful currents.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="card area-card p-4">
+                <i class="bi bi-compass fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h5 fw-bold">Marina & Central Island</h3>
+                <p class="mb-0">
+                  Islander 71 anchors the marina, while Long Island Cafe and The Refuge offer quieter
+                  Palm Boulevard alternatives. This area is useful for boat days and guests staying
+                  away from the Front Beach crowds.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="card area-card p-4">
+                <i class="bi bi-building fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h5 fw-bold">Wild Dunes</h3>
+                <p class="mb-0">
+                  Wild Dunes contains several resort restaurants, including Oystercatcher and Coastal
+                  Provisions. These are convenient for resort guests and worthwhile for visitors who
+                  confirm access, parking and reservations beforehand.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5" id="planning">
+      <div class="planning-banner p-4 p-lg-5">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7">
+            <p class="section-label mb-2">Eat well without losing the beach day</p>
+            <h2 class="display-6 fw-bold">Practical Isle of Palms dining tips</h2>
+            <p>
+              Summer weekends, holiday periods and major concerts can create traffic before visitors
+              reach the island. Avoid scheduling a reservation too close to your expected arrival,
+              especially when crossing the Isle of Palms Connector during the afternoon. Guests
+              staying in a rental should consider walking, cycling or using a rideshare when the
+              restaurant is nearby, but always review local parking and bike-safety rules.
+            </p>
+            <p class="mb-0">
+              Beachwear is accepted at many casual restaurants, but special-occasion dining deserves
+              a change of clothes. Keep a light layer available for breezy decks and strongly
+              air-conditioned dining rooms. For sunset restaurants, reserve earlier than the actual
+              sunset so the group is seated before the best light. Finally, verify kitchen closing
+              times rather than relying only on the bar’s posted hours.
+            </p>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="bg-white text-dark rounded-4 p-4">
+              <h3 class="h5 fw-bold mb-3">Build an island food day</h3>
+              <p class="mb-3"><strong>Breakfast:</strong> Start early at Sea Biscuit or Acme.</p>
+              <p class="mb-3"><strong>Beach lunch:</strong> Keep it casual near Front Beach.</p>
+              <p class="mb-3"><strong>Sunset:</strong> Reserve The Boathouse or Islander 71.</p>
+              <p class="mb-0"><strong>Special dinner:</strong> Choose Coda del Pesce or Oystercatcher.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="newsletter">
+      <div class="newsletter p-4 p-lg-5 text-center">
+        <p class="section-label mb-2">Stay hungry</p>
+        <h2 class="display-6 fw-bold">Get more Charleston-area dining guides</h2>
+        <p class="mx-auto mb-4" style="max-width: 700px;">
+          Join Charleston Food Insider for neighborhood restaurant lists, beach dining tips,
+          waterfront recommendations and new places to explore throughout the Lowcountry.
+        </p>
+
+        <form class="row g-2 justify-content-center" action="#" method="post">
+          <div class="col-md-6 col-lg-5">
+            <label class="visually-hidden" for="email">Email address</label>
+            <input class="form-control form-control-lg" id="email" name="email" type="email"
+              placeholder="Your email address" required>
+          </div>
+
+          <div class="col-md-auto">
+            <button class="btn btn-iop btn-lg w-100" type="submit">Join the Insider List</button>
+          </div>
+        </form>
+      </div>
+
+      <p class="editorial-note mt-4 mb-0">
+        Editorial note: Charleston Food Insider presents a curated guide rather than a fixed ranking.
+        Restaurant menus, hours, prices, reservation policies and entertainment schedules can change.
+        Guide updated July 2026.
+      </p>
+    </section>
+  </main>
+
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <h2 class="h4 text-white fw-bold">CharlestonFoodInsider</h2>
+          <p class="mb-0">
+            Independent inspiration for discovering memorable restaurants across Charleston,
+            Isle of Palms and the surrounding Lowcountry.
+          </p>
+        </div>
+
+        <div class="col-lg-5 text-lg-end">
+          <a class="me-3" href="#restaurants">Restaurants</a>
+          <a class="me-3" href="#areas">Dining Areas</a>
+          <a href="#planning">Beach Tips</a>
+          <p class="mt-3 mb-0">© 2026 Charleston Food Insider. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

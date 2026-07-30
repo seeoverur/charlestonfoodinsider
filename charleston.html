@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Restaurants in Charleston, SC | Charleston Food Insider</title>
+  <meta name="description" content="Explore Charleston Food Insider's curated guide to the best restaurants in Charleston, SC, including seafood, Southern cuisine, barbecue, oysters, and global flavors.">
+  <meta name="keywords" content="best restaurants in Charleston, Charleston SC restaurants, Charleston food guide, downtown Charleston dining, Charleston seafood">
+  <meta name="author" content="Charleston Food Insider">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --cfi-navy: #102a33;
+      --cfi-blue: #2d6774;
+      --cfi-sand: #f4eee4;
+      --cfi-gold: #c8893a;
+      --cfi-cream: #fffaf2;
+      --cfi-ink: #263238;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      color: var(--cfi-ink);
+      background: var(--cfi-cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    .navbar {
+      background: rgba(16, 42, 51, .97);
+      backdrop-filter: blur(8px);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .navbar-brand span { color: #f0b86e; }
+
+    .hero {
+      min-height: 76vh;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(10, 30, 38, .90), rgba(10, 30, 38, .44)),
+        url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat;
+    }
+
+    .hero-kicker {
+      color: #ffd39b;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(2.7rem, 7vw, 5.7rem);
+      font-weight: 900;
+      line-height: .98;
+    }
+
+    .hero .lead {
+      max-width: 720px;
+      font-size: 1.15rem;
+    }
+
+    .btn-cfi {
+      background: var(--cfi-gold);
+      border-color: var(--cfi-gold);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .btn-cfi:hover {
+      background: #ab6f28;
+      border-color: #ab6f28;
+      color: #fff;
+    }
+
+    .section-label {
+      color: var(--cfi-gold);
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .intro-panel {
+      margin-top: -58px;
+      position: relative;
+      z-index: 2;
+      border: 0;
+      border-radius: 1.25rem;
+      box-shadow: 0 1rem 3rem rgba(20, 42, 50, .14);
+    }
+
+    .restaurant-card {
+      height: 100%;
+      overflow: hidden;
+      border: 0;
+      border-radius: 1.15rem;
+      box-shadow: 0 .75rem 2rem rgba(23, 48, 57, .10);
+      transition: transform .2s ease, box-shadow .2s ease;
+      background: #fff;
+    }
+
+    .restaurant-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 1.25rem 2.5rem rgba(23, 48, 57, .17);
+    }
+
+    .restaurant-card img {
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .restaurant-card .card-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .restaurant-card .card-text { flex-grow: 1; }
+
+    .badge-cuisine {
+      background: #e4f1f2;
+      color: #245966;
+      font-weight: 700;
+    }
+
+    .badge-vibe {
+      background: #f7ead8;
+      color: #87581e;
+      font-weight: 700;
+    }
+
+    .quick-facts {
+      background: var(--cfi-navy);
+      color: #fff;
+    }
+
+    .quick-fact-icon {
+      color: #f0b86e;
+      font-size: 1.5rem;
+    }
+
+    .guide-panel {
+      background: var(--cfi-sand);
+      border-radius: 1.25rem;
+    }
+
+    .neighborhood-card {
+      border-left: 4px solid var(--cfi-gold);
+      background: #fff;
+      border-radius: .8rem;
+    }
+
+    .newsletter {
+      color: #fff;
+      background:
+        linear-gradient(rgba(16, 42, 51, .91), rgba(16, 42, 51, .91)),
+        url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1800&q=85") center/cover;
+      border-radius: 1.4rem;
+    }
+
+    footer {
+      background: #0a1e26;
+      color: #b9c9ce;
+    }
+
+    footer a { color: #f0b86e; }
+
+    .small-note {
+      font-size: .91rem;
+      color: #66767b;
+    }
+
+    @media (max-width: 767.98px) {
+      .hero { min-height: 70vh; }
+      .intro-panel { margin-top: -30px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#top">Charleston<span>FoodInsider</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#restaurants">Best Restaurants</a></li>
+          <li class="nav-item"><a class="nav-link" href="#neighborhoods">Neighborhoods</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tips">Dining Tips</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-cfi btn-sm px-3" href="#newsletter">Get the Guide</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container py-5">
+      <p class="hero-kicker mb-3">Eat like a Charleston local</p>
+      <h1 class="mb-4">The Best Restaurants in Charleston</h1>
+      <p class="lead mb-4">
+        A carefully curated guide to memorable seafood, Southern cooking, barbecue, oysters,
+        neighborhood dining and globally inspired kitchens across the Holy City.
+      </p>
+      <div class="d-flex flex-wrap gap-3">
+        <a class="btn btn-cfi btn-lg px-4" href="#restaurants">Explore the List</a>
+        <a class="btn btn-outline-light btn-lg px-4" href="#tips">Plan Your Meal</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="card intro-panel p-4 p-lg-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <p class="section-label mb-2">Charleston Food Insider</p>
+            <h2 class="display-6 fw-bold">A city where history and creativity meet at the table</h2>
+            <p class="mb-0">
+              Charleston has earned a national reputation for dining, but the city’s food story is
+              bigger than one famous dish or one style of restaurant. Local chefs draw from
+              Lowcountry seafood, Carolina-grown ingredients, Southern traditions, international
+              influences and the foodways of the African diaspora. The result is a restaurant scene
+              that can feel polished and relaxed at the same time. This guide highlights established
+              favorites and newer standouts that give visitors a useful starting point. It is not a
+              numerical ranking. Instead, each selection represents a different reason to dine out in
+              Charleston, from a special-occasion dinner to a casual plate of smoked brisket.
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <div class="quick-facts rounded-4 p-4">
+              <p class="fw-bold mb-3"><i class="bi bi-bookmark-star me-2 quick-fact-icon"></i>Insider checklist</p>
+              <p class="mb-2"><i class="bi bi-check2-circle me-2"></i>Reserve popular dinners early</p>
+              <p class="mb-2"><i class="bi bi-check2-circle me-2"></i>Expect seasonal menu changes</p>
+              <p class="mb-2"><i class="bi bi-check2-circle me-2"></i>Leave time for walk-in waits</p>
+              <p class="mb-0"><i class="bi bi-check2-circle me-2"></i>Verify hours before visiting</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 py-lg-6" id="restaurants">
+      <div class="container py-4">
+        <div class="text-center mx-auto mb-5" style="max-width: 760px;">
+          <p class="section-label mb-2">The insider list</p>
+          <h2 class="display-5 fw-bold">Ten Charleston restaurants worth knowing</h2>
+          <p>
+            These restaurants cover classic Southern cooking, fresh seafood, barbecue and global
+            flavors. Menus, prices and reservation policies can change, so use each restaurant’s
+            official website to confirm the latest details.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1100&q=80"
+                class="card-img-top" alt="Seasonal chef-prepared plate with vegetables">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-cuisine">Seasonal American</span>
+                  <span class="badge badge-vibe">Special Occasion</span>
+                </div>
+                <h3 class="h4 fw-bold">FIG</h3>
+                <p class="card-text">
+                  FIG is one of Charleston’s essential dining rooms for travelers who appreciate
+                  ingredient-driven cooking. Its name stands for “Food Is Good,” and the restaurant’s
+                  approach centers on carefully sourced products, confident technique and warm
+                  hospitality. The menu changes with the seasons, which means a memorable dish from
+                  one visit may be replaced by something equally thoughtful the next. This is the
+                  place to slow down, ask questions about the menu and let the kitchen show how local
+                  seafood, vegetables and meats can become polished without losing their identity.
+                  Reservations are highly recommended, particularly for weekend evenings.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://eatatfig.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1100&q=80"
+                class="card-img-top" alt="Modern Southern meat and vegetable dish">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-cuisine">Modern Southern</span>
+                  <span class="badge badge-vibe">Historic Setting</span>
+                </div>
+                <h3 class="h4 fw-bold">Husk Charleston</h3>
+                <p class="card-text">
+                  Set inside a restored downtown property, Husk helped bring renewed attention to
+                  Southern ingredients and regional food traditions. The kitchen’s work is rooted in
+                  local farms, heirloom grains, preserved foods, country ham and the evolving flavors
+                  of the modern South. Visitors should not arrive expecting a fixed list of permanent
+                  signature dishes; seasonality is part of the experience. Husk works well for a
+                  celebratory dinner, a Charleston date night or a visitor who wants a restaurant
+                  with a strong sense of place. Its Queen Street location also makes it convenient
+                  for an evening in the historic district.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://huskcharleston.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1100&q=80"
+                class="card-img-top" alt="Fresh oysters presented on ice">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-cuisine">Seafood & Raw Bar</span>
+                  <span class="badge badge-vibe">Grand Dining Room</span>
+                </div>
+                <h3 class="h4 fw-bold">The Ordinary</h3>
+                <p class="card-text">
+                  The Ordinary brings seafood and raw-bar dining into a dramatic former bank building
+                  on King Street. The room feels impressive, but the best reason to visit is the
+                  focused treatment of oysters, shellfish and coastal ingredients. It is a smart
+                  choice for groups that want a lively atmosphere without giving up careful cooking
+                  and professional service. Order across several sections of the menu so the table can
+                  experience both chilled seafood and hot preparations. The Ordinary is operated by
+                  the team behind FIG, and that shared emphasis on quality, drink and hospitality is
+                  easy to recognize.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://eattheordinary.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1510130387422-82bed34b37e9?auto=format&fit=crop&w=1100&q=80"
+                class="card-img-top" alt="Fresh fish dish with herbs and seasonal vegetables">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-cuisine">Dock-to-Table Seafood</span>
+                  <span class="badge badge-vibe">Walk-In Favorite</span>
+                </div>
+                <h3 class="h4 fw-bold">Chubby Fish</h3>
+                <p class="card-text">
+                  Chubby Fish is a compact neighborhood restaurant built around locally sourced
+                  seafood and produce. Its dock-to-table philosophy gives the menu energy and
+                  immediacy, with preparations shaped by what is available from area fishermen and
+                  farms. The dining room is casual, yet the cooking is precise enough to make the
+                  restaurant a destination. Chubby Fish is especially appealing to adventurous
+                  diners who like sharing plates and discovering unfamiliar species or preparations.
+                  Because the restaurant is widely known and seating is limited, visitors should plan
+                  for a possible wait and treat that extra time as part of the evening.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://www.chubbyfishcharleston.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1100&q=80"
+                class="card-img-top" alt="Intimate neighborhood restaurant dining room">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-cuisine">New American</span>
+                  <span class="badge badge-vibe">Neighborhood Gem</span>
+                </div>
+                <h3 class="h4 fw-bold">Vern’s</h3>
+                <p class="card-text">
+                  Vern’s feels like the kind of neighborhood restaurant every city wishes it had.
+                  Located at the corner of Bogard and Ashe streets, it combines a comfortable room
+                  with thoughtful food and an appealing sense of occasion. The menu often balances
+                  familiar ingredients with inventive combinations, allowing diners to enjoy a
+                  relaxed evening while still encountering something new. Vern’s is an excellent
+                  choice for couples, small groups and food-focused visitors who prefer intimate
+                  hospitality over a large, formal dining room. Demand can be strong, so securing a
+                  reservation in advance is the safest approach.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://www.vernschs.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1100&q=80"
+                class="card-img-top" alt="Sliced smoked barbecue brisket">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-cuisine">Texas-Style Barbecue</span>
+                  <span class="badge badge-vibe">Casual & Social</span>
+                </div>
+                <h3 class="h4 fw-bold">Lewis Barbecue</h3>
+                <p class="card-text">
+                  Charleston is deeply connected to pork barbecue, but Lewis Barbecue adds a
+                  celebrated Central Texas perspective to the local scene. The focus is smoke,
+                  patience and expertly handled beef, especially brisket. Order at the counter, choose
+                  a few sides and find a table in the roomy indoor-outdoor setting. Lewis works well
+                  for families, groups and travelers who want an excellent meal without a formal
+                  reservation. Popular items can sell out, so arriving earlier in the day is a useful
+                  strategy. The experience is casual, but the craft behind the barbecue is serious.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://www.lewisbarbecue.com/location/lewis-barbecue-charleston/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=1100&q=80"
+                class="card-img-top" alt="Golden fried chicken served at a casual restaurant">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-cuisine">Chicken & Oysters</span>
+                  <span class="badge badge-vibe">Laid-Back Patio</span>
+                </div>
+                <h3 class="h4 fw-bold">Leon’s Oyster Shop</h3>
+                <p class="card-text">
+                  Leon’s pairs fried chicken, oysters and cold drinks with one of the city’s most
+                  easygoing dining environments. Housed in a former auto-service building, the
+                  restaurant has enough personality to feel distinctly Charleston without trying to
+                  recreate a historic dining room. It is a dependable option for a casual lunch, an
+                  early dinner or a relaxed gathering with friends. The broad appeal is part of the
+                  attraction: seafood lovers can explore oyster preparations while other diners can
+                  focus on chicken, salads and sides. Outdoor seating adds to the neighborhood feel.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://leonsoystershop.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1100&q=80"
+                class="card-img-top" alt="Colorful Filipino-inspired shared dishes">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-cuisine">Filipino</span>
+                  <span class="badge badge-vibe">Creative & Welcoming</span>
+                </div>
+                <h3 class="h4 fw-bold">Kultura</h3>
+                <p class="card-text">
+                  Kultura expands the Charleston dining conversation through Filipino flavors,
+                  family-style service and a strong connection to local ingredients. Chef Nikko
+                  Cagalanan’s cooking makes the restaurant approachable for newcomers while offering
+                  depth for diners already familiar with Filipino food. Sharing several dishes is the
+                  best way to experience the menu, especially when dining with a small group. The
+                  restaurant’s downtown location and warm atmosphere make it a compelling alternative
+                  to a traditional Southern dinner. Kultura demonstrates how Charleston’s food scene
+                  continues to grow through chefs who bring personal stories and global traditions
+                  into the city.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://kulturacharleston.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=1100&q=80"
+                class="card-img-top" alt="Oysters and chilled seafood at a raw bar">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-cuisine">Oyster Bar</span>
+                  <span class="badge badge-vibe">Bustling Downtown</span>
+                </div>
+                <h3 class="h4 fw-bold">167 Raw Oyster Bar</h3>
+                <p class="card-text">
+                  Located on King Street, 167 Raw offers a lively New England–style oyster-bar
+                  experience shaped by East Coast seafood. It is a strong choice for visitors who
+                  want oysters, chilled shellfish, seafood sandwiches and a busy downtown atmosphere.
+                  The compact space can attract a crowd, so flexibility is useful. Rather than rushing
+                  through the meal, order in rounds and enjoy the energy of the room. The restaurant
+                  is especially convenient for shoppers and sightseers exploring the lower King
+                  Street area. Confirm current hours before visiting because the restaurant is
+                  typically closed on Sundays.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://www.167rawoysterbar.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1100&q=80"
+                class="card-img-top" alt="Asian-inspired shared plates with rice and vegetables">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-cuisine">Asian-Inspired</span>
+                  <span class="badge badge-vibe">Casual & Energetic</span>
+                </div>
+                <h3 class="h4 fw-bold">Xiao Bao Biscuit</h3>
+                <p class="card-text">
+                  Xiao Bao Biscuit serves bold, shareable dishes inspired by food traditions from
+                  China, Taiwan, Thailand and Vietnam. The restaurant occupies a former gas station
+                  near the corner of Rutledge Avenue and Spring Street, giving it an informal setting
+                  that matches the energetic menu. Seasonal changes and rotating specials keep the
+                  experience interesting for repeat diners. This is a good stop when a group wants
+                  strong flavors and a departure from the seafood-and-Southern path. Xiao Bao does not
+                  operate like a conventional reservation-driven dining room, so check the current
+                  policy and arrive prepared for a lively, casual meal.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://www.xiaobaobiscuit.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="neighborhoods">
+      <div class="container">
+        <div class="guide-panel p-4 p-lg-5">
+          <div class="row g-5">
+            <div class="col-lg-5">
+              <p class="section-label mb-2">Choose your area</p>
+              <h2 class="display-6 fw-bold">Charleston dining by neighborhood</h2>
+              <p>
+                Charleston’s peninsula is walkable in sections, but restaurants can be farther apart
+                than they appear on a map. Grouping meals and activities by neighborhood will reduce
+                driving, parking and rushed reservations.
+              </p>
+            </div>
+            <div class="col-lg-7">
+              <div class="neighborhood-card p-4 mb-3">
+                <h3 class="h5 fw-bold">Historic District & Lower King</h3>
+                <p class="mb-0">
+                  Pair sightseeing, galleries and shopping with FIG, Husk or 167 Raw. This area is
+                  attractive for visitors without cars, although reservations and parking planning
+                  remain important during weekends and special events.
+                </p>
+              </div>
+              <div class="neighborhood-card p-4 mb-3">
+                <h3 class="h5 fw-bold">Upper King & North Central</h3>
+                <p class="mb-0">
+                  The Ordinary, Leon’s and Lewis Barbecue fit naturally into an Upper King itinerary.
+                  The neighborhood offers an energetic mix of restaurants, bars, shops and newer
+                  development, making it useful for groups with different tastes.
+                </p>
+              </div>
+              <div class="neighborhood-card p-4">
+                <h3 class="h5 fw-bold">Cannonborough–Elliotborough</h3>
+                <p class="mb-0">
+                  Chubby Fish, Vern’s, Kultura and Xiao Bao Biscuit show the creative, neighborhood
+                  side of Charleston dining. Build in extra time to explore side streets and nearby
+                  independent businesses before or after dinner.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="tips">
+      <div class="container py-4">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-6">
+            <p class="section-label mb-2">Before you go</p>
+            <h2 class="display-6 fw-bold">Five practical dining tips</h2>
+            <p>
+              Charleston’s best-known restaurants can fill quickly, particularly on Thursday through
+              Saturday evenings. Book reservation-driven restaurants as soon as your travel dates are
+              firm. For walk-in restaurants, consider an early meal or place your name on the list
+              before exploring nearby shops.
+            </p>
+            <p>
+              Menus often change because many kitchens work with seasonal seafood and produce. Treat
+              online sample menus as a preview rather than a promise. Tell the restaurant about food
+              allergies when booking and again when you arrive.
+            </p>
+            <p>
+              Downtown parking can require patience. Review garage locations, rideshare options and
+              walking distance before leaving your hotel. Finally, do not schedule every meal at the
+              most formal restaurants. Charleston’s culinary identity also lives in counter-service
+              barbecue, oyster bars, bakeries, neighborhood cafés and family-run kitchens.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="quick-facts rounded-4 p-4 p-lg-5">
+              <h3 class="h4 fw-bold mb-4">Build a balanced Charleston food weekend</h3>
+              <div class="d-flex mb-4">
+                <i class="bi bi-cup-hot quick-fact-icon me-3"></i>
+                <div><strong>Morning:</strong> Start with a neighborhood café, bakery or biscuit stop.</div>
+              </div>
+              <div class="d-flex mb-4">
+                <i class="bi bi-sun quick-fact-icon me-3"></i>
+                <div><strong>Lunch:</strong> Choose barbecue, fried chicken or a raw bar for a relaxed meal.</div>
+              </div>
+              <div class="d-flex mb-4">
+                <i class="bi bi-moon-stars quick-fact-icon me-3"></i>
+                <div><strong>Dinner:</strong> Reserve one ingredient-driven restaurant for the main event.</div>
+              </div>
+              <div class="d-flex">
+                <i class="bi bi-geo-alt quick-fact-icon me-3"></i>
+                <div><strong>Explore:</strong> Add one restaurant outside your original comfort zone.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="small-note mt-4 mb-0">
+          Editorial note: Charleston Food Insider presents a curated guide rather than a fixed ranking.
+          Restaurant hours, menus, pricing and reservation policies are subject to change. Guide updated July 2026.
+        </p>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="newsletter">
+      <div class="newsletter p-4 p-lg-5 text-center">
+        <p class="section-label mb-2">Stay hungry</p>
+        <h2 class="display-6 fw-bold">Get Charleston dining ideas in your inbox</h2>
+        <p class="mx-auto mb-4" style="max-width: 680px;">
+          Sign up for neighborhood guides, new restaurant notes, casual lunch ideas and special-occasion
+          recommendations from Charleston Food Insider.
+        </p>
+        <form class="row g-2 justify-content-center" action="#" method="post">
+          <div class="col-md-6 col-lg-5">
+            <label class="visually-hidden" for="email">Email address</label>
+            <input class="form-control form-control-lg" id="email" name="email" type="email"
+              placeholder="Your email address" required>
+          </div>
+          <div class="col-md-auto">
+            <button class="btn btn-cfi btn-lg w-100" type="submit">Join the Insider List</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <h2 class="h4 text-white fw-bold">CharlestonFoodInsider</h2>
+          <p class="mb-0">
+            Independent inspiration for discovering memorable places to eat throughout Charleston,
+            South Carolina.
+          </p>
+        </div>
+        <div class="col-lg-5 text-lg-end">
+          <a class="me-3" href="#restaurants">Restaurants</a>
+          <a class="me-3" href="#neighborhoods">Neighborhoods</a>
+          <a href="#tips">Tips</a>
+          <p class="mt-3 mb-0">© 2026 Charleston Food Insider. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

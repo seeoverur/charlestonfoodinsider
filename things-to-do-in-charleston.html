@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Best Things to Do in Charleston, SC | Charleston Food Insider</title>
+  <meta name="description" content="Explore the best things to do in Charleston, South Carolina, including the Historic District, Fort Sumter, museums, Waterfront Park, the City Market, gardens, beaches, family attractions and day trips.">
+  <meta name="keywords" content="things to do in Charleston SC, Charleston attractions, Charleston sightseeing, Charleston Historic District, Fort Sumter, Charleston museums, free things to do Charleston">
+  <meta name="author" content="Charleston Food Insider">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --chs-navy: #102f3a;
+      --chs-blue: #2a7282;
+      --chs-seafoam: #dff1ef;
+      --chs-sand: #f3eadc;
+      --chs-coral: #d8754f;
+      --chs-gold: #c98a40;
+      --chs-cream: #fffaf3;
+      --chs-ink: #293a3f;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      color: var(--chs-ink);
+      background: var(--chs-cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.72;
+    }
+
+    .navbar {
+      background: rgba(16, 47, 58, .97);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+      font-weight: 850;
+      letter-spacing: .01em;
+    }
+
+    .navbar-brand span { color: #f5b57e; }
+
+    .hero {
+      min-height: 80vh;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(8, 34, 43, .94), rgba(8, 34, 43, .34)),
+        url("https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=2100&q=86") center/cover no-repeat;
+    }
+
+    .hero-kicker {
+      color: #ffc8a8;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 990px;
+      font-size: clamp(2.75rem, 6.9vw, 5.9rem);
+      font-weight: 900;
+      line-height: .98;
+    }
+
+    .hero .lead {
+      max-width: 800px;
+      font-size: 1.17rem;
+    }
+
+    .btn-chs {
+      color: #fff;
+      background: var(--chs-coral);
+      border-color: var(--chs-coral);
+      font-weight: 750;
+    }
+
+    .btn-chs:hover {
+      color: #fff;
+      background: #b95938;
+      border-color: #b95938;
+    }
+
+    .section-label {
+      color: var(--chs-coral);
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .intro-panel {
+      position: relative;
+      z-index: 2;
+      margin-top: -58px;
+      border: 0;
+      border-radius: 1.35rem;
+      box-shadow: 0 1rem 3rem rgba(16, 47, 58, .15);
+    }
+
+    .quick-box {
+      color: #fff;
+      background: var(--chs-navy);
+      border-radius: 1rem;
+    }
+
+    .quick-box i {
+      color: #f5b57e;
+      font-size: 1.25rem;
+    }
+
+    .attraction-card {
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+      border: 0;
+      border-radius: 1.15rem;
+      box-shadow: 0 .8rem 2rem rgba(16, 47, 58, .10);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .attraction-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 1.25rem 2.7rem rgba(16, 47, 58, .18);
+    }
+
+    .attraction-card img {
+      height: 225px;
+      object-fit: cover;
+    }
+
+    .attraction-card .card-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .attraction-card .card-text { flex-grow: 1; }
+
+    .badge-type {
+      color: #205f68;
+      background: var(--chs-seafoam);
+      font-weight: 750;
+    }
+
+    .badge-cost {
+      color: #845421;
+      background: #f6e8d7;
+      font-weight: 750;
+    }
+
+    .category-guide {
+      background: var(--chs-sand);
+      border-radius: 1.3rem;
+    }
+
+    .category-card {
+      height: 100%;
+      background: #fff;
+      border: 0;
+      border-top: 4px solid var(--chs-coral);
+      border-radius: .9rem;
+      box-shadow: 0 .55rem 1.4rem rgba(16, 47, 58, .07);
+    }
+
+    .itinerary-banner {
+      color: #fff;
+      background:
+        linear-gradient(rgba(16, 47, 58, .94), rgba(16, 47, 58, .94)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1900&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    .day-card {
+      height: 100%;
+      color: var(--chs-ink);
+      background: #fff;
+      border: 0;
+      border-radius: 1rem;
+    }
+
+    .day-number {
+      display: inline-grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      color: #fff;
+      background: var(--chs-coral);
+      border-radius: 50%;
+      font-weight: 850;
+    }
+
+    .planning-panel {
+      color: #fff;
+      background: var(--chs-navy);
+      border-radius: 1.3rem;
+    }
+
+    .planning-panel i {
+      color: #f5b57e;
+    }
+
+    .newsletter {
+      color: #fff;
+      background:
+        linear-gradient(rgba(42, 114, 130, .91), rgba(16, 47, 58, .95)),
+        url("https://images.unsplash.com/photo-1498579809087-ef1e558fd1da?auto=format&fit=crop&w=1800&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    footer {
+      color: #bdd0d5;
+      background: #08212a;
+    }
+
+    footer a { color: #f5b57e; }
+
+    .editorial-note {
+      color: #64777b;
+      font-size: .92rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .hero { min-height: 72vh; }
+      .intro-panel { margin-top: -30px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#top">Charleston<span>FoodInsider</span></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#attractions">Top Attractions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories">By Interest</a></li>
+          <li class="nav-item"><a class="nav-link" href="#itinerary">Three-Day Plan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tips">Travel Tips</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-chs btn-sm px-3" href="#newsletter">Get the Guide</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container py-5">
+      <p class="hero-kicker mb-3">History, culture, water and Lowcountry beauty</p>
+      <h1 class="mb-4">The Best Things to Do in Charleston</h1>
+      <p class="lead mb-4">
+        Walk the Historic District, explore nationally important museums, visit Fort Sumter,
+        enjoy the harbor, discover centuries-old gardens and plan an unforgettable Lowcountry day trip.
+      </p>
+
+      <div class="d-flex flex-wrap gap-3">
+        <a class="btn btn-chs btn-lg px-4" href="#attractions">Explore the Attractions</a>
+        <a class="btn btn-outline-light btn-lg px-4" href="#itinerary">See the Itinerary</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="card intro-panel p-4 p-lg-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <p class="section-label mb-2">Charleston Visitor Guide</p>
+            <h2 class="display-6 fw-bold">A destination that rewards curiosity and a slower pace</h2>
+            <p class="mb-0">
+              Charleston is often described through its architecture, food and waterfront views, but
+              the city becomes more meaningful when visitors explore the many stories beneath its
+              beautiful surface. A successful trip can combine free walks through historic streets
+              with museums that examine Charleston’s African American history, maritime importance,
+              art and natural environment. Travelers can cross the harbor to a military museum, ride
+              a ferry to Fort Sumter, spend an afternoon in a historic garden or leave the peninsula
+              for a barrier-island beach. This Charleston Food Insider guide organizes the city’s
+              leading attractions into practical categories rather than a strict ranking. Choose a
+              few experiences that match your interests and leave open time for shaded courtyards,
+              local shops, unexpected architecture and a memorable Charleston meal.
+            </p>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="quick-box p-4">
+              <h3 class="h5 fw-bold mb-3">Charleston planning checklist</h3>
+              <p class="mb-2"><i class="bi bi-ticket-perforated me-2"></i>Reserve major attractions early</p>
+              <p class="mb-2"><i class="bi bi-sun me-2"></i>Walk before the midday heat</p>
+              <p class="mb-2"><i class="bi bi-p-circle me-2"></i>Review garage locations</p>
+              <p class="mb-0"><i class="bi bi-cloud-rain me-2"></i>Keep an indoor backup plan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="attractions">
+      <div class="container py-4">
+        <div class="text-center mx-auto mb-5" style="max-width: 820px;">
+          <p class="section-label mb-2">Charleston Essentials</p>
+          <h2 class="display-5 fw-bold">Twelve memorable things to do</h2>
+          <p>
+            The following experiences cover history, art, wildlife, waterfront scenery and day trips.
+            Admission, operating hours, ferry schedules and tour availability can change, so use the
+            official links to confirm details before arriving.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <article class="card attraction-card">
+              <img src="https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Historic Charleston homes along a shaded street">
+
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-type">Historic Walk</span>
+                  <span class="badge badge-cost">Free</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Walk the Historic District</h3>
+                <p class="card-text">
+                  A self-guided walk is the best introduction to downtown Charleston. Begin near
+                  Waterfront Park, continue toward Rainbow Row and follow East Bay Street to The
+                  Battery and White Point Garden. The route combines harbor views, public parks,
+                  pastel facades, church steeples, ironwork and residential architecture. Walk slowly
+                  enough to notice plaques and details, but remember that most houses are private
+                  homes rather than public attractions. Early morning provides cooler temperatures,
+                  softer photography light and less sidewalk congestion. Comfortable shoes are
+                  essential because brick, stone and uneven pavement appear throughout the district.
+                  A guided history or architecture tour can add context on a later day.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.charleston-sc.gov/266/Park-Directory" target="_blank" rel="noopener">
+                  Explore City Parks <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card attraction-card">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Historic public market and shopping district">
+
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-type">Shopping & Culture</span>
+                  <span class="badge badge-cost">Free Entry</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Browse the Charleston City Market</h3>
+                <p class="card-text">
+                  The Charleston City Market stretches through several buildings in the center of the
+                  Historic District. Vendors sell artwork, food products, souvenirs, jewelry and
+                  handwoven sweetgrass baskets associated with Gullah Geechee cultural traditions.
+                  The market works best as a place to browse and speak with makers rather than simply
+                  rush through for a photograph. Visit during the daytime for the broadest vendor
+                  selection, or check whether the seasonal Night Market is operating during your trip.
+                  The surrounding blocks make it easy to continue toward restaurants, King Street,
+                  Waterfront Park or the carriage-tour area. Market hours and Night Market dates
+                  should be checked before visiting.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.thecharlestoncitymarket.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card attraction-card">
+              <img src="https://images.unsplash.com/photo-1564594985645-4427056e22e2?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Historic fort beside a harbor">
+
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-type">National Historical Park</span>
+                  <span class="badge badge-cost">Ferry Ticket</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Take the Ferry to Fort Sumter</h3>
+                <p class="card-text">
+                  Fort Sumter sits in Charleston Harbor and can only be reached by boat, making the
+                  journey part of the experience. The fort is nationally significant as the location
+                  where the first shots of the Civil War were fired. Begin at the National Park
+                  Service visitor center at Liberty Square, where exhibits provide historical context
+                  before boarding the ferry. Once at the fort, visitors can explore the remains,
+                  museum displays and harbor views within the scheduled stop. Ferry times are subject
+                  to weather and operational changes, so purchase tickets in advance and arrive early.
+                  The visitor center itself is free, while the authorized ferry requires a paid ticket.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.nps.gov/fosu/index.htm" target="_blank" rel="noopener">
+                  Visit National Park Service <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card attraction-card">
+              <img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Museum gallery with historical exhibits">
+
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-type">History & Culture</span>
+                  <span class="badge badge-cost">Ticketed</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Visit the International African American Museum</h3>
+                <p class="card-text">
+                  The International African American Museum stands at Gadsden’s Wharf, a site connected
+                  to the arrival of enslaved Africans in North America. Its exhibitions examine
+                  African American history, the African diaspora, South Carolina communities, family
+                  history and the cultural contributions that shaped the nation. The African Ancestors
+                  Memorial Garden surrounding the building extends the experience outdoors and
+                  encourages reflection. Plan enough time to engage with the galleries rather than
+                  treating the museum as a quick stop. Timed admission can help manage the visit, and
+                  the museum is generally closed on Mondays. Confirm current exhibitions, accessibility
+                  information and entry times through the official website.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://iaamuseum.org/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card attraction-card">
+              <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Sea turtle swimming through aquarium water">
+
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-type">Wildlife & Conservation</span>
+                  <span class="badge badge-cost">Family-Friendly</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Explore the South Carolina Aquarium</h3>
+                <p class="card-text">
+                  The South Carolina Aquarium follows the state’s habitats from the mountains toward
+                  the coast, allowing visitors to see native fish, reptiles, birds and marine life in
+                  one indoor attraction. The Sea Turtle Care Center adds a conservation and
+                  rehabilitation focus that separates the aquarium from a simple display of animals.
+                  Families can easily spend several hours here, especially when attending scheduled
+                  programs or interactive experiences. Its downtown waterfront location also pairs
+                  well with the International African American Museum, Liberty Square or a harbor
+                  departure. The aquarium is open daily under its regular schedule, but the final
+                  admission occurs before closing, so do not arrive at the end of the afternoon.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://scaquarium.org/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card attraction-card">
+              <img src="https://images.unsplash.com/photo-1566024287286-457247b70310?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Historic aircraft carrier and military aircraft">
+
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-type">Naval & Military History</span>
+                  <span class="badge badge-cost">Ticketed</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Board the USS Yorktown at Patriots Point</h3>
+                <p class="card-text">
+                  Patriots Point Naval & Maritime Museum is located across the harbor in Mount Pleasant.
+                  The World War II aircraft carrier USS Yorktown serves as its centerpiece, joined by
+                  the destroyer USS Laffey, aircraft displays, the Vietnam Experience and memorial
+                  exhibits. Exploring the ships requires stairs, narrow passages and considerable
+                  walking, so visitors should review accessibility information and wear secure shoes.
+                  The museum is especially rewarding for military-history enthusiasts and families
+                  with older children. Allow several hours rather than trying to fit the attraction
+                  into a brief opening. Its Mount Pleasant location can be combined with the Ravenel
+                  Bridge area, Shem Creek or a ferry departure when schedules align.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.patriotspoint.org/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card attraction-card">
+              <img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Historic museum displays and artifacts">
+
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-type">Lowcountry History</span>
+                  <span class="badge badge-cost">Museum Passes</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Discover The Charleston Museum</h3>
+                <p class="card-text">
+                  Founded in 1773, The Charleston Museum interprets the Lowcountry through natural
+                  history, decorative arts, textiles, weapons and regional artifacts. It offers a
+                  broader overview than a single historic house and is a useful indoor stop during
+                  heat or rain. Visitors can purchase admission to the main museum, the
+                  Heyward-Washington House, the Joseph Manigault House or a combination of sites.
+                  Pairing the museum with one historic house creates a balanced day: gallery exhibits
+                  establish context, while the preserved residence shows how architecture and daily
+                  life occupied physical space. Review the separate hours for each location because
+                  the museum and houses may not follow identical schedules.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.charlestonmuseum.org/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card attraction-card">
+              <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Art museum gallery with framed paintings">
+
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-type">American Art</span>
+                  <span class="badge badge-cost">Indoor Attraction</span>
+                </div>
+
+                <h3 class="h4 fw-bold">See Southern Art at the Gibbes Museum</h3>
+                <p class="card-text">
+                  The Gibbes Museum of Art occupies a Beaux-Arts building on Meeting Street and
+                  presents American art with a particular connection to Charleston and the South.
+                  Galleries include paintings, miniature portraits, decorative objects, sculpture,
+                  works on paper and changing exhibitions. The museum’s manageable size makes it easy
+                  to combine with the City Market, King Street shopping or a historic-house visit.
+                  Art lovers can spend several hours, while casual visitors can experience the main
+                  galleries without losing the entire day. The Gibbes is typically closed on Tuesdays
+                  and offers extended Wednesday hours, but visitors should confirm the current schedule
+                  and exhibition calendar before making plans.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.gibbesmuseum.org/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card attraction-card">
+              <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Lush garden path beneath mature trees">
+
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-type">Gardens & Wildlife</span>
+                  <span class="badge badge-cost">Half-Day Trip</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Explore Magnolia Plantation & Gardens</h3>
+                <p class="card-text">
+                  Magnolia Plantation & Gardens lies along the Ashley River outside downtown
+                  Charleston. General admission provides access to extensive trails, historic gardens,
+                  the Audubon Swamp Garden and wildlife areas. Visitors should approach the property
+                  as both a natural landscape and a historic site shaped by plantation slavery.
+                  Guided experiences and interpretive programs can add context beyond the visual
+                  beauty. Wear walking shoes, carry water and allow several hours because the grounds
+                  are too large for a rushed visit. Spring blooms are especially popular, while
+                  summer requires heat and insect preparation. Tour availability can fill during peak
+                  periods, and some guided experiences are purchased separately on arrival.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.magnoliaplantation.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card attraction-card">
+              <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Ancient live oak with large spreading branches">
+
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-type">Natural Landmark</span>
+                  <span class="badge badge-cost">Free</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Stand Beneath the Angel Oak</h3>
+                <p class="card-text">
+                  Angel Oak Park on Johns Island protects one of the Charleston area’s most
+                  recognizable live oak trees. The massive limbs stretch outward and downward,
+                  creating a natural canopy that photographs cannot fully communicate. Admission is
+                  free, and the park includes a small gift shop and picnic area. The visit itself may
+                  be brief, so combine it with another Johns Island or Wadmalaw Island destination.
+                  Remain behind protective barriers, avoid climbing or touching restricted portions
+                  of the tree and follow staff instructions designed to preserve the root system.
+                  Arriving earlier in the day can reduce crowds and make parking easier during busy
+                  travel seasons.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.charleston-sc.gov/153/Angel-Oak" target="_blank" rel="noopener">
+                  View Official City Page <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card attraction-card">
+              <img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Green tea fields beneath a bright sky">
+
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-type">Agritourism</span>
+                  <span class="badge badge-cost">Free Factory Tour</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Tour the Charleston Tea Garden</h3>
+                <p class="card-text">
+                  The Charleston Tea Garden on Wadmalaw Island offers a distinctive rural contrast to
+                  downtown streets. Visitors can take a free factory tour to learn how tea leaves are
+                  processed or purchase a trolley tour through the fields and greenhouse area. The
+                  property works naturally with an Angel Oak visit, but driving time should be included
+                  in the schedule. The garden is open seven days a week under different Sunday hours,
+                  and holiday closures may apply. Summer visitors should prepare for sun and humidity,
+                  while cooler seasons make the outdoor portions more comfortable. Leave room to sample
+                  tea and browse the shop rather than treating the garden as only a photograph stop.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://charlestonteagarden.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card attraction-card">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Wide sandy beach and blue ocean">
+
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-type">Beach Day</span>
+                  <span class="badge badge-cost">Parking Varies</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Visit a Charleston-Area Beach</h3>
+                <p class="card-text">
+                  Charleston’s barrier islands offer several different beach experiences. Sullivan’s
+                  Island combines a quiet shoreline with a compact restaurant district and Fort
+                  Moultrie. Isle of Palms provides broad beaches, vacation amenities and more
+                  oceanfront dining. Folly Beach has a livelier surf-town identity and a walkable
+                  business district. Choose one island rather than trying to visit all three in a
+                  single afternoon. Parking regulations, access points, alcohol restrictions and
+                  seasonal traffic differ by municipality, so review the official town or city rules
+                  before leaving downtown. Morning arrival usually improves parking availability and
+                  reduces the risk of spending the day in bridge traffic.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.charlestoncvb.com/plan-your-trip/beaches/" target="_blank" rel="noopener">
+                  Compare Area Beaches <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="categories">
+      <div class="container">
+        <div class="category-guide p-4 p-lg-5">
+          <div class="text-center mx-auto mb-5" style="max-width: 790px;">
+            <p class="section-label mb-2">Choose Your Charleston</p>
+            <h2 class="display-6 fw-bold">Things to do by interest</h2>
+            <p class="mb-0">
+              A trip becomes easier when attractions are selected around the traveler rather than
+              around a generic checklist. Use these categories to narrow the choices.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="card category-card p-4">
+                <i class="bi bi-bank fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h5 fw-bold">For History Travelers</h3>
+                <p class="mb-0">
+                  Prioritize Fort Sumter, the International African American Museum, The Charleston
+                  Museum, an interpreted historic house and the Old Slave Mart Museum. Avoid packing
+                  too many serious sites into one afternoon.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="card category-card p-4">
+                <i class="bi bi-people fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h5 fw-bold">For Families</h3>
+                <p class="mb-0">
+                  Combine the South Carolina Aquarium with Waterfront Park, Patriots Point or a short
+                  harbor ride. Select one major attraction and leave room for food, rest and free
+                  outdoor time.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="card category-card p-4">
+                <i class="bi bi-tree fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h5 fw-bold">For Outdoor Visitors</h3>
+                <p class="mb-0">
+                  Walk The Battery, visit Magnolia’s trails, explore Angel Oak, cross part of the
+                  Ravenel Bridge on foot or spend a morning on a barrier-island beach.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="card category-card p-4">
+                <i class="bi bi-wallet2 fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h5 fw-bold">For a Smaller Budget</h3>
+                <p class="mb-0">
+                  Build the day around Waterfront Park, Rainbow Row, The Battery, White Point Garden,
+                  the City Market, Angel Oak and self-guided neighborhood walks. Pay for one major
+                  museum or ferry experience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5" id="itinerary">
+      <div class="itinerary-banner p-4 p-lg-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 800px;">
+          <p class="section-label mb-2">A Balanced First Visit</p>
+          <h2 class="display-6 fw-bold">A three-day Charleston itinerary</h2>
+          <p class="mb-0">
+            This plan balances the peninsula with the harbor and one trip beyond downtown. Adjust it
+            for weather, mobility and confirmed reservation times.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="card day-card p-4">
+              <span class="day-number mb-3">1</span>
+              <h3 class="h4 fw-bold">Historic Charleston</h3>
+              <p>
+                Begin at Waterfront Park before the day becomes hot. Walk past Rainbow Row toward The
+                Battery and White Point Garden, then return through Church Street or Meeting Street.
+                Spend the afternoon at the City Market and Gibbes Museum, or substitute an interpreted
+                historic house. Finish with dinner downtown and an evening walk through a well-lit,
+                active area.
+              </p>
+              <p class="mb-0"><strong>Best for:</strong> Architecture, shopping and first-time orientation.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card day-card p-4">
+              <span class="day-number mb-3">2</span>
+              <h3 class="h4 fw-bold">Harbor and Museums</h3>
+              <p>
+                Reserve a morning Fort Sumter ferry and arrive early at Liberty Square. After returning,
+                visit the International African American Museum or South Carolina Aquarium nearby.
+                Travelers with strong military-history interests can cross to Patriots Point instead,
+                but attempting every harbor attraction in one day can feel rushed. End with a waterfront
+                meal or sunset harbor view.
+              </p>
+              <p class="mb-0"><strong>Best for:</strong> National history, culture, families and water views.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card day-card p-4">
+              <span class="day-number mb-3">3</span>
+              <h3 class="h4 fw-bold">Lowcountry Day Trip</h3>
+              <p>
+                Choose one direction. Travel along the Ashley River for Magnolia Plantation & Gardens,
+                or head toward Johns and Wadmalaw islands for Angel Oak and the Charleston Tea Garden.
+                Beach travelers can instead spend the morning on Sullivan’s Island, Isle of Palms or
+                Folly Beach. Return before rush-hour traffic when possible and reserve dinner near the
+                area where you expect to finish.
+              </p>
+              <p class="mb-0"><strong>Best for:</strong> Nature, gardens, beaches and a change of pace.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5" id="tips">
+      <div class="planning-panel p-4 p-lg-5">
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <p class="section-label mb-2">Plan Smarter</p>
+            <h2 class="display-6 fw-bold">Practical Charleston travel tips</h2>
+            <p>
+              Downtown Charleston is walkable, but heat, humidity, rain and uneven pavement can change
+              the experience. Schedule the longest outdoor walk early, carry water and keep a museum
+              available for the warmest or wettest part of the day. Summer thunderstorms can arrive
+              quickly, while spring and fall weekends may produce heavy crowds even in mild weather.
+            </p>
+            <p class="mb-0">
+              Public garages are generally more dependable than searching repeatedly for street
+              parking. Do not leave valuables visible in a vehicle, and never assume that parking for
+              one attraction allows access to an unrelated nearby property. A rideshare is helpful for
+              dinner, but a rental car is more practical for gardens, Angel Oak, the Tea Garden and
+              most beaches.
+            </p>
+          </div>
+
+          <div class="col-lg-6">
+            <h3 class="h4 fw-bold mb-4">Before leaving the hotel</h3>
+
+            <div class="d-flex mb-4">
+              <i class="bi bi-check2-circle fs-4 me-3"></i>
+              <div><strong>Check official hours:</strong> Museums may close on different weekdays.</div>
+            </div>
+
+            <div class="d-flex mb-4">
+              <i class="bi bi-check2-circle fs-4 me-3"></i>
+              <div><strong>Confirm tickets:</strong> Ferries and timed museum entries can sell out.</div>
+            </div>
+
+            <div class="d-flex mb-4">
+              <i class="bi bi-check2-circle fs-4 me-3"></i>
+              <div><strong>Review the weather:</strong> Harbor trips and outdoor tours can change.</div>
+            </div>
+
+            <div class="d-flex">
+              <i class="bi bi-check2-circle fs-4 me-3"></i>
+              <div><strong>Protect open time:</strong> Charleston is better when every hour is not scheduled.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="newsletter">
+      <div class="newsletter p-4 p-lg-5 text-center">
+        <p class="section-label mb-2">Explore More</p>
+        <h2 class="display-6 fw-bold">Get Charleston guides in your inbox</h2>
+        <p class="mx-auto mb-4" style="max-width: 720px;">
+          Join Charleston Food Insider for neighborhood restaurant pages, visitor itineraries,
+          beach guides and new Lowcountry attractions worth adding to your plans.
+        </p>
+
+        <form class="row g-2 justify-content-center" action="#" method="post">
+          <div class="col-md-6 col-lg-5">
+            <label class="visually-hidden" for="email">Email address</label>
+            <input class="form-control form-control-lg" id="email" name="email" type="email"
+              placeholder="Your email address" required>
+          </div>
+
+          <div class="col-md-auto">
+            <button class="btn btn-chs btn-lg w-100" type="submit">Join the Insider List</button>
+          </div>
+        </form>
+      </div>
+
+      <p class="editorial-note mt-4 mb-0">
+        Editorial note: Charleston Food Insider presents a curated visitor guide rather than a fixed
+        ranking. Attraction hours, pricing, ferry schedules, parking conditions, exhibitions and
+        local regulations can change. Guide updated July 2026.
+      </p>
+    </section>
+  </main>
+
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <h2 class="h4 text-white fw-bold">CharlestonFoodInsider</h2>
+          <p class="mb-0">
+            Independent inspiration for discovering food, history, culture and memorable experiences
+            throughout Charleston and the surrounding Lowcountry.
+          </p>
+        </div>
+
+        <div class="col-lg-5 text-lg-end">
+          <a class="me-3" href="#attractions">Attractions</a>
+          <a class="me-3" href="#itinerary">Itinerary</a>
+          <a href="#tips">Travel Tips</a>
+          <p class="mt-3 mb-0">© 2026 Charleston Food Insider. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Best Restaurants in Mount Pleasant, SC | Charleston Food Insider</title>
+  <meta name="description" content="Explore the best restaurants in Mount Pleasant, South Carolina, including Shem Creek waterfront dining, Southern brunch, oysters, seafood, fine dining, Old Village restaurants and local favorites.">
+  <meta name="keywords" content="best restaurants Mount Pleasant SC, Shem Creek restaurants, Mount Pleasant seafood, Mount Pleasant brunch, Old Village restaurants, Charleston Food Insider">
+  <meta name="author" content="Charleston Food Insider">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --mtp-navy: #102f3a;
+      --mtp-blue: #2b7280;
+      --mtp-seafoam: #dff1ef;
+      --mtp-sand: #f3ebdf;
+      --mtp-gold: #c9853f;
+      --mtp-cream: #fffaf3;
+      --mtp-ink: #28383e;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--mtp-ink);
+      background: var(--mtp-cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.72;
+    }
+
+    .navbar {
+      background: rgba(16, 47, 58, .97);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+      font-weight: 850;
+      letter-spacing: .01em;
+    }
+
+    .navbar-brand span {
+      color: #f2b775;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(8, 35, 44, .94), rgba(8, 35, 44, .38)),
+        url("https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=2100&q=86") center/cover no-repeat;
+    }
+
+    .hero-kicker {
+      color: #ffd09c;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 980px;
+      font-size: clamp(2.7rem, 6.8vw, 5.8rem);
+      font-weight: 900;
+      line-height: .98;
+    }
+
+    .hero .lead {
+      max-width: 780px;
+      font-size: 1.16rem;
+    }
+
+    .btn-mtp {
+      color: #fff;
+      background: var(--mtp-gold);
+      border-color: var(--mtp-gold);
+      font-weight: 750;
+    }
+
+    .btn-mtp:hover {
+      color: #fff;
+      background: #a9692b;
+      border-color: #a9692b;
+    }
+
+    .section-label {
+      color: var(--mtp-gold);
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .intro-panel {
+      position: relative;
+      z-index: 2;
+      margin-top: -58px;
+      border: 0;
+      border-radius: 1.35rem;
+      box-shadow: 0 1rem 3rem rgba(16, 47, 58, .15);
+    }
+
+    .quick-box {
+      color: #fff;
+      background: var(--mtp-navy);
+      border-radius: 1rem;
+    }
+
+    .quick-box i {
+      color: #f2b775;
+      font-size: 1.25rem;
+    }
+
+    .restaurant-card {
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+      border: 0;
+      border-radius: 1.15rem;
+      box-shadow: 0 .8rem 2rem rgba(16, 47, 58, .10);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .restaurant-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 1.25rem 2.7rem rgba(16, 47, 58, .18);
+    }
+
+    .restaurant-card img {
+      height: 225px;
+      object-fit: cover;
+    }
+
+    .restaurant-card .card-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .restaurant-card .card-text {
+      flex-grow: 1;
+    }
+
+    .badge-food {
+      color: #205f68;
+      background: var(--mtp-seafoam);
+      font-weight: 750;
+    }
+
+    .badge-vibe {
+      color: #845421;
+      background: #f6e9d8;
+      font-weight: 750;
+    }
+
+    .area-guide {
+      background: var(--mtp-sand);
+      border-radius: 1.3rem;
+    }
+
+    .area-card {
+      height: 100%;
+      background: #fff;
+      border: 0;
+      border-top: 4px solid var(--mtp-gold);
+      border-radius: .9rem;
+      box-shadow: 0 .55rem 1.4rem rgba(16, 47, 58, .07);
+    }
+
+    .planning-banner {
+      color: #fff;
+      background:
+        linear-gradient(rgba(16, 47, 58, .94), rgba(16, 47, 58, .94)),
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    .newsletter {
+      color: #fff;
+      background:
+        linear-gradient(rgba(43, 114, 128, .91), rgba(16, 47, 58, .95)),
+        url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1800&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    footer {
+      color: #bdd0d5;
+      background: #08212a;
+    }
+
+    footer a {
+      color: #f2b775;
+    }
+
+    .editorial-note {
+      color: #64777b;
+      font-size: .92rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .hero {
+        min-height: 70vh;
+      }
+
+      .intro-panel {
+        margin-top: -30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#top">Charleston<span>FoodInsider</span></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+          <li class="nav-item"><a class="nav-link" href="#areas">Dining Areas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#planning">Dining Tips</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-mtp btn-sm px-3" href="#newsletter">Get the Guide</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container py-5">
+      <p class="hero-kicker mb-3">Waterfront sunsets, Southern flavor and neighborhood dining</p>
+      <h1 class="mb-4">The Best Restaurants in Mount Pleasant</h1>
+      <p class="lead mb-4">
+        Discover Shem Creek seafood, classic Lowcountry brunch, intimate Old Village dining,
+        oysters, gourmet grits, fine dining and relaxed local gathering places.
+      </p>
+
+      <div class="d-flex flex-wrap gap-3">
+        <a class="btn btn-mtp btn-lg px-4" href="#restaurants">Explore the Restaurants</a>
+        <a class="btn btn-outline-light btn-lg px-4" href="#areas">Choose a Dining Area</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="card intro-panel p-4 p-lg-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <p class="section-label mb-2">Mount Pleasant Dining Guide</p>
+            <h2 class="display-6 fw-bold">A Charleston-area food destination with several distinct personalities</h2>
+            <p class="mb-0">
+              Mount Pleasant stretches from the Ravenel Bridge toward the beaches, creating a
+              restaurant scene that is larger and more varied than many first-time visitors expect.
+              Shem Creek supplies the classic waterfront experience, where fishing boats, boardwalks
+              and marsh sunsets surround seafood restaurants and energetic outdoor bars. The Old
+              Village offers a quieter atmosphere shaped by historic streets and neighborhood
+              hospitality. Coleman Boulevard includes longtime Southern favorites, oyster bars,
+              gastropubs and locally owned dining rooms, while newer residential areas support
+              polished neighborhood restaurants away from the main tourist route. Charleston Food
+              Insider created this guide as a curated starting point rather than a numerical ranking.
+              The right restaurant depends on whether the occasion calls for brunch, a sunset drink,
+              an anniversary dinner, a family meal or an easy night near the water.
+            </p>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="quick-box p-4">
+              <h3 class="h5 fw-bold mb-3">Mount Pleasant quick tips</h3>
+              <p class="mb-2"><i class="bi bi-sunset me-2"></i>Reserve sunset dinners early</p>
+              <p class="mb-2"><i class="bi bi-car-front me-2"></i>Plan for Shem Creek parking</p>
+              <p class="mb-2"><i class="bi bi-people me-2"></i>Expect weekend brunch waits</p>
+              <p class="mb-0"><i class="bi bi-clock me-2"></i>Verify current hours online</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="restaurants">
+      <div class="container py-4">
+        <div class="text-center mx-auto mb-5" style="max-width: 800px;">
+          <p class="section-label mb-2">The Local List</p>
+          <h2 class="display-5 fw-bold">Ten Mount Pleasant restaurants worth knowing</h2>
+          <p>
+            These selections include waterfront landmarks, locally loved brunch spots and
+            reservation-worthy dining rooms. Menus, opening hours and reservation policies can
+            change, so confirm the latest details through each restaurant’s official website.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Fresh oysters served on ice">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">French Seafood</span>
+                  <span class="badge badge-vibe">Oyster Bar</span>
+                </div>
+
+                <h3 class="h4 fw-bold">NICO Oysters + Seafood</h3>
+                <p class="card-text">
+                  NICO brings French technique and Lowcountry ingredients together near Shem Creek.
+                  The lively restaurant is built around oysters, wood-fired seafood and a raw bar
+                  where diners can watch part of the preparation. It is a useful choice for visitors
+                  who want coastal food in a polished setting without the formality of a traditional
+                  fine-dining room. Order several oyster varieties, add a warm seafood preparation
+                  and allow the bar team to recommend a cocktail or wine pairing. The inside-outside
+                  layout helps NICO feel connected to the creek while remaining comfortable in
+                  changing weather. Reservations are recommended for dinner, especially on weekends
+                  and during popular Charleston travel seasons.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.nicoshemcreek.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Chef-driven seasonal restaurant plate">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Seasonal American</span>
+                  <span class="badge badge-vibe">Creekside Dining</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Tavern & Table</h3>
+                <p class="card-text">
+                  Tavern & Table pairs one of Mount Pleasant’s best-known waterfront settings with a
+                  chef-driven menu and a strong beverage program. The restaurant works equally well
+                  for a leisurely lunch, sunset drinks or a full dinner with friends. Seasonal
+                  ingredients and straightforward preparations keep the food approachable, while the
+                  indoor and outdoor bars give the property an energetic Shem Creek atmosphere.
+                  Groups can share starters before moving into entrées, and the cocktail list adds
+                  another reason to stay through sunset. Because waterfront tables are naturally in
+                  high demand, guests should reserve when possible and understand that a specific
+                  outdoor seat may depend on weather and availability.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.tavernandtable.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Smoked barbecue brisket and sides">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Seafood & Barbecue</span>
+                  <span class="badge badge-vibe">Sunset Hangout</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Saltwater Cowboys</h3>
+                <p class="card-text">
+                  Saltwater Cowboys combines two crowd-friendly styles—Lowcountry seafood and
+                  slow-smoked barbecue—on a large deck overlooking Shem Creek. This variety makes the
+                  restaurant practical for groups in which some guests want shrimp or oysters while
+                  others prefer brisket, pork or casual bar food. The setting is relaxed, social and
+                  often lively, with cocktails, sunset views and scheduled music adding to the
+                  experience. Families and dog owners may appreciate the outdoor space, although
+                  current policies should always be confirmed. Saltwater Cowboys becomes especially
+                  busy during warm weekends, so arrive earlier than the ideal sunset time and allow
+                  room in the schedule for parking and a possible wait.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.saltwater-cowboys.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Southern shrimp and grits">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Southern & Lowcountry</span>
+                  <span class="badge badge-vibe">Breakfast Favorite</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Page’s Okra Grill</h3>
+                <p class="card-text">
+                  Page’s Okra Grill is one of Mount Pleasant’s best-known destinations for generous
+                  Southern cooking. The family-owned restaurant serves breakfast, brunch, lunch and
+                  dinner, with made-from-scratch biscuits, fried chicken, shrimp and grits, vegetables
+                  and creative comfort-food combinations shaping its identity. It is an excellent
+                  introduction for visitors who want familiar Lowcountry flavors in a casual setting.
+                  Weekend brunch can create a crowd, so an early arrival is often more comfortable
+                  than appearing at the busiest late-morning hour. Portions are substantial, making
+                  sharing useful for groups that want to sample several dishes. The covered outdoor
+                  area adds space and keeps the restaurant feeling lively.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.pagesokragrill.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Creative Southern plate with vegetables">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Creative Southern</span>
+                  <span class="badge badge-vibe">Grits & Bourbon</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Grace & Grit</h3>
+                <p class="card-text">
+                  Grace & Grit gives Southern food a creative, chef-led presentation while maintaining
+                  the generous hospitality expected from a neighborhood restaurant. The menu places
+                  fresh seafood, local produce and flavored grits at the center of the experience.
+                  Its well-known grit flight allows newcomers to compare multiple preparations rather
+                  than selecting only one. A carefully developed bourbon program makes the restaurant
+                  equally appealing for drinks and dinner. Grace & Grit is suitable for brunch,
+                  celebrations and visitors who want a modern Lowcountry meal away from the busiest
+                  creekside decks. Review the weekly schedule because brunch and dinner service vary
+                  by day, and reserve ahead when visiting with a group.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://gracegrit.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Intimate coastal tavern dining room">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Coastal Tavern</span>
+                  <span class="badge badge-vibe">Historic Old Village</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Post House</h3>
+                <p class="card-text">
+                  Post House is a coastal tavern and boutique inn in Mount Pleasant’s historic Old
+                  Village. Its location, seasonal menu and classic cocktails create an experience
+                  that feels connected to neighborhood life rather than a conventional commercial
+                  district. The dining room works for lunch, brunch, dinner, date nights and special
+                  occasions, while the surrounding streets encourage a walk before the reservation.
+                  Post House is particularly appealing to guests who appreciate intimate design,
+                  thoughtful seafood and a slower style of hospitality. Demand can be strong because
+                  both residents and Charleston visitors seek out the restaurant, so reservations are
+                  the safest choice. Leave time to enjoy the Old Village instead of treating the meal
+                  as a quick stop.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.theposthouseinn.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Fine dining meat entree with vegetables">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Lowcountry Fine Dining</span>
+                  <span class="badge badge-vibe">Anniversary Dinner</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Langdon’s Restaurant & Wine Bar</h3>
+                <p class="card-text">
+                  Langdon’s is one of Mount Pleasant’s established fine-dining restaurants, combining
+                  Lowcountry ingredients with broader global influences. The refined room, extensive
+                  wine options and attentive service make it appropriate for anniversaries, milestone
+                  birthdays and business dinners. This is a restaurant for diners who want to spend
+                  time over the meal rather than rush toward another activity. Seafood and meat
+                  preparations receive equal attention, which helps mixed groups find suitable choices.
+                  Ask the service team for guidance when pairing wine or planning multiple courses.
+                  Langdon’s is located away from the main Shem Creek crowds, offering a quieter
+                  alternative when the occasion matters more than a waterfront view.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://langdons.owensdininggroup.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Casual waterfront restaurant and bar">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">American & Seafood</span>
+                  <span class="badge badge-vibe">Casual Waterfront</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Vickery’s Bar & Grill</h3>
+                <p class="card-text">
+                  Vickery’s is a longtime Shem Creek restaurant known for broad water views and a
+                  comfortable, unpretentious atmosphere. Its menu mixes seafood, sandwiches, salads
+                  and familiar American dishes, making the restaurant useful for families and groups
+                  that do not want a narrow concept. The large space can accommodate more guests than
+                  some smaller creekside restaurants, but popular times still create waits. Vickery’s
+                  is a good choice for lunch after walking the boardwalk or for an early dinner before
+                  Shem Creek nightlife becomes busier. Choose it when the goal is a recognizable
+                  waterfront experience with enough menu variety to satisfy adults and children.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://vickerysshemcreek.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Pub burger with cheese and fries">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Gastropub</span>
+                  <span class="badge badge-vibe">Craft Beer</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Coleman Public House</h3>
+                <p class="card-text">
+                  Coleman Public House is a neighborhood gastropub where craft beer, burgers,
+                  sandwiches and elevated comfort food share the menu. It provides an easy alternative
+                  to seafood-heavy dining and works well for lunch, casual dinner or drinks with
+                  friends. The setting feels local and relaxed, making it useful for visitors who want
+                  to step away from the tourist-focused waterfront for one meal. Beer drinkers can
+                  explore a rotating selection while the kitchen offers enough variety for guests who
+                  prefer wine, cocktails or nonalcoholic options. Coleman Public House is especially
+                  convenient when exploring the businesses along Coleman Boulevard or planning an
+                  informal gathering without a lengthy fine-dining service.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://colemanpublichouse.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Seasonal shared plates at a neighborhood restaurant">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Local American</span>
+                  <span class="badge badge-vibe">Neighborhood Table</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Community Table</h3>
+                <p class="card-text">
+                  Community Table serves locally influenced American food in the I’On area of Mount
+                  Pleasant. The restaurant’s name reflects its welcoming role as a neighborhood
+                  gathering place for brunch, lunch, happy hour and dinner. Seasonal ingredients and
+                  approachable plates allow diners to enjoy a polished meal without a formal
+                  atmosphere. It is particularly helpful for families, couples and small groups
+                  staying farther from Shem Creek or exploring I’On’s walkable streets. The restaurant
+                  offers a calmer alternative to the busiest waterfront decks while still delivering
+                  a distinctly local experience. Review the current meal schedule and reservation
+                  options before visiting, because service hours may differ throughout the week.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.communitytablechs.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="areas">
+      <div class="container">
+        <div class="area-guide p-4 p-lg-5">
+          <div class="text-center mx-auto mb-5" style="max-width: 790px;">
+            <p class="section-label mb-2">Know Mount Pleasant</p>
+            <h2 class="display-6 fw-bold">Choose a restaurant by dining area</h2>
+            <p class="mb-0">
+              Mount Pleasant covers a large area, and traffic near the Ravenel Bridge, beaches and
+              major shopping corridors can affect travel time. Grouping dinner with the neighborhood
+              you already plan to explore keeps the day relaxed.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="card area-card p-4">
+                <i class="bi bi-water fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h5 fw-bold">Shem Creek</h3>
+                <p class="mb-0">
+                  NICO, Tavern & Table, Saltwater Cowboys and Vickery’s place diners near the creek,
+                  shrimp boats and boardwalk. Visit for waterfront atmosphere, but prepare for parking
+                  pressure and heavy weekend crowds.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="card area-card p-4">
+                <i class="bi bi-house-heart fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h5 fw-bold">Old Village</h3>
+                <p class="mb-0">
+                  Post House anchors the historic village dining experience. Combine a reservation
+                  with a walk along Pitt Street, quiet residential blocks and waterfront views near
+                  the Pitt Street Bridge area.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="card area-card p-4">
+                <i class="bi bi-buildings fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h5 fw-bold">Coleman Boulevard</h3>
+                <p class="mb-0">
+                  Page’s Okra Grill and Coleman Public House provide contrasting Southern and
+                  gastropub experiences. This corridor is convenient for visitors crossing from
+                  downtown Charleston or traveling toward Sullivan’s Island.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <div class="card area-card p-4">
+                <i class="bi bi-tree fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h5 fw-bold">I’On & Central Mount Pleasant</h3>
+                <p class="mb-0">
+                  Community Table and nearby neighborhood restaurants offer a quieter experience,
+                  while Grace & Grit and Langdon’s provide reservation-worthy meals away from the
+                  busiest tourist zones.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5" id="planning">
+      <div class="planning-banner p-4 p-lg-5">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7">
+            <p class="section-label mb-2">Before you dine</p>
+            <h2 class="display-6 fw-bold">Practical Mount Pleasant restaurant tips</h2>
+            <p>
+              Shem Creek is most crowded near sunset, particularly from Thursday through Sunday.
+              Arrive well before the exact sunset time if outdoor seating matters. Parking areas can
+              fill, and moving between several waterfront lots may take longer than expected. A
+              rideshare can reduce parking stress, but pickup times may increase at the end of the
+              evening.
+            </p>
+            <p>
+              Weekend brunch is another popular period. Page’s Okra Grill, Grace & Grit and other
+              daytime restaurants may develop waits after the early morning window. Groups should
+              arrive together and review each restaurant’s seating policy in advance.
+            </p>
+            <p class="mb-0">
+              Mount Pleasant is also larger than it appears on a Charleston-area map. A restaurant
+              near northern Highway 17 may be a meaningful drive from the Old Village or Ravenel
+              Bridge during rush hour. Check the route before booking, allow time for bridge traffic
+              and avoid scheduling dinner immediately after an activity on the opposite side of town.
+            </p>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="bg-white text-dark rounded-4 p-4">
+              <h3 class="h5 fw-bold mb-3">Build a Mount Pleasant food day</h3>
+              <p class="mb-3"><strong>Breakfast:</strong> Start with Southern favorites at Page’s.</p>
+              <p class="mb-3"><strong>Lunch:</strong> Choose a gastropub or relaxed Shem Creek table.</p>
+              <p class="mb-3"><strong>Sunset:</strong> Reserve Tavern & Table or Saltwater Cowboys.</p>
+              <p class="mb-0"><strong>Special dinner:</strong> Select Post House, Langdon’s or Grace & Grit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="newsletter">
+      <div class="newsletter p-4 p-lg-5 text-center">
+        <p class="section-label mb-2">Stay hungry</p>
+        <h2 class="display-6 fw-bold">Get more Charleston-area dining guides</h2>
+        <p class="mx-auto mb-4" style="max-width: 710px;">
+          Join Charleston Food Insider for neighborhood restaurant lists, waterfront dining ideas,
+          brunch recommendations and new places to explore throughout the Lowcountry.
+        </p>
+
+        <form class="row g-2 justify-content-center" action="#" method="post">
+          <div class="col-md-6 col-lg-5">
+            <label class="visually-hidden" for="email">Email address</label>
+            <input class="form-control form-control-lg" id="email" name="email" type="email"
+              placeholder="Your email address" required>
+          </div>
+
+          <div class="col-md-auto">
+            <button class="btn btn-mtp btn-lg w-100" type="submit">Join the Insider List</button>
+          </div>
+        </form>
+      </div>
+
+      <p class="editorial-note mt-4 mb-0">
+        Editorial note: Charleston Food Insider presents a curated guide rather than a fixed ranking.
+        Restaurant menus, hours, prices, reservation policies and entertainment schedules can change.
+        Guide updated July 2026.
+      </p>
+    </section>
+  </main>
+
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <h2 class="h4 text-white fw-bold">CharlestonFoodInsider</h2>
+          <p class="mb-0">
+            Independent inspiration for discovering memorable restaurants across Charleston,
+            Mount Pleasant and the surrounding Lowcountry.
+          </p>
+        </div>
+
+        <div class="col-lg-5 text-lg-end">
+          <a class="me-3" href="#restaurants">Restaurants</a>
+          <a class="me-3" href="#areas">Dining Areas</a>
+          <a href="#planning">Dining Tips</a>
+          <p class="mt-3 mb-0">© 2026 Charleston Food Insider. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Best Restaurants on Sullivan's Island, SC | Charleston Food Insider</title>
+  <meta name="description" content="Discover the best restaurants on Sullivan's Island, South Carolina, including seafood, house-made pasta, barbecue, burgers, tacos, oysters, beach sandwiches and local dessert stops.">
+  <meta name="keywords" content="best restaurants Sullivan's Island, Sullivan's Island restaurants, Middle Street dining, Sullivan's Island seafood, restaurants near Sullivan's Island beach, Charleston Food Insider">
+  <meta name="author" content="Charleston Food Insider">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --si-navy: #112f39;
+      --si-blue: #2a7783;
+      --si-sky: #dff2f2;
+      --si-sand: #f4eadb;
+      --si-coral: #dd7250;
+      --si-cream: #fffaf3;
+      --si-ink: #293a3f;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--si-ink);
+      background: var(--si-cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.72;
+    }
+
+    .navbar {
+      background: rgba(17, 47, 57, .97);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+      font-weight: 850;
+      letter-spacing: .01em;
+    }
+
+    .navbar-brand span {
+      color: #ffb18f;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(8, 34, 43, .94), rgba(8, 34, 43, .39)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2100&q=86") center/cover no-repeat;
+    }
+
+    .hero-kicker {
+      color: #ffc6aa;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 980px;
+      font-size: clamp(2.7rem, 6.8vw, 5.8rem);
+      font-weight: 900;
+      line-height: .98;
+    }
+
+    .hero .lead {
+      max-width: 790px;
+      font-size: 1.16rem;
+    }
+
+    .btn-si {
+      color: #fff;
+      background: var(--si-coral);
+      border-color: var(--si-coral);
+      font-weight: 750;
+    }
+
+    .btn-si:hover {
+      color: #fff;
+      background: #bb593a;
+      border-color: #bb593a;
+    }
+
+    .section-label {
+      color: var(--si-coral);
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .intro-panel {
+      position: relative;
+      z-index: 2;
+      margin-top: -58px;
+      border: 0;
+      border-radius: 1.35rem;
+      box-shadow: 0 1rem 3rem rgba(17, 47, 57, .15);
+    }
+
+    .quick-box {
+      color: #fff;
+      background: var(--si-navy);
+      border-radius: 1rem;
+    }
+
+    .quick-box i {
+      color: #ffb18f;
+      font-size: 1.25rem;
+    }
+
+    .restaurant-card {
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+      border: 0;
+      border-radius: 1.15rem;
+      box-shadow: 0 .8rem 2rem rgba(17, 47, 57, .10);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .restaurant-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 1.25rem 2.7rem rgba(17, 47, 57, .18);
+    }
+
+    .restaurant-card img {
+      height: 225px;
+      object-fit: cover;
+    }
+
+    .restaurant-card .card-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .restaurant-card .card-text {
+      flex-grow: 1;
+    }
+
+    .badge-food {
+      color: #205f68;
+      background: var(--si-sky);
+      font-weight: 750;
+    }
+
+    .badge-vibe {
+      color: #855039;
+      background: #f8e6dc;
+      font-weight: 750;
+    }
+
+    .station-guide {
+      background: var(--si-sand);
+      border-radius: 1.3rem;
+    }
+
+    .station-card {
+      height: 100%;
+      background: #fff;
+      border: 0;
+      border-top: 4px solid var(--si-coral);
+      border-radius: .9rem;
+      box-shadow: 0 .55rem 1.4rem rgba(17, 47, 57, .07);
+    }
+
+    .planning-banner {
+      color: #fff;
+      background:
+        linear-gradient(rgba(17, 47, 57, .94), rgba(17, 47, 57, .94)),
+        url("https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1800&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    .newsletter {
+      color: #fff;
+      background:
+        linear-gradient(rgba(42, 119, 131, .91), rgba(17, 47, 57, .95)),
+        url("https://images.unsplash.com/photo-1498579809087-ef1e558fd1da?auto=format&fit=crop&w=1800&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    footer {
+      color: #bed0d4;
+      background: #082129;
+    }
+
+    footer a {
+      color: #ffb18f;
+    }
+
+    .editorial-note {
+      color: #64777b;
+      font-size: .92rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .hero {
+        min-height: 70vh;
+      }
+
+      .intro-panel {
+        margin-top: -30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#top">Charleston<span>FoodInsider</span></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stations">Dining Areas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#planning">Beach-Day Tips</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-si btn-sm px-3" href="#newsletter">Get the Guide</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container py-5">
+      <p class="hero-kicker mb-3">Small island, serious food scene</p>
+      <h1 class="mb-4">The Best Restaurants on Sullivan’s Island</h1>
+      <p class="lead mb-4">
+        Explore seasonal pasta, fresh seafood, raw-bar favorites, barbecue, burgers,
+        tacos, beach sandwiches and local desserts along Middle Street.
+      </p>
+
+      <div class="d-flex flex-wrap gap-3">
+        <a class="btn btn-si btn-lg px-4" href="#restaurants">Explore the Restaurants</a>
+        <a class="btn btn-outline-light btn-lg px-4" href="#planning">Plan Your Beach Day</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="card intro-panel p-4 p-lg-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <p class="section-label mb-2">Sullivan’s Island Dining Guide</p>
+            <h2 class="display-6 fw-bold">A compact restaurant district with remarkable range</h2>
+            <p class="mb-0">
+              Sullivan’s Island is a quiet residential beach town, yet its central Middle Street
+              district contains one of the Charleston area’s most concentrated collections of
+              worthwhile restaurants. Within a few walkable blocks, diners can choose house-made pasta,
+              local seafood, Caribbean-influenced raw-bar dishes, slow-smoked barbecue, creative
+              burgers, tacos, sandwiches and small-batch gelato. The island’s historic “station”
+              addresses come from the trolley stops that once guided visitors across the community,
+              and Stations 21 through 22½ remain the center of the dining action today. Charleston
+              Food Insider created this page as a curated guide rather than a fixed ranking. The best
+              choice depends on the occasion: a reservation-worthy dinner, a casual family meal, food
+              after the beach, a late afternoon drink or something quick to carry toward the sand.
+            </p>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="quick-box p-4">
+              <h3 class="h5 fw-bold mb-3">Island dining checklist</h3>
+              <p class="mb-2"><i class="bi bi-calendar-check me-2"></i>Reserve popular dinners early</p>
+              <p class="mb-2"><i class="bi bi-car-front me-2"></i>Allow time for limited parking</p>
+              <p class="mb-2"><i class="bi bi-umbrella-beach me-2"></i>Keep beach rules in mind</p>
+              <p class="mb-0"><i class="bi bi-clock me-2"></i>Verify current hours online</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="restaurants">
+      <div class="container py-4">
+        <div class="text-center mx-auto mb-5" style="max-width: 800px;">
+          <p class="section-label mb-2">The Island List</p>
+          <h2 class="display-5 fw-bold">Ten Sullivan’s Island dining spots worth knowing</h2>
+          <p>
+            The list mixes destination restaurants with dependable beach-day stops. Menus, hours,
+            reservation systems and entertainment schedules can change, so confirm details on the
+            official restaurant website before visiting.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Handmade pasta with herbs and cheese">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Eclectic Southern</span>
+                  <span class="badge badge-vibe">Special Occasion</span>
+                </div>
+
+                <h3 class="h4 fw-bold">The Obstinate Daughter</h3>
+                <p class="card-text">
+                  The Obstinate Daughter is Sullivan’s Island’s best-known reservation restaurant.
+                  Its self-described eclectic Southern cooking draws from French, Italian and Spanish
+                  traditions while remaining rooted in Lowcountry farms and fishermen. House-made
+                  pasta, wood-fired pizza, seasonal small plates and raw-bar selections make the menu
+                  useful for sharing. The second-floor dining room feels polished but still reflects
+                  the island’s maritime character. This is a strong choice for date night, a birthday
+                  dinner or visitors who want one restaurant-centered experience during their beach
+                  trip. Reservations can disappear quickly during spring and summer, so book ahead
+                  rather than expecting a last-minute table after leaving the beach.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.theobstinatedaughter.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Fresh oysters and chilled seafood on ice">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Dayboat Seafood</span>
+                  <span class="badge badge-vibe">Modern Fish Camp</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Sullivan’s Fish Camp</h3>
+                <p class="card-text">
+                  Sullivan’s Fish Camp offers a modern interpretation of the casual Southern fish
+                  camp. The restaurant balances fried seafood baskets and familiar coastal favorites
+                  with raw preparations, composed plates and a carefully developed bar program. Its
+                  central location and family-friendly atmosphere make it useful for both beach-day
+                  visitors and diners planning a complete evening meal. Guests can keep the experience
+                  simple with a sandwich and frozen drink or explore oysters, fresh local fish and
+                  seasonal vegetables. The current kitchen direction gives the restaurant more depth
+                  than its laid-back name suggests. Reserve when possible, particularly when bringing
+                  a larger group or dining during the busiest weekend periods.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.sullivansfishcamp.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Colorful coastal seafood plates for sharing">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Coastal Seafood</span>
+                  <span class="badge badge-vibe">Tropical Raw Bar</span>
+                </div>
+
+                <h3 class="h4 fw-bold">The Longboard</h3>
+                <p class="card-text">
+                  The Longboard brings a bright, tropical style to Middle Street with seafood,
+                  oysters, ceviche, poke-inspired dishes and shareable coastal plates. The design
+                  connects indoor and outdoor spaces, creating a restaurant that feels appropriate
+                  for lunch after the beach, happy hour or a relaxed dinner. It is an appealing choice
+                  for groups that want lighter seafood preparations instead of a traditional fried
+                  platter. Ordering several dishes allows the table to compare raw, grilled and chilled
+                  flavors. Oyster specials and service hours may vary, so review the current menu and
+                  reservation options before arrival. The Longboard’s polished island atmosphere makes
+                  it casual enough for vacation while still feeling distinctive.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.thelongboardsullivans.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Smoked barbecue brisket, ribs and side dishes">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Barbecue</span>
+                  <span class="badge badge-vibe">Lively Beach Hangout</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Home Team BBQ</h3>
+                <p class="card-text">
+                  Home Team BBQ gives Sullivan’s Island diners a break from seafood through smoked
+                  wings, pulled pork, brisket, ribs, sandwiches and Southern sides. Its location only
+                  a short walk from the beach creates an energetic mix of residents, families,
+                  visitors and late-night crowds. The restaurant is particularly useful for groups
+                  because platters and shared meats allow everyone to sample several items. Frozen
+                  drinks and an active bar add to the social atmosphere, while the menu remains
+                  approachable for children. Home Team can become crowded after beach hours and during
+                  live entertainment, so check the calendar and arrive with flexibility. Counter-style
+                  informality does not eliminate the possibility of a wait.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://hometeambbq.com/location/sullivans-island/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Gourmet burger with cheese and fries">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Burgers & Fish Tacos</span>
+                  <span class="badge badge-vibe">Literary Tavern</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Poe’s Tavern</h3>
+                <p class="card-text">
+                  Poe’s Tavern turns Edgar Allan Poe’s connection to Sullivan’s Island into a casual
+                  restaurant known for creative burgers, fish tacos and a shaded outdoor patio. The
+                  author was stationed at nearby Fort Moultrie, and references to his stories appear
+                  throughout the décor and menu. Poe’s is an easy family lunch or relaxed dinner when
+                  the group wants recognizable food in a memorable setting. Burger combinations can
+                  be customized, and the broad menu provides alternatives for diners who do not want
+                  red meat. The restaurant’s popularity often produces a wait during beach season.
+                  Place your name on the list, explore nearby Middle Street and avoid arriving with a
+                  tightly scheduled next activity.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.poestavern.com/sullivans-island-sc" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Tacos with lime, salsa and fresh toppings">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Mexi-Cali</span>
+                  <span class="badge badge-vibe">Surf-Inspired Cantina</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Mex 1 Coastal Cantina</h3>
+                <p class="card-text">
+                  Mex 1 Coastal Cantina serves tacos, bowls, nachos and freshly mixed drinks in a
+                  colorful surf-inspired environment. It is one of the island’s most practical
+                  choices for groups seeking a casual meal that can move faster than a multi-course
+                  dinner. The menu works well after the beach, during happy hour or for a relaxed
+                  weekend brunch. Margaritas and rotating specials make the bar an important part of
+                  the experience, while children and non-drinkers still have plenty of food choices.
+                  Reservations are available, which can be helpful during weekends and holidays.
+                  Review live music or special-event information because entertainment can make the
+                  restaurant more energetic than on a normal weekday.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.mex1coastalcantina.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Intimate neighborhood bistro dining room">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">American Bistro</span>
+                  <span class="badge badge-vibe">Laid-Back Fine Dining</span>
+                </div>
+
+                <h3 class="h4 fw-bold">High Thyme</h3>
+                <p class="card-text">
+                  High Thyme is a longtime island bistro serving an eclectic mix of American fare in
+                  a comfortable, understated setting. It appeals to diners who want careful seafood,
+                  meat and seasonal preparations without the atmosphere of a large destination
+                  restaurant. The dining room and porch feel neighborhood-oriented, and the wine list
+                  helps make High Thyme appropriate for date night or an unhurried dinner with friends.
+                  This is a good alternative when the group wants to sit down, talk and enjoy a complete
+                  meal away from louder bars. Seating is limited, so review the restaurant’s operating
+                  days and reservation policy before making plans. Its low-key character is part of
+                  what keeps regulars returning.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.highthyme.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Friendly neighborhood pub with outdoor tables">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Irish Pub Fare</span>
+                  <span class="badge badge-vibe">Local Institution</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Dunleavy’s Pub</h3>
+                <p class="card-text">
+                  Dunleavy’s Pub provides the kind of casual, familiar atmosphere that every beach
+                  town needs. The family-run Irish pub serves sandwiches, burgers, wings and traditional
+                  bar favorites alongside beer and cocktails. Outdoor tables on Middle Street create
+                  an easy stop for visitors walking between the beach and nearby restaurants. Dunleavy’s
+                  is best approached as a neighborhood pub rather than a formal culinary destination:
+                  come for a relaxed meal, conversation, sports or a drink after the beach. The smaller
+                  building contributes to its personality but may also limit seating when the island
+                  is crowded. Check current hours before relying on it for a late meal, and remember
+                  that the bar atmosphere may become livelier in the evening.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://dunleavysonsullivans.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Fresh deli sandwich prepared for takeout">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Sandwiches & Breakfast</span>
+                  <span class="badge badge-vibe">Grab-and-Go</span>
+                </div>
+
+                <h3 class="h4 fw-bold">The Co-Op</h3>
+                <p class="card-text">
+                  The Co-Op is a quick-service market and eatery known for breakfast, sandwiches,
+                  salads, snacks and frozen rosé. Its Sullivan’s Island location is especially useful
+                  when visitors want food to carry toward the beach rather than a full table-service
+                  meal. Morning options can start the day, while sandwiches and prepared items work
+                  for lunch or the drive home. The concept is casual and efficient, but popular beach
+                  hours may still create a line. Review local beach rules before packing the order:
+                  alcoholic beverages are not permitted on Sullivan’s Island beaches, streets or
+                  boardwalks. The Co-Op is best treated as a convenient food stop, with any alcoholic
+                  drinks enjoyed only where legally permitted.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.thecoopsi.com/location/sullivans-island/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Small-batch gelato in several flavors">
+              <div class="card-body p-4">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge badge-food">Gelato & Sweets</span>
+                  <span class="badge badge-vibe">After-Dinner Stop</span>
+                </div>
+
+                <h3 class="h4 fw-bold">Beardcat’s Sweet Shop</h3>
+                <p class="card-text">
+                  Beardcat’s Sweet Shop sits beneath The Obstinate Daughter and provides a natural
+                  finish to an island meal. The small shop is known for rotating gelato flavors,
+                  coffee, pastries and convenient grab-and-go items. A scoop after dinner can become
+                  part of a Middle Street walk, while daytime visitors can use the shop for a cold
+                  break from the beach. Seasonal flavors create variety, and the signature olive-oil
+                  and sea-salt combination has helped give the shop its own identity. Beardcat’s is
+                  compact, so the line may extend outside during warm evenings. Treat the wait as part
+                  of the experience and confirm current hours, especially outside peak summer season.
+                </p>
+
+                <a class="btn btn-outline-dark mt-3" href="https://www.facebook.com/BeardcatsSweetShop/" target="_blank" rel="noopener">
+                  View Restaurant Page <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="stations">
+      <div class="container">
+        <div class="station-guide p-4 p-lg-5">
+          <div class="text-center mx-auto mb-5" style="max-width: 790px;">
+            <p class="section-label mb-2">Understanding the Stations</p>
+            <h2 class="display-6 fw-bold">Choose a restaurant by part of Middle Street</h2>
+            <p class="mb-0">
+              Most Sullivan’s Island restaurants sit within the central business district between
+              Stations 20 and 23. Once parked legally, visitors can usually walk between several
+              choices instead of moving the car for every stop.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <div class="card station-card p-4">
+                <i class="bi bi-geo-alt fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h4 fw-bold">Station 21 Area</h3>
+                <p class="mb-0">
+                  Sullivan’s Fish Camp and The Co-Op make this section useful for seafood, sandwiches
+                  and grab-and-go food. It is convenient for beach visitors who want a casual meal
+                  without traveling far from central access paths.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card station-card p-4">
+                <i class="bi bi-signpost-split fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h4 fw-bold">Station 22 Area</h3>
+                <p class="mb-0">
+                  The Obstinate Daughter, Beardcat’s, Poe’s, Home Team and Mex 1 create a dense mix
+                  of destination dining and casual choices. Park once, walk carefully and expect the
+                  greatest concentration of activity during weekends.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card station-card p-4">
+                <i class="bi bi-shop fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h4 fw-bold">Station 22½ Area</h3>
+                <p class="mb-0">
+                  The Longboard, High Thyme and Dunleavy’s offer three different moods within a small
+                  area: tropical seafood, intimate bistro dining and a traditional neighborhood pub.
+                  This section works well for groups deciding after arrival.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5" id="planning">
+      <div class="planning-banner p-4 p-lg-5">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7">
+            <p class="section-label mb-2">Before you visit</p>
+            <h2 class="display-6 fw-bold">Practical Sullivan’s Island dining and parking tips</h2>
+            <p>
+              Sullivan’s Island does not have large public restaurant garages. Beach parking is
+              generally located in designated public right-of-way areas, and vehicles must follow
+              posted signs, keep all tires off the pavement and never block a street or beach access
+              path. Parking can become limited during warm weekends, and ongoing 2026 infrastructure
+              work may reduce availability in parts of the island. Arrive earlier than your dining
+              time and avoid circling until the reservation is in danger.
+            </p>
+            <p>
+              The island’s compact restaurant district becomes easiest once the car is parked.
+              Comfortable shoes allow the group to walk between Middle Street businesses, enjoy a
+              dessert after dinner or place a name on a waitlist before exploring nearby shops.
+              Pedestrians should remain alert because Middle Street stays active with cars, bikes and
+              golf carts.
+            </p>
+            <p class="mb-0">
+              Beach rules matter when ordering takeout. Alcohol is prohibited on Sullivan’s Island
+              beaches, streets and boardwalks. Glass, polystyrene foam and certain single-use plastics
+              are also prohibited on the beach. No lifeguards are on duty, so dining plans should not
+              encourage swimming after drinking. Check the Town of Sullivan’s Island website for the
+              current regulations before building a picnic or beach-day itinerary.
+            </p>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="bg-white text-dark rounded-4 p-4">
+              <h3 class="h5 fw-bold mb-3">Build an island food day</h3>
+              <p class="mb-3"><strong>Morning:</strong> Grab breakfast or sandwiches from The Co-Op.</p>
+              <p class="mb-3"><strong>Lunch:</strong> Choose Poe’s, Home Team or Sullivan’s Fish Camp.</p>
+              <p class="mb-3"><strong>Happy hour:</strong> Try oysters at The Longboard.</p>
+              <p class="mb-3"><strong>Dinner:</strong> Reserve The Obstinate Daughter or High Thyme.</p>
+              <p class="mb-0"><strong>Dessert:</strong> Finish with gelato at Beardcat’s.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="newsletter">
+      <div class="newsletter p-4 p-lg-5 text-center">
+        <p class="section-label mb-2">Stay hungry</p>
+        <h2 class="display-6 fw-bold">Get more Charleston-area dining guides</h2>
+        <p class="mx-auto mb-4" style="max-width: 710px;">
+          Join Charleston Food Insider for beach restaurant lists, neighborhood dining ideas,
+          seafood recommendations and new places to explore throughout the Lowcountry.
+        </p>
+
+        <form class="row g-2 justify-content-center" action="#" method="post">
+          <div class="col-md-6 col-lg-5">
+            <label class="visually-hidden" for="email">Email address</label>
+            <input class="form-control form-control-lg" id="email" name="email" type="email"
+              placeholder="Your email address" required>
+          </div>
+
+          <div class="col-md-auto">
+            <button class="btn btn-si btn-lg w-100" type="submit">Join the Insider List</button>
+          </div>
+        </form>
+      </div>
+
+      <p class="editorial-note mt-4 mb-0">
+        Editorial note: Charleston Food Insider presents a curated guide rather than a fixed ranking.
+        Restaurant menus, hours, prices, reservations, parking availability and local regulations can
+        change. Guide updated July 2026.
+      </p>
+    </section>
+  </main>
+
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <h2 class="h4 text-white fw-bold">CharlestonFoodInsider</h2>
+          <p class="mb-0">
+            Independent inspiration for discovering memorable restaurants across Charleston,
+            Sullivan’s Island and the surrounding Lowcountry.
+          </p>
+        </div>
+
+        <div class="col-lg-5 text-lg-end">
+          <a class="me-3" href="#restaurants">Restaurants</a>
+          <a class="me-3" href="#stations">Dining Areas</a>
+          <a href="#planning">Beach Tips</a>
+          <p class="mt-3 mb-0">© 2026 Charleston Food Insider. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

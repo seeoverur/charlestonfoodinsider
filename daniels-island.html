@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Restaurants on Daniel Island, SC | Charleston Food Insider</title>
+  <meta name="description" content="Discover the best restaurants on Daniel Island, SC, including waterfront seafood, European cuisine, brunch, sushi, Mexican food, burgers, breweries and casual dining near Credit One Stadium.">
+  <meta name="keywords" content="best restaurants Daniel Island, Daniel Island restaurants, food near Credit One Stadium, Daniel Island dining guide, Charleston Food Insider">
+  <meta name="author" content="Charleston Food Insider">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --island-navy: #12323b;
+      --island-teal: #247681;
+      --island-aqua: #dff1ef;
+      --island-sand: #f5eee3;
+      --island-coral: #d97855;
+      --island-cream: #fffaf3;
+      --island-ink: #26363b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      color: var(--island-ink);
+      background: var(--island-cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.72;
+    }
+
+    .navbar {
+      background: rgba(18, 50, 59, .97);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+      font-weight: 850;
+      letter-spacing: .01em;
+    }
+
+    .navbar-brand span { color: #ffb18f; }
+
+    .hero {
+      min-height: 76vh;
+      display: grid;
+      place-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(12, 38, 47, .94), rgba(12, 38, 47, .46)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2100&q=86") center/cover no-repeat;
+    }
+
+    .hero-kicker {
+      color: #ffc7ad;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 930px;
+      font-size: clamp(2.65rem, 6.7vw, 5.6rem);
+      font-weight: 900;
+      line-height: .98;
+    }
+
+    .hero .lead {
+      max-width: 760px;
+      font-size: 1.15rem;
+    }
+
+    .btn-island {
+      background: var(--island-coral);
+      border-color: var(--island-coral);
+      color: white;
+      font-weight: 750;
+    }
+
+    .btn-island:hover {
+      background: #bd5f40;
+      border-color: #bd5f40;
+      color: white;
+    }
+
+    .section-label {
+      color: var(--island-coral);
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .intro-panel {
+      margin-top: -58px;
+      position: relative;
+      z-index: 2;
+      border: 0;
+      border-radius: 1.35rem;
+      box-shadow: 0 1rem 3rem rgba(18, 50, 59, .15);
+    }
+
+    .restaurant-card {
+      height: 100%;
+      overflow: hidden;
+      border: 0;
+      border-radius: 1.1rem;
+      background: white;
+      box-shadow: 0 .8rem 2rem rgba(18, 50, 59, .10);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .restaurant-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 1.2rem 2.6rem rgba(18, 50, 59, .18);
+    }
+
+    .restaurant-card img {
+      height: 225px;
+      object-fit: cover;
+    }
+
+    .restaurant-card .card-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .restaurant-card .card-text { flex-grow: 1; }
+
+    .badge-food {
+      color: #1e626a;
+      background: var(--island-aqua);
+      font-weight: 750;
+    }
+
+    .badge-vibe {
+      color: #855035;
+      background: #f7e7dc;
+      font-weight: 750;
+    }
+
+    .fact-box {
+      color: white;
+      background: var(--island-navy);
+      border-radius: 1rem;
+    }
+
+    .fact-box i {
+      color: #ffb18f;
+      font-size: 1.25rem;
+    }
+
+    .district-guide {
+      background: var(--island-sand);
+      border-radius: 1.3rem;
+    }
+
+    .district-card {
+      height: 100%;
+      background: white;
+      border: 0;
+      border-top: 4px solid var(--island-coral);
+      border-radius: .9rem;
+      box-shadow: 0 .6rem 1.4rem rgba(18, 50, 59, .07);
+    }
+
+    .stadium-banner {
+      color: white;
+      background:
+        linear-gradient(rgba(18, 50, 59, .93), rgba(18, 50, 59, .93)),
+        url("https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1800&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    .newsletter {
+      color: white;
+      background:
+        linear-gradient(rgba(28, 89, 98, .91), rgba(18, 50, 59, .94)),
+        url("https://images.unsplash.com/photo-1498579809087-ef1e558fd1da?auto=format&fit=crop&w=1800&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    footer {
+      color: #bfd0d4;
+      background: #0a222a;
+    }
+
+    footer a { color: #ffb18f; }
+
+    .editorial-note {
+      color: #65777b;
+      font-size: .92rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .hero { min-height: 70vh; }
+      .intro-panel { margin-top: -30px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#top">Charleston<span>FoodInsider</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+          <li class="nav-item"><a class="nav-link" href="#areas">Dining Areas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stadium">Credit One Stadium</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-island btn-sm px-3" href="#newsletter">Get the Guide</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container py-5">
+      <p class="hero-kicker mb-3">Waterfront flavor and neighborhood favorites</p>
+      <h1 class="mb-4">The Best Restaurants on Daniel Island</h1>
+      <p class="lead mb-4">
+        Discover waterfront seafood, European-inspired dinners, relaxed brunches, sushi,
+        Mexican favorites, smashburgers and casual places to eat near Credit One Stadium.
+      </p>
+      <div class="d-flex flex-wrap gap-3">
+        <a class="btn btn-island btn-lg px-4" href="#restaurants">Explore the Restaurants</a>
+        <a class="btn btn-outline-light btn-lg px-4" href="#stadium">Plan an Event Night</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="card intro-panel p-4 p-lg-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <p class="section-label mb-2">Daniel Island Dining Guide</p>
+            <h2 class="display-6 fw-bold">A relaxed Charleston food destination with its own identity</h2>
+            <p class="mb-0">
+              Daniel Island may feel quieter than downtown Charleston, but its restaurant scene offers
+              much more than convenient neighborhood dining. The island includes a polished waterfront
+              district, casual family-friendly restaurants, gathering places for sports fans and several
+              useful options before concerts, tennis matches and special events at Credit One Stadium.
+              Diners can begin the day with breakfast or brunch, meet friends for a burger and a local
+              beer, enjoy sushi or Mexican food for dinner, or plan a memorable seafood meal beside the
+              Wando River. Charleston Food Insider created this guide as a starting point rather than a
+              numbered ranking. Every restaurant serves a different purpose, and the best choice depends
+              on the occasion, the size of your group and how much time you have before your next stop.
+            </p>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="fact-box p-4">
+              <h3 class="h5 fw-bold mb-3">Daniel Island quick tips</h3>
+              <p class="mb-2"><i class="bi bi-water me-2"></i>Book waterfront dinners early</p>
+              <p class="mb-2"><i class="bi bi-ticket-perforated me-2"></i>Allow extra time on event nights</p>
+              <p class="mb-2"><i class="bi bi-car-front me-2"></i>Review parking before arrival</p>
+              <p class="mb-0"><i class="bi bi-clock me-2"></i>Confirm current hours online</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="restaurants">
+      <div class="container py-4">
+        <div class="text-center mx-auto mb-5" style="max-width: 780px;">
+          <p class="section-label mb-2">The Island List</p>
+          <h2 class="display-5 fw-bold">Nine Daniel Island restaurants worth visiting</h2>
+          <p>
+            The list combines special-occasion dining with casual local favorites. Menus, opening
+            hours, reservation policies and event schedules can change, so check each restaurant’s
+            official website before making the trip.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Fresh oysters presented on ice at a coastal restaurant">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-food">Coastal Seafood</span>
+                  <span class="badge badge-vibe">Waterfront Dining</span>
+                </div>
+                <h3 class="h4 fw-bold">The Kingstide</h3>
+                <p class="card-text">
+                  The Kingstide is the island’s signature waterfront restaurant and one of the best
+                  choices for a dinner that feels connected to the Lowcountry setting. Located beside
+                  the Wando River, the restaurant serves seafood through raw, roasted and wood-fired
+                  preparations. The building and outdoor spaces are designed to make the water part of
+                  the experience, so sunset reservations are especially appealing. The Kingstide fits
+                  date nights, birthday dinners, business gatherings and visitors who want a polished
+                  meal without driving into downtown Charleston. Guests arriving for a busy weekend
+                  should reserve ahead and review the restaurant’s different dining and bar spaces
+                  before selecting a table.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://www.thekingstide.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="European-inspired pasta with herbs">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-food">European-Inspired</span>
+                  <span class="badge badge-vibe">Courtyard Dinner</span>
+                </div>
+                <h3 class="h4 fw-bold">Vinea Courtyard Kitchen</h3>
+                <p class="card-text">
+                  Vinea Courtyard Kitchen brings European and Mediterranean influences to River Landing
+                  Drive in the former Sermet’s Courtyard space. The restaurant works well for diners who
+                  want fresh pasta, carefully composed entrées and a more intimate evening than a large
+                  waterfront venue. Its courtyard setting helps preserve the neighborhood character that
+                  made this location a longtime gathering place. Vinea is a thoughtful option for couples,
+                  small celebrations and residents meeting friends for dinner. Because it is a newer
+                  Daniel Island restaurant with limited service days, guests should check the current
+                  schedule and make a reservation rather than relying on a last-minute table.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://vineakitchen.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Bright and welcoming brunch restaurant interior">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-food">Breakfast & Brunch</span>
+                  <span class="badge badge-vibe">Family-Friendly</span>
+                </div>
+                <h3 class="h4 fw-bold">Mpishi Restaurant</h3>
+                <p class="card-text">
+                  Mpishi is one of Daniel Island’s most useful daytime restaurants because it serves
+                  breakfast, brunch and lunch in a comfortable neighborhood setting. Chef Andy Clay’s
+                  global cooking background gives the menu more range than a standard breakfast café,
+                  while familiar choices keep it approachable for families and groups with different
+                  preferences. The restaurant is a strong place to begin a Daniel Island morning, meet
+                  for a weekday lunch or eat before an afternoon event. Outdoor seating, takeout and
+                  delivery options add convenience. Mpishi also promotes pre-concert dining, making it
+                  worth checking when a major performance is scheduled nearby.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://mpishirestaurant.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Colorful Mexican tacos with lime and salsa">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-food">Mexican</span>
+                  <span class="badge badge-vibe">Casual Gathering</span>
+                </div>
+                <h3 class="h4 fw-bold">Agaves Cantina</h3>
+                <p class="card-text">
+                  Agaves Cantina is a dependable Daniel Island choice for tacos, combination plates,
+                  margaritas and a relaxed group meal. The restaurant’s broad menu makes it practical
+                  when dining with friends or relatives who want familiar Mexican favorites without
+                  planning a formal evening. It can also be a convenient stop before an event because
+                  guests can order shareable starters or choose a complete dinner. Popular nights may
+                  become busy, particularly when the island is hosting a concert or tournament, so
+                  build extra time into the schedule. Agaves offers the kind of energetic, easygoing
+                  atmosphere that works for families, casual dates and larger parties.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://agavesdanielisland.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Japanese sushi rolls and sashimi arranged on a plate">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-food">Japanese Fusion</span>
+                  <span class="badge badge-vibe">Dinner & Takeout</span>
+                </div>
+                <h3 class="h4 fw-bold">Wasabi of Daniel Island</h3>
+                <p class="card-text">
+                  Wasabi gives island residents and visitors a dedicated option for sushi, sashimi,
+                  hibachi-style entrées and modern Japanese fusion. It is a flexible restaurant for
+                  both dine-in meals and takeout, which can be helpful when a group prefers a quieter
+                  evening at home or at a nearby rental. Diners can build a meal from individual rolls,
+                  appetizers and shared plates, or choose a more traditional entrée. Wasabi is also a
+                  useful alternative when the group has already eaten several seafood or Southern
+                  meals elsewhere in Charleston. Review the online menu beforehand when coordinating
+                  a large order or accommodating different preferences.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://danielisland.wasabirestaurantgroup.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Creative restaurant plates prepared for sharing">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-food">Scratch Kitchen</span>
+                  <span class="badge badge-vibe">Brewery & Patio</span>
+                </div>
+                <h3 class="h4 fw-bold">New Realm Brewing</h3>
+                <p class="card-text">
+                  New Realm combines a working brewery, full restaurant, outdoor gathering space and
+                  live-event energy at its Daniel Island location. The beer list ranges from lighter
+                  styles to hop-forward IPAs and darker selections, while the kitchen offers enough
+                  variety for groups that are not visiting only for craft beer. The large footprint
+                  makes New Realm suitable for casual gatherings, game days and meals with children.
+                  It can become especially active when music or community events are scheduled, so
+                  check the calendar before arriving. For visitors who want one destination where a
+                  mixed group can eat, drink and spend time outdoors, New Realm is a practical choice.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://newrealmbrewing.com/charleston/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Smashburger with cheese and crispy edges">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-food">Smashburgers</span>
+                  <span class="badge badge-vibe">Neighborhood Hangout</span>
+                </div>
+                <h3 class="h4 fw-bold">Heavy’s Barburger</h3>
+                <p class="card-text">
+                  Heavy’s Barburger brings a straightforward combination of smashburgers, wings,
+                  salads, drinks and upbeat music to Island Park Drive. The Daniel Island location is
+                  designed as a neighborhood hangout with indoor seating, a patio and a relaxed bar.
+                  It is an easy choice for families, friends and eventgoers who want a satisfying meal
+                  without a lengthy formal service. The restaurant does not require reservations, so
+                  guests can simply arrive, although event traffic may still create a rush. Milkshakes
+                  are a Daniel Island-specific attraction and pair naturally with the crisp-edged
+                  burgers and house-made snacks.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://www.heavysbarburger.com/daniel-island" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Casual sports bar with tables and televisions">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-food">American Pub Food</span>
+                  <span class="badge badge-vibe">Sports Bar</span>
+                </div>
+                <h3 class="h4 fw-bold">Mac’s Daniel Island</h3>
+                <p class="card-text">
+                  Mac’s is a casual sports bar and grill on Seven Farms Drive with indoor seating, a
+                  covered patio and televisions throughout the restaurant. The menu centers on familiar
+                  American pub food, making it a low-pressure choice when the main goal is watching a
+                  game, meeting a group or eating later than many traditional dining rooms remain open.
+                  Mac’s can also work before or after a Credit One Stadium event, depending on the event
+                  schedule and crowd size. Guests looking for a quiet meal should avoid peak game times,
+                  while sports fans may prefer the extra energy. Review current hours and reservation
+                  information before visiting with a large party.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://macsdi.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <article class="card restaurant-card">
+              <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1100&q=82"
+                class="card-img-top" alt="Coffee shop counter with pastries and prepared food">
+              <div class="card-body p-4">
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="badge badge-food">Market & Eatery</span>
+                  <span class="badge badge-vibe">Quick Waterfront Stop</span>
+                </div>
+                <h3 class="h4 fw-bold">The DIME</h3>
+                <p class="card-text">
+                  The DIME is the convenient companion to The Kingstide in the waterfront district.
+                  Its market-and-eatery format is useful for coffee, breakfast, lunch, prepared foods
+                  and quick items that can be taken toward the park or marina. Visitors who want to
+                  experience River Landing Drive without committing to a full-service dinner can make
+                  The DIME their casual stop. It is also practical for families, walkers and cyclists
+                  exploring the nearby paths. Pair a visit with time along the waterfront, but confirm
+                  operating hours because a market-style business may close earlier than the island’s
+                  dinner restaurants.
+                </p>
+                <a class="btn btn-outline-dark mt-3" href="https://www.thedimedi.com/" target="_blank" rel="noopener">
+                  Visit Official Website <i class="bi bi-box-arrow-up-right ms-1"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="areas">
+      <div class="container">
+        <div class="district-guide p-4 p-lg-5">
+          <div class="text-center mx-auto mb-5" style="max-width: 760px;">
+            <p class="section-label mb-2">Know the Island</p>
+            <h2 class="display-6 fw-bold">Choose a restaurant by dining area</h2>
+            <p class="mb-0">
+              Daniel Island is easier to navigate when restaurants are grouped around the waterfront,
+              Seven Farms Drive and Island Park Drive. Selecting a meal near the rest of your plans
+              can save time during concerts, tournaments and busy weekends.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <div class="card district-card p-4">
+                <i class="bi bi-water fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h4 fw-bold">River Landing & Waterfront</h3>
+                <p class="mb-0">
+                  Choose The Kingstide for a full waterfront dinner, Vinea for a European-inspired
+                  courtyard meal, or The DIME for something faster. This district is ideal for a walk
+                  near the river before or after eating.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card district-card p-4">
+                <i class="bi bi-buildings fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h4 fw-bold">Seven Farms Drive</h3>
+                <p class="mb-0">
+                  Seven Farms Drive is practical for neighborhood dining and event-day meals. Mpishi,
+                  Agaves, Wasabi and Mac’s provide different price points and service styles within a
+                  relatively compact commercial area.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card district-card p-4">
+                <i class="bi bi-music-note-beamed fs-2 mb-3" aria-hidden="true"></i>
+                <h3 class="h4 fw-bold">Island Park Drive</h3>
+                <p class="mb-0">
+                  New Realm and Heavy’s work well for casual groups looking for outdoor space,
+                  burgers, craft beer or a relaxed atmosphere. Always review live-event schedules,
+                  because the area can become much busier than normal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5" id="stadium">
+      <div class="stadium-banner p-4 p-lg-5">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7">
+            <p class="section-label mb-2">Concerts, tennis and special events</p>
+            <h2 class="display-6 fw-bold">Dining near Credit One Stadium</h2>
+            <p>
+              A major event can change traffic, parking and restaurant wait times throughout Daniel
+              Island. The safest strategy is to select a restaurant before the day of the event and
+              decide whether the group wants a reservation, counter service or a flexible walk-in meal.
+              For a polished experience, consider an early reservation at The Kingstide or Vinea. For
+              a casual meal, Heavy’s, Agaves, New Realm or Mac’s may be easier choices, but they can
+              also attract event crowds.
+            </p>
+            <p class="mb-0">
+              Arrive earlier than you would on a normal evening, avoid placing a food order too close
+              to showtime and verify the venue’s parking instructions separately from the restaurant’s
+              parking information. After the event, late-night availability may be limited, so do not
+              assume every kitchen will still be serving.
+            </p>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="bg-white text-dark rounded-4 p-4">
+              <h3 class="h5 fw-bold mb-3">Event-night checklist</h3>
+              <p class="mb-2"><i class="bi bi-check2-circle me-2"></i>Confirm restaurant hours</p>
+              <p class="mb-2"><i class="bi bi-check2-circle me-2"></i>Allow time for traffic and parking</p>
+              <p class="mb-2"><i class="bi bi-check2-circle me-2"></i>Tell your server about your schedule</p>
+              <p class="mb-0"><i class="bi bi-check2-circle me-2"></i>Do not rely on a last-minute table</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="newsletter">
+      <div class="newsletter p-4 p-lg-5 text-center">
+        <p class="section-label mb-2">Stay in the know</p>
+        <h2 class="display-6 fw-bold">Get more Charleston-area dining guides</h2>
+        <p class="mx-auto mb-4" style="max-width: 700px;">
+          Join Charleston Food Insider for neighborhood restaurant lists, waterfront dining ideas,
+          event-night tips and casual local recommendations from around the Lowcountry.
+        </p>
+
+        <form class="row g-2 justify-content-center" action="#" method="post">
+          <div class="col-md-6 col-lg-5">
+            <label class="visually-hidden" for="email">Email address</label>
+            <input class="form-control form-control-lg" id="email" name="email" type="email"
+              placeholder="Your email address" required>
+          </div>
+          <div class="col-md-auto">
+            <button class="btn btn-island btn-lg w-100" type="submit">Join the Insider List</button>
+          </div>
+        </form>
+      </div>
+
+      <p class="editorial-note mt-4 mb-0">
+        Editorial note: Charleston Food Insider presents a curated guide rather than a fixed ranking.
+        Restaurant menus, hours, prices, reservations and event schedules can change. Guide updated
+        July 2026.
+      </p>
+    </section>
+  </main>
+
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <h2 class="h4 text-white fw-bold">CharlestonFoodInsider</h2>
+          <p class="mb-0">
+            Independent inspiration for discovering memorable restaurants throughout Charleston,
+            Daniel Island and the surrounding Lowcountry.
+          </p>
+        </div>
+
+        <div class="col-lg-5 text-lg-end">
+          <a class="me-3" href="#restaurants">Restaurants</a>
+          <a class="me-3" href="#areas">Dining Areas</a>
+          <a href="#stadium">Event Tips</a>
+          <p class="mt-3 mb-0">© 2026 Charleston Food Insider. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

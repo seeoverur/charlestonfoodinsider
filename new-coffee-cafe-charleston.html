@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sweet Palm Coffee on King Street | Charleston Food Insider</title>
+  <meta name="description" content="Discover Sweet Palm Coffee at 471 King Street in downtown Charleston, serving signature lattes, matcha, breakfast, brunch, lunch, wraps, pastries, energy drinks and ice cream sundaes.">
+  <meta name="keywords" content="Sweet Palm Coffee, King Street coffee shop, downtown Charleston coffee, Charleston breakfast, Charleston brunch, Charleston lunch, signature lattes Charleston">
+  <meta name="author" content="Charleston Food Insider">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --sp-green: #173c36;
+      --sp-palm: #2f7465;
+      --sp-sage: #dfeee8;
+      --sp-pink: #d98283;
+      --sp-gold: #c99a58;
+      --sp-cream: #fffaf3;
+      --sp-sand: #f3eadf;
+      --sp-ink: #2b3936;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--sp-ink);
+      background: var(--sp-cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.75;
+    }
+
+    .navbar {
+      background: rgba(23, 60, 54, .97);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+      font-weight: 850;
+      letter-spacing: .01em;
+    }
+
+    .navbar-brand span {
+      color: #f0b9b1;
+    }
+
+    .hero {
+      min-height: 76vh;
+      display: grid;
+      place-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(18, 49, 44, .95), rgba(18, 49, 44, .38)),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2100&q=86") center/cover no-repeat;
+    }
+
+    .hero-kicker {
+      color: #ffd0c7;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 960px;
+      font-size: clamp(2.7rem, 6.7vw, 5.7rem);
+      font-weight: 900;
+      line-height: .98;
+    }
+
+    .hero .lead {
+      max-width: 790px;
+      font-size: 1.16rem;
+    }
+
+    .btn-sp {
+      color: white;
+      background: var(--sp-pink);
+      border-color: var(--sp-pink);
+      font-weight: 750;
+    }
+
+    .btn-sp:hover {
+      color: white;
+      background: #bd6668;
+      border-color: #bd6668;
+    }
+
+    .section-label {
+      color: var(--sp-pink);
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .intro-card {
+      position: relative;
+      z-index: 2;
+      margin-top: -58px;
+      border: 0;
+      border-radius: 1.35rem;
+      box-shadow: 0 1rem 3rem rgba(23, 60, 54, .15);
+    }
+
+    .quick-box {
+      color: white;
+      background: var(--sp-green);
+      border-radius: 1rem;
+    }
+
+    .quick-box i {
+      color: #f0b9b1;
+    }
+
+    .feature-card {
+      height: 100%;
+      background: white;
+      border: 0;
+      border-radius: 1rem;
+      box-shadow: 0 .7rem 1.8rem rgba(23, 60, 54, .08);
+    }
+
+    .feature-card i {
+      color: var(--sp-pink);
+      font-size: 2rem;
+    }
+
+    .article-panel {
+      background: white;
+      border-radius: 1.2rem;
+      box-shadow: 0 .7rem 1.8rem rgba(23, 60, 54, .07);
+    }
+
+    .sidebar-box {
+      background: var(--sp-sand);
+      border-radius: 1rem;
+    }
+
+    .menu-card {
+      height: 100%;
+      background: white;
+      border: 0;
+      border-top: 4px solid var(--sp-gold);
+      border-radius: .9rem;
+      box-shadow: 0 .55rem 1.4rem rgba(23, 60, 54, .08);
+    }
+
+    .menu-card i {
+      color: var(--sp-palm);
+      font-size: 1.8rem;
+    }
+
+    .location-panel {
+      color: white;
+      background:
+        linear-gradient(rgba(23, 60, 54, .94), rgba(23, 60, 54, .94)),
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1900&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 255px;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 .65rem 1.5rem rgba(23, 60, 54, .10);
+    }
+
+    .cta-panel {
+      color: white;
+      background:
+        linear-gradient(rgba(47, 116, 101, .90), rgba(23, 60, 54, .95)),
+        url("https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1900&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    footer {
+      color: #c4d4d0;
+      background: #0c2925;
+    }
+
+    footer a {
+      color: #f0b9b1;
+    }
+
+    .small-note {
+      color: #687a76;
+      font-size: .92rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .hero {
+        min-height: 68vh;
+      }
+
+      .intro-card {
+        margin-top: -30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#top">Charleston<span>FoodInsider</span></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#article">About Sweet Palm</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu Highlights</a></li>
+          <li class="nav-item"><a class="nav-link" href="#visit">Visit</a></li>
+          <li class="nav-item"><a class="nav-link" href="#groups">Groups</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-sp btn-sm px-3" href="https://www.sweetpalmcoffee.com/" target="_blank" rel="noopener">
+              Official Website
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container py-5">
+      <p class="hero-kicker mb-3">Coffee, food and downtown Charleston energy</p>
+      <h1 class="mb-4">Sweet Palm Coffee on King Street</h1>
+      <p class="lead mb-4">
+        A welcoming downtown café serving handcrafted espresso drinks, signature lattes,
+        matcha, breakfast, brunch, lunch, desserts and refreshing specialty beverages.
+      </p>
+
+      <div class="d-flex flex-wrap gap-3">
+        <a class="btn btn-sp btn-lg px-4" href="#article">Discover Sweet Palm</a>
+        <a class="btn btn-outline-light btn-lg px-4" href="https://www.sweetpalmcoffee.com/menu" target="_blank" rel="noopener">
+          View the Menu
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="card intro-card p-4 p-lg-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <p class="section-label mb-2">Downtown Charleston Café</p>
+            <h2 class="display-6 fw-bold">A comfortable King Street stop for coffee and a complete meal</h2>
+            <p class="mb-0">
+              Sweet Palm Coffee is located at 471 King Street in downtown Charleston, placing it near
+              College of Charleston, Marion Square, local shops, hotels and several historic
+              neighborhoods. Inspired by European café culture and rooted in warm hospitality, the
+              café combines carefully crafted coffee with house-made food that can carry guests from
+              breakfast through lunch. It is designed for locals, students, visitors, remote workers
+              and anyone who wants an approachable place to recharge while exploring the city.
+            </p>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="quick-box p-4">
+              <h3 class="h5 fw-bold mb-3">Sweet Palm at a glance</h3>
+              <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>471 King Street</p>
+              <p class="mb-2"><i class="bi bi-cup-hot me-2"></i>Coffee, lattes and matcha</p>
+              <p class="mb-2"><i class="bi bi-egg-fried me-2"></i>Breakfast, brunch and lunch</p>
+              <p class="mb-0"><i class="bi bi-bag-check me-2"></i>Dine-in and takeout</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card feature-card p-4 text-center">
+            <i class="bi bi-cup-straw mb-3"></i>
+            <h3 class="h5 fw-bold">Signature Drinks</h3>
+            <p class="mb-0">
+              Sweet Palm serves espresso classics alongside creative lattes, matcha,
+              iced teas, refreshers and plant-based energy drinks.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card feature-card p-4 text-center">
+            <i class="bi bi-egg-fried mb-3"></i>
+            <h3 class="h5 fw-bold">Food All Day</h3>
+            <p class="mb-0">
+              Breakfast sandwiches, burritos, egg bites, wraps, bowls, melts and
+              other café favorites provide options beyond coffee and pastries.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card feature-card p-4 text-center">
+            <i class="bi bi-heart mb-3"></i>
+            <h3 class="h5 fw-bold">Welcoming Atmosphere</h3>
+            <p class="mb-0">
+              The café offers locals, students and travelers a relaxed place to meet,
+              work, eat or pause during a busy day on King Street.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="article">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <article class="article-panel p-4 p-lg-5">
+            <p class="section-label mb-2">Coffee Shop Spotlight</p>
+            <h2 class="display-6 fw-bold mb-4">Sweet Palm Coffee Brings Creative Café Flavor to Downtown Charleston</h2>
+
+            <h3 class="h4 fw-bold mt-4">A King Street Coffee Shop with a Broader Menu</h3>
+            <p>
+              Charleston has no shortage of places to grab coffee, but Sweet Palm Coffee separates
+              itself by treating the café as a destination for both drinks and food. A guest can stop
+              in for a straightforward drip coffee or cappuccino, but the same visit can include a
+              breakfast sandwich, chicken wrap, bowl, cinnamon roll or ice cream sundae. That flexibility
+              makes Sweet Palm useful at several points throughout the day.
+            </p>
+
+            <p>
+              Its location at 471 King Street places the café within walking distance of College of
+              Charleston and Marion Square. Shoppers exploring the King Street corridor can use it as
+              a convenient break, while students and downtown workers can pick up breakfast or lunch
+              without committing to a lengthy restaurant service. Visitors staying nearby can also
+              begin the morning at Sweet Palm before walking deeper into the Historic District.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">Coffee Classics and Creative Signature Lattes</h3>
+            <p>
+              The drink menu begins with familiar café classics, including espresso, drip coffee,
+              Americanos, cappuccinos, cortados, flat whites, mochas, cold brew and traditional
+              lattes. These drinks give coffee-focused guests the ability to keep an order simple.
+              Extra espresso and cold foam can be added for guests who prefer a stronger or sweeter
+              finish.
+            </p>
+
+            <p>
+              Sweet Palm’s personality becomes most visible in the signature latte menu. The Sweet
+              Palm Latte uses a house signature syrup made with vanilla bean, palm blossom and warm
+              spices, finished with sweet cream. Other specialty choices include banana pudding,
+              pistachio, salted caramel, Southern pecan praline and an Ultimate Vanilla Latte made
+              with house-made vanilla bean sauce, vanilla cold foam and vanilla sugar dust.
+            </p>
+
+            <p>
+              Many signature flavors can also be prepared with matcha, creating another option for
+              guests who want the café’s creative toppings without espresso. The broader tea menu
+              includes a premium matcha latte, ceremonial matcha, chai, dirty chai, London Fog,
+              Carolina iced tea and a Charleston Lemon Cream Iced Tea topped with lemon cold foam.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">Refreshers and Energy Drinks Beyond Coffee</h3>
+            <p>
+              Not every guest arrives looking for coffee. Sweet Palm offers colorful refreshers,
+              coolers and Palm Energy drinks that expand the menu for warm Charleston afternoons.
+              Flavors include strawberry and dragon fruit, peach and raspberry, mango and pineapple,
+              and a sugar-free dragon fruit selection.
+            </p>
+
+            <p>
+              Refreshing nonalcoholic drinks such as the Lowcountry Mojito, Sea Island Refresher and
+              Thunderbird Refresher are useful for visitors walking through downtown in hot weather.
+              These drinks give Sweet Palm the feel of a modern beverage café without losing the
+              traditional espresso foundation expected from a King Street coffee shop.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">Breakfast, Brunch and Lunch on King Street</h3>
+            <p>
+              Sweet Palm is not limited to pastries and beverages. Its food menu includes breakfast
+              sandwiches, egg bites, hash browns, breakfast burritos, egg-and-cheese selections,
+              turkey and Swiss melts, chicken wraps and bowls. The menu works for diners who need a
+              full meal as well as those who want a quick bite beside a latte.
+            </p>
+
+            <p>
+              The café’s breakfast and brunch positioning is especially useful for people who do not
+              want the long wait associated with a traditional weekend brunch restaurant. Guests can
+              order food, find a place to sit or take the meal with them while continuing through
+              downtown. Lunch options such as wraps, melts and bowls also give nearby students,
+              offices and hotel guests an alternative to heavier restaurant meals.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">Desserts, Pastries and Ice Cream Sundaes</h3>
+            <p>
+              Sweet Palm also works as a dessert stop. Cinnamon rolls, blueberry muffins and other
+              café sweets can be paired with coffee, while the ice cream menu includes several
+              specialty sundaes. Current flavors promoted by the café include classic chocolate,
+              salted caramel, wild berry, banana pudding, strawberry, tiramisu, Biscoff and strawberry
+              matcha.
+            </p>
+
+            <p>
+              These desserts make the shop useful later in the day, when a visitor may want something
+              sweet after shopping or sightseeing. A sundae paired with cold brew, matcha or a specialty
+              latte creates a different experience from the café’s breakfast service without requiring
+              a separate dessert restaurant.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">A Community Space for Locals, Students and Visitors</h3>
+            <p>
+              Sweet Palm describes itself as a welcoming café for the surrounding neighborhoods,
+              including Radcliffeborough, Wraggborough, Harleston Village and the French Quarter.
+              Its King Street address also makes it accessible to College of Charleston students,
+              creators, freelancers and visitors moving between downtown attractions.
+            </p>
+
+            <p>
+              The café’s identity is built around more than a quick caffeine stop. It can serve as a
+              meeting place, a work break, a casual brunch destination or a familiar neighborhood
+              location where guests return for a preferred drink. That combination of convenience,
+              variety and hospitality gives Sweet Palm a useful place in Charleston’s crowded café
+              scene.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">Coffee Classes and Group Orders</h3>
+            <p>
+              Sweet Palm offers coffee and cooking classes by appointment for groups such as birthday
+              celebrations, girls’ trips and bachelorette parties. The current class information lists
+              a minimum of four participants, giving visitors another activity option beyond a normal
+              café visit.
+            </p>
+
+            <p>
+              The business can also prepare larger takeout and delivery-style orders for offices,
+              meetings, wedding groups, students and private gatherings. Group orders may include
+              coffee, espresso drinks, breakfast items, pastries, cinnamon rolls, wraps and other
+              café food. Ordering ahead gives the team time to prepare and package the food properly.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">A Flexible Downtown Charleston Stop</h3>
+            <p class="mb-0">
+              Sweet Palm Coffee works because it can fit several different Charleston plans. It can
+              be the first coffee of the morning, a fast breakfast before sightseeing, a lunch stop
+              between King Street shops, a place to meet a friend or a destination for an afternoon
+              latte and sundae. With signature drinks, house-made food and a central location, Sweet
+              Palm offers locals and visitors a comfortable way to enjoy café culture in the heart
+              of downtown Charleston.
+            </p>
+          </article>
+        </div>
+
+        <aside class="col-lg-4" id="visit">
+          <div class="sidebar-box p-4 mb-4">
+            <p class="section-label mb-2">Plan Your Visit</p>
+            <h2 class="h4 fw-bold">Sweet Palm Coffee</h2>
+
+            <p class="mb-2">
+              <i class="bi bi-geo-alt me-2"></i>
+              471 King Street<br>
+              <span class="ms-4">Charleston, SC 29403</span>
+            </p>
+
+            <p class="mb-2">
+              <i class="bi bi-telephone me-2"></i>
+              (843) 806-7342
+            </p>
+
+            <p class="mb-4">
+              <i class="bi bi-envelope me-2"></i>
+              info@sweetpalmcoffee.com
+            </p>
+
+            <a class="btn btn-sp w-100 mb-2" href="https://www.sweetpalmcoffee.com/menu" target="_blank" rel="noopener">
+              View the Menu
+            </a>
+
+            <a class="btn btn-outline-dark w-100" href="https://www.sweetpalmcoffee.com/contact" target="_blank" rel="noopener">
+              Contact Sweet Palm
+            </a>
+          </div>
+
+          <div class="sidebar-box p-4 mb-4">
+            <h2 class="h4 fw-bold">Current posted hours</h2>
+            <p class="mb-2"><strong>Sunday:</strong> 8:30 a.m.–5:00 p.m.</p>
+            <p class="mb-2"><strong>Monday–Thursday:</strong> 8:30 a.m.–4:00 p.m.</p>
+            <p class="mb-0"><strong>Friday–Saturday:</strong> 8:30 a.m.–5:00 p.m.</p>
+          </div>
+
+          <div class="sidebar-box p-4">
+            <h2 class="h4 fw-bold">Nearby destinations</h2>
+            <p class="mb-2"><i class="bi bi-check2 me-2"></i>College of Charleston</p>
+            <p class="mb-2"><i class="bi bi-check2 me-2"></i>Marion Square</p>
+            <p class="mb-2"><i class="bi bi-check2 me-2"></i>King Street shopping</p>
+            <p class="mb-0"><i class="bi bi-check2 me-2"></i>Downtown hotels and attractions</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="menu">
+      <div class="text-center mx-auto mb-5" style="max-width: 780px;">
+        <p class="section-label mb-2">Menu Highlights</p>
+        <h2 class="display-6 fw-bold">Something for every kind of café visit</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3">
+          <div class="card menu-card p-4">
+            <i class="bi bi-cup-hot mb-3"></i>
+            <h3 class="h5 fw-bold">Coffee Classics</h3>
+            <p class="mb-0">
+              Espresso, drip coffee, cappuccinos, cold brew, cortados, flat whites, mochas and lattes
+              cover the traditional coffee-shop essentials.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="card menu-card p-4">
+            <i class="bi bi-stars mb-3"></i>
+            <h3 class="h5 fw-bold">Signature Lattes</h3>
+            <p class="mb-0">
+              Try the Sweet Palm Latte, banana pudding, pistachio, salted caramel, Southern pecan
+              praline or Ultimate Vanilla.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="card menu-card p-4">
+            <i class="bi bi-egg-fried mb-3"></i>
+            <h3 class="h5 fw-bold">Breakfast & Lunch</h3>
+            <p class="mb-0">
+              Choose breakfast sandwiches, egg bites, burritos, hash browns, wraps, bowls and melts
+              for a quick meal on King Street.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="card menu-card p-4">
+            <i class="bi bi-snow mb-3"></i>
+            <h3 class="h5 fw-bold">Sweets & Sundaes</h3>
+            <p class="mb-0">
+              Cinnamon rolls, muffins and specialty ice cream sundaes make Sweet Palm an afternoon
+              or after-meal dessert stop.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <img class="gallery-img"
+            src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=1200&q=84"
+            alt="Latte with detailed foam art">
+        </div>
+
+        <div class="col-md-4">
+          <img class="gallery-img"
+            src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=1200&q=84"
+            alt="Welcoming modern cafe interior">
+        </div>
+
+        <div class="col-md-4">
+          <img class="gallery-img"
+            src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?auto=format&fit=crop&w=1200&q=84"
+            alt="Ice cream sundae with toppings">
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="groups">
+      <div class="location-panel p-4 p-lg-5">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7">
+            <p class="section-label mb-2">Coffee Classes and Large Orders</p>
+            <h2 class="display-6 fw-bold">Bring Sweet Palm into your Charleston plans</h2>
+            <p>
+              Sweet Palm offers coffee and cooking classes by appointment for groups, including
+              birthday celebrations, girls’ trips and bachelorette weekends. The classes combine
+              hands-on learning with food, coffee and a relaxed café atmosphere.
+            </p>
+            <p class="mb-0">
+              Offices, student groups, wedding parties and private gatherings can also contact the
+              café about larger pickup or delivery-style orders. Coffee, lattes, wraps, breakfast
+              items, pastries and other menu selections can be prepared in advance for a group.
+            </p>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="bg-white text-dark rounded-4 p-4">
+              <h3 class="h5 fw-bold mb-3">Group options</h3>
+              <p class="mb-2"><i class="bi bi-check2-circle me-2"></i>Coffee classes by appointment</p>
+              <p class="mb-2"><i class="bi bi-check2-circle me-2"></i>Birthday and bridal groups</p>
+              <p class="mb-2"><i class="bi bi-check2-circle me-2"></i>Office breakfast or lunch</p>
+              <p class="mb-4"><i class="bi bi-check2-circle me-2"></i>Large takeout orders</p>
+
+              <a class="btn btn-sp w-100 mb-2" href="https://www.sweetpalmcoffee.com/classes" target="_blank" rel="noopener">
+                View Coffee Classes
+              </a>
+
+              <a class="btn btn-outline-dark w-100" href="https://www.sweetpalmcoffee.com/carryout-and-delivery-catering" target="_blank" rel="noopener">
+                View Group Ordering
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5">
+      <div class="cta-panel p-4 p-lg-5 text-center">
+        <p class="section-label mb-2">Visit Sweet Palm</p>
+        <h2 class="display-6 fw-bold">Make Sweet Palm Coffee part of your King Street day</h2>
+        <p class="mx-auto mb-4" style="max-width: 760px;">
+          Stop in for a handcrafted latte, matcha, breakfast, lunch or dessert while exploring
+          downtown Charleston. Review the current menu and hours before your visit.
+        </p>
+
+        <a class="btn btn-sp btn-lg px-4" href="https://www.sweetpalmcoffee.com/" target="_blank" rel="noopener">
+          Visit Sweet Palm Coffee
+        </a>
+      </div>
+
+      <p class="small-note mt-4 mb-0">
+        Editorial note: Charleston Food Insider presents an independent business feature.
+        Menu selections, prices, operating hours, class availability and ordering policies can change.
+        Page updated July 2026.
+      </p>
+    </section>
+  </main>
+
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <h2 class="h4 text-white fw-bold">CharlestonFoodInsider</h2>
+          <p class="mb-0">
+            Independent inspiration for discovering coffee shops, restaurants and local food
+            experiences throughout Charleston and the Lowcountry.
+          </p>
+        </div>
+
+        <div class="col-lg-5 text-lg-end">
+          <a class="me-3" href="#article">About</a>
+          <a class="me-3" href="#menu">Menu</a>
+          <a class="me-3" href="#visit">Visit</a>
+          <a href="#groups">Groups</a>
+          <p class="mt-3 mb-0">© 2026 Charleston Food Insider. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
