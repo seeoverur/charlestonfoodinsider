@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lewis Barbecue Charleston Guide | Charleston Food Insider</title>
+  <meta name="description" content="Discover Lewis Barbecue in Charleston, SC, serving Central Texas-style brisket, pork ribs, house-made sausage, smoked turkey, classic sides, sandwiches, happy hour and catering.">
+  <meta name="keywords" content="Lewis Barbecue Charleston, Lewis BBQ Charleston, Charleston barbecue, brisket Charleston SC, Central Texas barbecue Charleston, North Nassau Street restaurants">
+  <meta name="author" content="Charleston Food Insider">
+
+  <meta property="og:title" content="Lewis Barbecue Charleston Guide">
+  <meta property="og:description" content="A Charleston Food Insider guide to brisket, smoked meats, sides and the laid-back Lewis Barbecue experience.">
+  <meta property="og:type" content="article">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --lb-charcoal: #202321;
+      --lb-smoke: #3d4540;
+      --lb-rust: #a94228;
+      --lb-gold: #d49b49;
+      --lb-cream: #fff9ee;
+      --lb-paper: #f1e7d7;
+      --lb-sage: #dfe8df;
+      --lb-ink: #292d2a;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--lb-ink);
+      background: var(--lb-cream);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.75;
+    }
+
+    .navbar {
+      background: rgba(32, 35, 33, .98);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+      font-weight: 850;
+      letter-spacing: .01em;
+    }
+
+    .navbar-brand span {
+      color: #efaf72;
+    }
+
+    .hero {
+      min-height: 76vh;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(24, 27, 25, .96), rgba(24, 27, 25, .37)),
+        url("https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=2100&q=87") center/cover no-repeat;
+    }
+
+    .hero-kicker {
+      color: #f4bd78;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 980px;
+      font-size: clamp(2.8rem, 6.7vw, 5.8rem);
+      font-weight: 900;
+      line-height: .97;
+    }
+
+    .hero .lead {
+      max-width: 810px;
+      font-size: 1.17rem;
+    }
+
+    .btn-lb {
+      color: #fff;
+      background: var(--lb-rust);
+      border-color: var(--lb-rust);
+      font-weight: 750;
+    }
+
+    .btn-lb:hover {
+      color: #fff;
+      background: #88321f;
+      border-color: #88321f;
+    }
+
+    .section-label {
+      color: var(--lb-rust);
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .intro-card {
+      position: relative;
+      z-index: 2;
+      margin-top: -58px;
+      border: 0;
+      border-radius: 1.35rem;
+      box-shadow: 0 1rem 3rem rgba(32, 35, 33, .16);
+    }
+
+    .quick-box {
+      color: #fff;
+      background: var(--lb-charcoal);
+      border-radius: 1rem;
+    }
+
+    .quick-box i {
+      color: #efaf72;
+    }
+
+    .feature-card {
+      height: 100%;
+      background: #fff;
+      border: 0;
+      border-radius: 1rem;
+      box-shadow: 0 .7rem 1.8rem rgba(32, 35, 33, .08);
+    }
+
+    .feature-card i {
+      color: var(--lb-rust);
+      font-size: 2rem;
+    }
+
+    .article-panel {
+      background: #fff;
+      border-radius: 1.2rem;
+      box-shadow: 0 .7rem 1.8rem rgba(32, 35, 33, .07);
+    }
+
+    .sidebar-box {
+      background: var(--lb-paper);
+      border-radius: 1rem;
+    }
+
+    .menu-card {
+      height: 100%;
+      background: #fff;
+      border: 0;
+      border-top: 4px solid var(--lb-gold);
+      border-radius: .9rem;
+      box-shadow: 0 .55rem 1.4rem rgba(32, 35, 33, .08);
+    }
+
+    .menu-card i {
+      color: var(--lb-rust);
+      font-size: 1.8rem;
+    }
+
+    .order-guide {
+      background: var(--lb-sage);
+      border-radius: 1.25rem;
+    }
+
+    .order-step {
+      height: 100%;
+      background: #fff;
+      border-radius: .9rem;
+      box-shadow: 0 .5rem 1.2rem rgba(32, 35, 33, .07);
+    }
+
+    .order-number {
+      display: inline-grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      color: #fff;
+      background: var(--lb-rust);
+      border-radius: 50%;
+      font-weight: 850;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 255px;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 .65rem 1.5rem rgba(32, 35, 33, .11);
+    }
+
+    .catering-panel {
+      color: #fff;
+      background:
+        linear-gradient(rgba(32, 35, 33, .94), rgba(32, 35, 33, .94)),
+        url("https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1900&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    .cta-panel {
+      color: #fff;
+      background:
+        linear-gradient(rgba(169, 66, 40, .90), rgba(32, 35, 33, .95)),
+        url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1900&q=84") center/cover;
+      border-radius: 1.3rem;
+    }
+
+    footer {
+      color: #c8cfca;
+      background: #151817;
+    }
+
+    footer a {
+      color: #efaf72;
+    }
+
+    .small-note {
+      color: #6a716c;
+      font-size: .92rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .hero {
+        min-height: 68vh;
+      }
+
+      .intro-card {
+        margin-top: -30px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Lewis Barbecue Brings Central Texas Brisket to Charleston",
+    "author": {
+      "@type": "Organization",
+      "name": "Charleston Food Insider"
+    },
+    "about": {
+      "@type": "Restaurant",
+      "name": "Lewis Barbecue Charleston",
+      "servesCuisine": ["Barbecue", "Central Texas Barbecue", "American"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "464 North Nassau Street",
+        "addressLocality": "Charleston",
+        "addressRegion": "SC",
+        "postalCode": "29403",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-843-805-9500",
+      "url": "https://www.lewisbarbecue.com/location/lewis-barbecue-charleston/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Charleston<span>FoodInsider</span></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#article">About Lewis</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu Highlights</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ordering">How to Order</a></li>
+          <li class="nav-item"><a class="nav-link" href="#visit">Visit</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-lb btn-sm px-3"
+              href="https://www.lewisbarbecue.com/location/lewis-barbecue-charleston/"
+              target="_blank" rel="noopener">
+              Official Website
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container py-5">
+      <p class="hero-kicker mb-3">Central Texas barbecue in Charleston</p>
+      <h1 class="mb-4">Lewis Barbecue Is Built Around Brisket, Smoke and Patience</h1>
+      <p class="lead mb-4">
+        Custom smokers, cut-to-order meats, house-made sausage, classic sides,
+        a spacious patio and one of Charleston’s most recognizable barbecue experiences.
+      </p>
+
+      <div class="d-flex flex-wrap gap-3">
+        <a class="btn btn-lb btn-lg px-4" href="#article">Read the Feature</a>
+        <a class="btn btn-outline-light btn-lg px-4"
+          href="https://www.lewisbarbecue.com/location/lewis-barbecue-charleston/"
+          target="_blank" rel="noopener">
+          View Current Menu
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="card intro-card p-4 p-lg-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <p class="section-label mb-2">Charleston Barbecue Feature</p>
+            <h2 class="display-6 fw-bold">A Texas barbecue destination in Charleston’s upper peninsula</h2>
+            <p class="mb-0">
+              Lewis Barbecue serves Central Texas-style smoked meats at 464 North Nassau Street in
+              Charleston. Pitmaster John Lewis brought his custom smokers to the Holy City in 2015
+              and opened the restaurant the following year. Today, guests order at the counter while
+              brisket, pork ribs, turkey and sausage are sliced in front of them. The large dining
+              room, full bar and backyard patio turn a tray of barbecue into a relaxed Charleston
+              gathering that works for locals, visitors, families and groups.
+            </p>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="quick-box p-4">
+              <h3 class="h5 fw-bold mb-3">Lewis at a glance</h3>
+              <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>464 North Nassau Street</p>
+              <p class="mb-2"><i class="bi bi-fire me-2"></i>Central Texas-style barbecue</p>
+              <p class="mb-2"><i class="bi bi-person-standing me-2"></i>Counter service</p>
+              <p class="mb-0"><i class="bi bi-calendar-x me-2"></i>No reservations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card feature-card p-4 text-center">
+            <i class="bi bi-fire mb-3"></i>
+            <h3 class="h5 fw-bold">Custom Smokers</h3>
+            <p class="mb-0">
+              John Lewis designs and welds the large smokers used to produce the restaurant’s
+              slow-cooked brisket, ribs, turkey and sausage.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card feature-card p-4 text-center">
+            <i class="bi bi-knife mb-3"></i>
+            <h3 class="h5 fw-bold">Cut to Order</h3>
+            <p class="mb-0">
+              Guests move through the counter line and select meats by weight before adding
+              sides, sandwiches, desserts and drinks.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card feature-card p-4 text-center">
+            <i class="bi bi-tree mb-3"></i>
+            <h3 class="h5 fw-bold">Backyard Patio</h3>
+            <p class="mb-0">
+              Indoor seating, a large bar and an outdoor patio make Lewis useful for casual
+              lunches, dinners and group gatherings.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="article">
+      <div class="row g-5">
+        <div class="col-lg-8">
+          <article class="article-panel p-4 p-lg-5">
+            <p class="section-label mb-2">Restaurant Spotlight</p>
+            <h2 class="display-6 fw-bold mb-4">Lewis Barbecue Brings Central Texas Brisket to Charleston</h2>
+
+            <h3 class="h4 fw-bold mt-4">A Different Barbecue Tradition</h3>
+            <p>
+              South Carolina has one of the country’s oldest barbecue traditions, and pork served
+              with regional sauces remains an important part of the state’s food identity. Lewis
+              Barbecue adds a different perspective to Charleston by concentrating on the meat and
+              fire traditions of Central Texas. Beef brisket receives top billing, and the restaurant
+              approaches it with the patience required to develop a dark bark, rendered fat and a
+              tender interior.
+            </p>
+
+            <p>
+              The result is a barbecue restaurant that feels connected to Charleston’s casual dining
+              culture while remaining unmistakably Texan. Trays are lined with butcher paper, meats
+              are sold by weight, white bread and pickled vegetables accompany the order, and diners
+              can decide whether they prefer lean slices, fatty slices or a mixture of both.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">The Story Behind the Smoke</h3>
+            <p>
+              John Lewis grew up in El Paso and moved to Austin as a young adult. A birthday smoker
+              helped begin his interest in backyard barbecue, and he later developed his skills
+              through competition cooking and professional restaurant work. He became closely
+              involved with some of the most influential names in Austin barbecue before bringing
+              his smokers to Charleston.
+            </p>
+
+            <p>
+              Lewis moved to the Holy City in 2015 and opened the Charleston restaurant in June 2016.
+              His hands-on approach extends beyond seasoning and cooking. The large offset smokers
+              associated with the restaurant were designed and welded by the pitmaster, reflecting
+              the idea that airflow, fire management and equipment construction all affect the final
+              slice of brisket.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">Brisket Is the Main Event</h3>
+            <p>
+              Sliced USDA Prime beef brisket is the restaurant’s signature item. Guests order as much
+              or as little as they need, and the official menu recommends roughly one-half pound of
+              meat per person as a general planning point. A first-time diner may want a combination
+              of lean and fatty brisket to compare the firmer flat with the richer point.
+            </p>
+
+            <p>
+              Chopped brisket offers a different texture and is lightly mixed with the restaurant’s
+              sauce. It can be ordered by weight, piled onto a sandwich or combined with sausage and
+              pulled pork in the El Sancho. The sandwich format is convenient for lunch, but ordering
+              meat by the pound gives a table more freedom to taste several selections.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">Ribs, Sausage, Turkey and Pulled Pork</h3>
+            <p>
+              Brisket may lead the menu, but it should not automatically become the entire order.
+              Pork spare ribs arrive lightly glazed and meaty, while pulled pork gives guests a
+              familiar Southern barbecue option with a restrained amount of tangy sauce. The smoked
+              turkey breast is another useful choice for diners who want something leaner without
+              giving up the flavor of the pit.
+            </p>
+
+            <p>
+              House-made sausage adds some of the clearest Texas character. Texas Hot Guts combines
+              mostly beef with some pork and a noticeable kick. Green chile cheddar sausage folds
+              peppers and melted cheese into a pork link. Ordering one link for the table is an easy
+              way to add another texture and flavor without committing to a large serving.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">Sides That Complete the Tray</h3>
+            <p>
+              The sides at Lewis are designed to support the smoked meats rather than disappear
+              beside them. Creamy potato salad provides a cool, familiar contrast. Tangy coleslaw
+              uses an oil-and-vinegar dressing, and cowboy pinto beans bring Tex-Mex seasoning to the
+              tray. Collard greens and mac and cheese connect the menu more directly to Southern
+              comfort food.
+            </p>
+
+            <p>
+              Green chile corn pudding is one of the most recognizable side dishes. It resembles a
+              soft, cheesy cornbread casserole with diced Hatch chiles that contribute flavor rather
+              than aggressive heat. Beef-tallow-fried sidewinder fries, pickled onions, jalapeños and
+              a hunk of cheddar provide additional ways to build the meal.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">Sandwiches, Specials and Dessert</h3>
+            <p>
+              Diners who prefer a more compact order can choose sliced brisket, chopped brisket,
+              pulled pork or turkey on a bun. The El Sancho combines chopped brisket or pulled pork
+              with sausage, while the Loco version brings all three meats together. Nachos and chips
+              with green chile queso turn smoked meat into a shareable starter or bar snack.
+            </p>
+
+            <p>
+              Lewis also promotes rotating daily specials. These may include beef back ribs, smoked
+              prime rib, a barbecue Reuben, a beef-and-cheddar sandwich, giant beef short ribs or
+              chicken-fried steak. Specials are often available only on a particular day and may sell
+              out, so visitors should review the current official menu rather than assuming an item
+              will be available.
+            </p>
+
+            <p>
+              Banana pudding and chocolate dirt pie offer a cool, sweet finish after a rich barbecue
+              tray. Sharing dessert is often enough after brisket, sausage, sides and white bread, but
+              both choices are built around familiar flavors that fit the casual setting.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">A Relaxed Charleston Experience</h3>
+            <p>
+              Lewis Barbecue does not accept reservations. Guests join the counter line, select their
+              meats and carry the finished tray to the dining area. The system allows diners to see
+              the food being sliced and ask for the amount or brisket style they prefer. Lines can
+              develop during popular meal periods, especially on weekends and when a limited special
+              is offered.
+            </p>
+
+            <p>
+              The restaurant’s spacious layout makes the wait feel different from a small dining room.
+              A large bar and backyard patio provide room for cold drinks, groups and an unhurried
+              meal. Happy hour is currently posted for weekday afternoons, giving visitors another
+              way to experience the bar and smaller food selections.
+            </p>
+
+            <h3 class="h4 fw-bold mt-5">Worth the Trip for Barbecue Fans</h3>
+            <p class="mb-0">
+              Lewis Barbecue gives Charleston diners a focused introduction to Central Texas
+              barbecue. The experience is built around fire management, custom smokers, cut-to-order
+              meats and the confidence to let brisket remain the center of the tray. Order more than
+              one meat, add green chile corn pudding and another contrasting side, then leave room
+              for the patio and a cold drink. For barbecue fans visiting Charleston, Lewis is more
+              than a quick lunch stop—it is a destination shaped by smoke, time and craft.
+            </p>
+          </article>
+        </div>
+
+        <aside class="col-lg-4" id="visit">
+          <div class="sidebar-box p-4 mb-4">
+            <p class="section-label mb-2">Plan Your Visit</p>
+            <h2 class="h4 fw-bold">Lewis Barbecue Charleston</h2>
+
+            <p class="mb-2">
+              <i class="bi bi-geo-alt me-2"></i>
+              464 North Nassau Street<br>
+              <span class="ms-4">Charleston, SC 29403</span>
+            </p>
+
+            <p class="mb-2">
+              <i class="bi bi-telephone me-2"></i>
+              (843) 805-9500
+            </p>
+
+            <p class="mb-4">
+              <i class="bi bi-envelope me-2"></i>
+              infoCHS@lewisbarbecue.com
+            </p>
+
+            <a class="btn btn-lb w-100 mb-2"
+              href="https://www.lewisbarbecue.com/location/lewis-barbecue-charleston/"
+              target="_blank" rel="noopener">
+              View Menu and Location
+            </a>
+
+            <a class="btn btn-outline-dark w-100"
+              href="https://www.lewisbarbecue.com/order-take-out/"
+              target="_blank" rel="noopener">
+              Order Takeout
+            </a>
+          </div>
+
+          <div class="sidebar-box p-4 mb-4">
+            <h2 class="h4 fw-bold">Current posted hours</h2>
+            <p class="mb-2"><strong>Sunday–Monday:</strong> 11 a.m.–9 p.m.</p>
+            <p class="mb-2"><strong>Tuesday–Saturday:</strong> 11 a.m.–10 p.m.</p>
+            <p class="mb-0"><strong>Happy Hour:</strong> Monday–Friday, 4–6 p.m.</p>
+          </div>
+
+          <div class="sidebar-box p-4">
+            <h2 class="h4 fw-bold">Good to know</h2>
+            <p class="mb-2"><i class="bi bi-check2 me-2"></i>No reservations</p>
+            <p class="mb-2"><i class="bi bi-check2 me-2"></i>Meats sold by weight</p>
+            <p class="mb-2"><i class="bi bi-check2 me-2"></i>Indoor and patio seating</p>
+            <p class="mb-2"><i class="bi bi-check2 me-2"></i>Takeout available</p>
+            <p class="mb-0"><i class="bi bi-check2 me-2"></i>Daily specials may sell out</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="menu">
+      <div class="text-center mx-auto mb-5" style="max-width: 800px;">
+        <p class="section-label mb-2">Menu Highlights</p>
+        <h2 class="display-6 fw-bold">Build a balanced Lewis Barbecue tray</h2>
+        <p class="mb-0">
+          A strong first order combines at least two meats with one rich side, one brighter side
+          and the traditional pickles, onions and bread.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3">
+          <div class="card menu-card p-4">
+            <i class="bi bi-fire mb-3"></i>
+            <h3 class="h5 fw-bold">Start with Brisket</h3>
+            <p class="mb-0">
+              Request a mixture of lean and fatty sliced brisket to experience the meat’s different
+              textures and levels of richness.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="card menu-card p-4">
+            <i class="bi bi-plus-circle mb-3"></i>
+            <h3 class="h5 fw-bold">Add a Second Meat</h3>
+            <p class="mb-0">
+              Choose pork spare ribs, smoked turkey, pulled pork or one of the house-made sausage
+              links to create contrast.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="card menu-card p-4">
+            <i class="bi bi-bowl-hot mb-3"></i>
+            <h3 class="h5 fw-bold">Choose the Corn Pudding</h3>
+            <p class="mb-0">
+              Green chile corn pudding is a rich, cheesy signature side. Pair it with tangy slaw
+              or pickled onions for balance.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+          <div class="card menu-card p-4">
+            <i class="bi bi-cup-straw mb-3"></i>
+            <h3 class="h5 fw-bold">Finish with a Cold Drink</h3>
+            <p class="mb-0">
+              The full bar, soft drinks and patio atmosphere make it easy to slow down after moving
+              through the counter line.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="ordering">
+      <div class="order-guide p-4 p-lg-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 780px;">
+          <p class="section-label mb-2">First-Time Ordering Guide</p>
+          <h2 class="display-6 fw-bold">How the counter-service experience works</h2>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3">
+            <div class="order-step p-4">
+              <span class="order-number mb-3">1</span>
+              <h3 class="h5 fw-bold">Join the Line</h3>
+              <p class="mb-0">
+                Lewis does not take reservations. Arrive earlier during busy weekends or when trying
+                to order a limited daily special.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-3">
+            <div class="order-step p-4">
+              <span class="order-number mb-3">2</span>
+              <h3 class="h5 fw-bold">Select Your Meats</h3>
+              <p class="mb-0">
+                Order by weight and tell the slicer whether you prefer lean brisket, fatty brisket or
+                a combination.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-3">
+            <div class="order-step p-4">
+              <span class="order-number mb-3">3</span>
+              <h3 class="h5 fw-bold">Add Sides and Extras</h3>
+              <p class="mb-0">
+                Complete the tray with corn pudding, beans, slaw, greens, mac and cheese, pickled
+                vegetables or bread.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-3">
+            <div class="order-step p-4">
+              <span class="order-number mb-3">4</span>
+              <h3 class="h5 fw-bold">Find a Table</h3>
+              <p class="mb-0">
+                Take the finished tray into the dining room, bar area or backyard patio and enjoy the
+                meal at a relaxed pace.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <img class="gallery-img"
+            src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=84"
+            alt="Sliced smoked brisket on a wooden board">
+        </div>
+
+        <div class="col-md-4">
+          <img class="gallery-img"
+            src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1200&q=84"
+            alt="Barbecue platter with smoked meat and sides">
+        </div>
+
+        <div class="col-md-4">
+          <img class="gallery-img"
+            src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=84"
+            alt="Slow-smoked barbecue meat ready to serve">
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5" id="catering">
+      <div class="catering-panel p-4 p-lg-5">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7">
+            <p class="section-label mb-2">Catering and Events</p>
+            <h2 class="display-6 fw-bold">Bring Lewis Barbecue to a Charleston gathering</h2>
+            <p>
+              Lewis offers pickup and delivery for large orders, onsite gatherings at the restaurant
+              and full-service offsite events. Family-style catering packages can include brisket,
+              ribs, sausage, pulled pork, turkey, sides, bread, pickles, onions and barbecue sauces.
+            </p>
+            <p class="mb-0">
+              The catering team can also discuss different budgets, dietary restrictions and group
+              sizes. Large pickup and delivery orders should be planned in advance rather than treated
+              as a normal same-day takeout order.
+            </p>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="bg-white text-dark rounded-4 p-4">
+              <h3 class="h5 fw-bold mb-3">Group options</h3>
+              <p class="mb-2"><i class="bi bi-check2-circle me-2"></i>Large-order pickup</p>
+              <p class="mb-2"><i class="bi bi-check2-circle me-2"></i>Delivery catering</p>
+              <p class="mb-2"><i class="bi bi-check2-circle me-2"></i>Onsite gatherings</p>
+              <p class="mb-4"><i class="bi bi-check2-circle me-2"></i>Full-service offsite events</p>
+
+              <a class="btn btn-lb w-100"
+                href="https://www.lewisbarbecue.com/charleston-catering-and-events/"
+                target="_blank" rel="noopener">
+                View Catering Information
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container pb-5">
+      <div class="cta-panel p-4 p-lg-5 text-center">
+        <p class="section-label mb-2">Visit Lewis Barbecue</p>
+        <h2 class="display-6 fw-bold">Come hungry and order more than brisket</h2>
+        <p class="mx-auto mb-4" style="max-width: 780px;">
+          Build a tray with sliced brisket, sausage or ribs, add green chile corn pudding and a
+          brighter side, then settle into the dining room or backyard patio.
+        </p>
+
+        <a class="btn btn-lb btn-lg px-4"
+          href="https://www.lewisbarbecue.com/location/lewis-barbecue-charleston/"
+          target="_blank" rel="noopener">
+          Visit Lewis Barbecue
+        </a>
+      </div>
+
+      <p class="small-note mt-4 mb-0">
+        Editorial note: Charleston Food Insider presents an independent restaurant feature.
+        Menu items, prices, hours, specials, dietary information and catering policies can change.
+        Review the restaurant’s official website before visiting. Page updated July 2026.
+      </p>
+    </section>
+  </main>
+
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <h2 class="h4 text-white fw-bold">CharlestonFoodInsider</h2>
+          <p class="mb-0">
+            Independent inspiration for discovering barbecue, restaurants and memorable food
+            experiences throughout Charleston and the Lowcountry.
+          </p>
+        </div>
+
+        <div class="col-lg-5 text-lg-end">
+          <a class="me-3" href="index.html">Home</a>
+          <a class="me-3" href="#article">About</a>
+          <a class="me-3" href="#menu">Menu</a>
+          <a href="#visit">Visit</a>
+          <p class="mt-3 mb-0">© 2026 Charleston Food Insider. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
