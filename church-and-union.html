@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Church and Union | Modern American Dining in Downtown Charleston, SC</title>
+<meta name="description" content="Church and Union Charleston serves modern American cuisine and craft cocktails inside a converted century-old church on North Market Street, with lunch, brunch, and dinner service.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  :root{
+    --ink: #14100D;
+    --stone: #1F1A15;
+    --panel: #251F19;
+    --gold: #C9A227;
+    --gold-soft: #E4C766;
+    --ruby: #7B2942;
+    --sapphire: #33546F;
+    --parchment: #EFE7D8;
+    --line: rgba(239,231,216,0.12);
+  }
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--ink);
+    color:var(--parchment);
+    font-family:'Inter', sans-serif;
+  }
+
+  h1,h2,h3,.display-serif{
+    font-family:'Cormorant Garamond', serif;
+    letter-spacing:0.01em;
+  }
+
+  .label-mono{
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.16em;
+    font-size:0.72rem;
+    font-weight:600;
+  }
+
+  /* ---- Nav ---- */
+  .navbar-nave{
+    background:rgba(20,16,13,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .navbar-nave .navbar-brand{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;
+    font-size:1.55rem;
+    color:var(--parchment) !important;
+    letter-spacing:0.03em;
+  }
+  .navbar-nave .nav-link{
+    color:var(--parchment) !important;
+    opacity:0.8;
+    font-weight:500;
+    font-size:0.9rem;
+    margin-left:1.4rem;
+  }
+  .navbar-nave .nav-link:hover{opacity:1;}
+  .btn-gold{
+    background:var(--gold);
+    color:var(--ink);
+    border:none;
+    font-weight:600;
+    padding:0.55rem 1.5rem;
+    border-radius:1px;
+    letter-spacing:0.03em;
+  }
+  .btn-gold:hover{background:var(--gold-soft); color:var(--ink);}
+
+  /* ---- Hero: rose window ---- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:6rem 0 5rem;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(123,41,66,0.28), transparent 60%),
+      var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .hero .eyebrow{color:var(--gold);}
+  .hero h1{
+    font-size:clamp(2.8rem, 5.2vw, 4.8rem);
+    font-weight:600;
+    line-height:1.04;
+    color:var(--parchment);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold-soft);
+  }
+  .hero .lede{
+    font-size:1.15rem;
+    max-width:34rem;
+    color:rgba(239,231,216,0.78);
+  }
+
+  .rose-window{
+    width:100%;
+    max-width:340px;
+    margin:0 auto;
+  }
+
+  /* ---- Sections ---- */
+  section{padding:5rem 0;}
+  .section-band{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--stone);}
+  .section-title{
+    font-size:clamp(2rem,3.2vw,2.7rem);
+    font-weight:600;
+  }
+  .rule-gold{
+    width:52px;
+    height:2px;
+    background:var(--gold);
+  }
+
+  .stat-block .num{
+    font-family:'Cormorant Garamond', serif;
+    font-size:2.6rem;
+    font-weight:600;
+    color:var(--gold-soft);
+    line-height:1;
+  }
+  .stat-block .cap{
+    font-size:0.85rem;
+    color:rgba(239,231,216,0.65);
+    margin-top:0.4rem;
+  }
+
+  /* ---- Menu ---- */
+  .menu-panel{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:2.75rem 2.5rem;
+    height:100%;
+  }
+  .menu-panel .label-mono{color:var(--gold);}
+  .menu-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1rem;
+    padding:0.9rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .menu-row:last-child{border-bottom:none;}
+  .menu-row .item-name{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.25rem;
+    font-weight:600;
+  }
+  .menu-row .item-desc{
+    font-size:0.85rem;
+    color:rgba(239,231,216,0.6);
+    display:block;
+    margin-top:0.2rem;
+  }
+
+  /* ---- Feature cards ---- */
+  .feature-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:2.25rem;
+    height:100%;
+  }
+  .feature-card .glyph{
+    width:2.6rem; height:2.6rem;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--gold);
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.2rem;
+    margin-bottom:1.1rem;
+  }
+
+  /* ---- Reviews ---- */
+  .review-card{
+    background:var(--stone);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:1.9rem;
+    height:100%;
+  }
+  .review-card .stars{color:var(--gold); letter-spacing:0.1em;}
+
+  /* ---- Visit strip ---- */
+  .visit-strip{
+    background: linear-gradient(180deg, var(--ruby) 0%, #5c1f32 100%);
+  }
+  .visit-strip h3{
+    color:var(--gold-soft);
+    font-size:1rem;
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    margin-bottom:0.75rem;
+  }
+  .visit-strip a{color:var(--parchment); text-decoration:underline; text-decoration-color:rgba(239,231,216,0.4);}
+
+  footer{
+    background:var(--ink);
+    border-top:1px solid var(--line);
+    color:rgba(239,231,216,0.55);
+    padding:2.5rem 0;
+    font-size:0.88rem;
+  }
+  footer a{color:var(--parchment); text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-nave py-3 fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#top">Church &amp; Union</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" style="border-color:var(--line);">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav align-items-md-center">
+        <li class="nav-item"><a class="nav-link" href="#about">The Space</a></li>
+        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#visit">Visit</a></li>
+        <li class="nav-item mt-2 mt-md-0 ms-md-2"><a class="btn btn-gold" href="https://www.opentable.com/r/church-and-union-charleston" target="_blank" rel="noopener">Reserve a Table</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top" style="padding-top:8.5rem;">
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <div class="label-mono eyebrow mb-3">32B North Market St &middot; Charleston, SC</div>
+        <h1 class="mb-4">Dinner, held inside <em>a converted church</em></h1>
+        <p class="lede mb-4">Sixty-foot ceilings. Original stained glass. A kitchen led by Executive Chef Doug Watson and Top Chef alum Jamie Lynch. Church and Union brings modern American cooking and craft cocktails to one of downtown Charleston's most striking rooms.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="https://www.opentable.com/r/church-and-union-charleston" target="_blank" rel="noopener" class="btn btn-gold">Reserve a Table</a>
+          <a href="#menu" class="btn btn-outline-light" style="border-color:rgba(239,231,216,0.4); color:var(--parchment);">See the Menu</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <svg class="rose-window" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stained glass rose window illustration">
+          <circle cx="150" cy="150" r="140" fill="none" stroke="var(--gold)" stroke-width="1.5" opacity="0.5"/>
+          <circle cx="150" cy="150" r="105" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.35"/>
+          <g opacity="0.85">
+            <path d="M150 150 L150 20 A130 130 0 0 1 262 85 Z" fill="var(--ruby)"/>
+            <path d="M150 150 L262 85 A130 130 0 0 1 262 215 Z" fill="var(--sapphire)"/>
+            <path d="M150 150 L262 215 A130 130 0 0 1 150 280 Z" fill="var(--ruby)"/>
+            <path d="M150 150 L150 280 A130 130 0 0 1 38 215 Z" fill="var(--sapphire)"/>
+            <path d="M150 150 L38 215 A130 130 0 0 1 38 85 Z" fill="var(--ruby)"/>
+            <path d="M150 150 L38 85 A130 130 0 0 1 150 20 Z" fill="var(--sapphire)"/>
+          </g>
+          <circle cx="150" cy="150" r="45" fill="var(--gold)" opacity="0.9"/>
+          <circle cx="150" cy="150" r="140" fill="none" stroke="#14100D" stroke-width="10" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <div class="label-mono mb-2" style="color:var(--gold);">The Space</div>
+        <h2 class="section-title mb-3">A century-old sanctuary, reimagined</h2>
+        <div class="rule-gold mb-4"></div>
+        <p class="mb-3">Church and Union occupies a century-old church in the heart of downtown Charleston, with soaring 60-foot ceilings and original stained glass windows that cast color across the dining room through the day.</p>
+        <p class="mb-0">A 5th Street Group concept, the Charleston location opened in 2015 and pairs that dramatic architecture with a menu that leans playful and modern — a fitting stage for a kitchen unafraid to take a few creative risks.</p>
+      </div>
+      <div class="col-lg-6">
+        <div class="row g-4">
+          <div class="col-6 stat-block">
+            <div class="num">60ft</div>
+            <div class="cap">Original sanctuary ceilings</div>
+          </div>
+          <div class="col-6 stat-block">
+            <div class="num">2015</div>
+            <div class="cap">Charleston location opened</div>
+          </div>
+          <div class="col-6 stat-block">
+            <div class="num">4</div>
+            <div class="cap">Cities: Charlotte, Charleston, Denver, Nashville</div>
+          </div>
+          <div class="col-6 stat-block">
+            <div class="num">Est.</div>
+            <div class="cap">Modern American &amp; cocktail bar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="section-band">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width:36rem;">
+      <div class="label-mono mb-2" style="color:var(--gold);">From The Kitchen</div>
+      <h2 class="section-title">Modern American, a little playful</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="menu-panel">
+          <div class="label-mono mb-3">Signature Dishes</div>
+          <div class="menu-row">
+            <div><span class="item-name">Hand-Braided Ravioli</span><span class="item-desc">Garlic tomato sauce, capers</span></div>
+          </div>
+          <div class="menu-row">
+            <div><span class="item-name">Lamb Burger</span><span class="item-desc">Gorgonzola fondue, red onion marmalade</span></div>
+          </div>
+          <div class="menu-row">
+            <div><span class="item-name">Roasted Shrimp</span><span class="item-desc">A dinner menu favorite</span></div>
+          </div>
+          <div class="menu-row">
+            <div><span class="item-name">Pan-Seared Swordfish</span><span class="item-desc">Market-driven preparation</span></div>
+          </div>
+          <div class="menu-row">
+            <div><span class="item-name">Featured Pork Chop</span><span class="item-desc">Chef's seasonal preparation</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="menu-panel">
+          <div class="label-mono mb-3">Cocktails &amp; Brunch</div>
+          <div class="menu-row">
+            <div><span class="item-name">The Ghost</span><span class="item-desc">Tequila, cucumber, cayenne</span></div>
+          </div>
+          <div class="menu-row">
+            <div><span class="item-name">Weekend Brunch</span><span class="item-desc">Friday &ndash; Sunday, 9am &ndash; 3:30pm</span></div>
+          </div>
+          <div class="menu-row">
+            <div><span class="item-name">Hummus &amp; Crackers</span><span class="item-desc">Included starter; gluten-free swap available on request</span></div>
+          </div>
+          <div class="menu-row">
+            <div><span class="item-name">Soft Shell Crab</span><span class="item-desc">A guest favorite, seasonal</span></div>
+          </div>
+          <div class="menu-row">
+            <div><span class="item-name">Kids Menu</span><span class="item-desc">Cheeseburger, chicken tenders, or grilled cheese</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center mt-4 mb-0" style="font-size:0.9rem; color:rgba(239,231,216,0.6);">Full lunch, dinner, and brunch menus available on request. Private events and catering inquiries welcome.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="glyph">I</div>
+          <h3 class="h5 mb-2">Chef-Driven Menu</h3>
+          <p class="mb-0" style="font-size:0.95rem; color:rgba(239,231,216,0.75);">Executive Chef Doug Watson and Chef-Partner Jamie Lynch bring a playful edge to modern American cooking.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="glyph">II</div>
+          <h3 class="h5 mb-2">Private Events</h3>
+          <p class="mb-0" style="font-size:0.95rem; color:rgba(239,231,216,0.75);">The room has hosted everything from family reunions to corporate gatherings beneath its stained glass.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="glyph">III</div>
+          <h3 class="h5 mb-2">Reservations Recommended</h3>
+          <p class="mb-0" style="font-size:0.95rem; color:rgba(239,231,216,0.75);">The dining room stays busy — book ahead through OpenTable, though short waits for walk-ins do happen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="section-band">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width:36rem;">
+      <div class="label-mono mb-2" style="color:var(--gold);">Guest Impressions</div>
+      <h2 class="section-title">A Charleston must-visit</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="stars mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="mb-0" style="font-size:0.95rem; color:rgba(239,231,216,0.8);">Diners describe the restaurant as beautiful and lively, with a unique decor that includes a striking ceiling mural inside the converted church.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="stars mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="mb-0" style="font-size:0.95rem; color:rgba(239,231,216,0.8);">A large family group celebrating a reunion of 37 people called out the amazing food and exceptional, attentive service.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="stars mb-2">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="mb-0" style="font-size:0.95rem; color:rgba(239,231,216,0.8);">A gluten-free guest appreciated the kitchen's willingness to accommodate substitutions, even beyond what was requested.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit" class="visit-strip">
+  <div class="container">
+    <div class="row g-5 text-center text-md-start">
+      <div class="col-md-4">
+        <h3>Hours</h3>
+        <p class="mb-1">Dinner Daily: 5pm &ndash; Till</p>
+        <p class="mb-1">Lunch Mon &ndash; Thu: 10am &ndash; 3:30pm</p>
+        <p class="mb-0">Brunch Fri &ndash; Sun: 9am &ndash; 3:30pm</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Location</h3>
+        <p class="mb-1">32B North Market St</p>
+        <p class="mb-0">Charleston, SC 29401</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Reservations</h3>
+        <p class="mb-1"><a href="https://www.opentable.com/r/church-and-union-charleston" target="_blank" rel="noopener">Book on OpenTable</a></p>
+        <p class="mb-0">Walk-ins accommodated as space allows</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+    <div>&copy; 2026 Church and Union &middot; Charleston, SC &middot; A 5th Street Group Concept</div>
+    <div class="d-flex gap-3">
+      <a href="#menu">Menu</a>
+      <a href="#visit">Hours</a>
+      <a href="https://www.opentable.com/r/church-and-union-charleston" target="_blank" rel="noopener">Reserve</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
