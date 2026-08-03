@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charleston Bachelorette Guide | Bites, Bars &amp; the Best Weekend Yet</title>
+<meta name="description" content="A Charleston bachelorette weekend guide — where to eat, where to drink, and how to plan the perfect bride tribe itinerary.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  :root{
+    --wine:#5C1F2E;
+    --wine-2:#7A2E3D;
+    --rose:#C97B84;
+    --blush:#F7E1DC;
+    --gold:#C9A15A;
+    --cream:#FBF5EE;
+    --ink:#2B1B22;
+    --line: rgba(43,27,34,0.12);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Nunito Sans', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    margin:0;
+  }
+  h1,h2,h3,.display-font{
+    font-family:'Playfair Display', serif;
+    letter-spacing:0;
+  }
+  a{ text-decoration:none; }
+
+  /* scalloped bunting divider - signature element */
+  .scallop{ display:block; width:100%; line-height:0; }
+  .scallop svg{ width:100%; height:34px; display:block; }
+
+  /* Nav */
+  .navbar-bach{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    padding:1rem 0;
+  }
+  .navbar-bach .brand{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--wine);
+  }
+  .navbar-bach .brand .dot{ color:var(--gold); }
+  .navbar-bach .nav-link{
+    color:var(--ink) !important;
+    font-size:0.92rem;
+    font-weight:600;
+    margin-left:1.4rem;
+  }
+  .navbar-bach .nav-link:hover{ color:var(--wine) !important; }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse at 80% 15%, rgba(201,161,90,0.18), transparent 55%),
+      linear-gradient(155deg, var(--wine) 0%, var(--wine-2) 55%, var(--rose) 130%);
+    padding:6.5rem 0 5rem;
+    overflow:hidden;
+  }
+  .hero .ribbon{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--wine);
+    font-weight:700;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:0.4rem 1rem;
+    border-radius:2px;
+    margin-bottom:1.25rem;
+  }
+  .hero h1{
+    color:#fff;
+    font-size:clamp(2.5rem, 5.4vw, 4.2rem);
+    font-weight:700;
+    line-height:1.06;
+    max-width:15ch;
+  }
+  .hero p.lead{
+    color:rgba(255,255,255,0.85);
+    font-size:1.12rem;
+    max-width:44ch;
+    font-family:'Nunito Sans', sans-serif;
+  }
+  .btn-gold{
+    background:var(--gold);
+    color:var(--wine);
+    font-weight:700;
+    padding:0.75rem 1.6rem;
+    border-radius:2px;
+    border:none;
+  }
+  .btn-gold:hover{ background:#D9B575; color:var(--wine); }
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,0.5);
+    color:#fff;
+    padding:0.75rem 1.6rem;
+    border-radius:2px;
+    font-weight:600;
+  }
+  .btn-ghost:hover{ background:rgba(255,255,255,0.12); color:#fff; }
+
+  section{ padding:5rem 0; }
+  .section-eyebrow{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    color:var(--wine-2);
+    font-weight:700;
+  }
+  .section-title{
+    font-size:clamp(1.9rem, 3.2vw, 2.5rem);
+    font-weight:700;
+    color:var(--ink);
+    max-width:18ch;
+  }
+
+  /* Food cards */
+  .bite-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:1.75rem;
+    height:100%;
+    position:relative;
+  }
+  .bite-card h3{ font-size:1.2rem; margin-bottom:0.4rem; color:var(--ink); }
+  .bite-card p{ color:#4d3c42; font-size:0.94rem; margin-bottom:0.75rem; }
+  .bite-tag{
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--wine-2);
+    font-weight:700;
+  }
+
+  /* Featured Sweet Palm spotlight */
+  .spotlight{
+    background:linear-gradient(135deg, var(--wine) 0%, var(--rose) 100%);
+    color:#fff;
+    border-radius:3px;
+    padding:3rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .spotlight::after{
+    content:"";
+    position:absolute; right:-50px; top:-50px;
+    width:200px; height:200px;
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:50%;
+  }
+  .spotlight .badge-fave{
+    background:var(--gold);
+    color:var(--wine);
+    font-weight:700;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    padding:0.35rem 0.85rem;
+    border-radius:2px;
+    display:inline-block;
+    margin-bottom:1rem;
+  }
+  .spotlight h2{ color:#fff; margin-bottom:0.75rem; }
+  .spotlight p{ color:rgba(255,255,255,0.9); max-width:52ch; }
+  .spotlight .addr{
+    font-size:0.88rem;
+    color:rgba(255,255,255,0.75);
+    margin-top:1rem;
+  }
+  .spotlight .btn-gold{ margin-top:1.5rem; }
+
+  /* Nightlife */
+  .night-band{ background:var(--ink); color:rgba(255,255,255,0.85); }
+  .night-card{
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:3px;
+    padding:1.5rem;
+    height:100%;
+  }
+  .night-card h3{ color:#fff; font-size:1.1rem; }
+  .night-card p{ color:rgba(255,255,255,0.65); font-size:0.92rem; margin-bottom:0; }
+
+  /* Itinerary timeline */
+  .itin-row{
+    display:flex;
+    gap:1.5rem;
+    padding:1.25rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .itin-row:last-child{ border-bottom:none; }
+  .itin-time{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    color:var(--wine);
+    min-width:110px;
+    font-size:1.05rem;
+  }
+  .itin-text strong{ display:block; margin-bottom:0.2rem; }
+  .itin-text span{ color:#4d3c42; font-size:0.92rem; }
+
+  footer{ background:var(--wine); color:rgba(255,255,255,0.7); padding:3rem 0 2rem; font-size:0.9rem; }
+  footer a{ color:var(--gold); font-weight:600; }
+  footer .disclaimer{ border-top:1px solid rgba(255,255,255,0.15); margin-top:2rem; padding-top:1.5rem; font-size:0.82rem; color:rgba(255,255,255,0.45); }
+
+  @media (max-width:767px){
+    section{ padding:3.25rem 0; }
+    .spotlight{ padding:2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-bach navbar-expand-md">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a class="brand" href="#top">Charleston Bachelorette<span class="dot">.</span></a>
+    <div class="d-none d-md-flex">
+      <a class="nav-link" href="#eat">Where to Eat</a>
+      <a class="nav-link" href="#drink">Where to Drink</a>
+      <a class="nav-link" href="#itinerary">Weekend Plan</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row">
+      <div class="col-lg-8">
+        <span class="ribbon">Bride Tribe Weekend Guide</span>
+        <h1 class="mb-3">Charleston does bachelorette weekends right.</h1>
+        <p class="lead mb-4">Cobblestone streets, rooftop cocktails, and brunch spots worth the wait — here&rsquo;s where to eat, drink, and gather the whole crew for the last hurrah.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#eat" class="btn btn-gold">Find a Table</a>
+          <a href="#itinerary" class="btn btn-ghost">See the Weekend Plan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="scallop">
+  <svg viewBox="0 0 1440 34" preserveAspectRatio="none">
+    <path d="M0,0 H1440 V14 C1380,30 1320,0 1260,14 C1200,30 1140,0 1080,14 C1020,30 960,0 900,14 C840,30 780,0 720,14 C660,30 600,0 540,14 C480,30 420,0 360,14 C300,30 240,0 180,14 C120,30 60,0 0,14 Z" fill="#FBF5EE"></path>
+  </svg>
+</div>
+
+<section id="eat">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <div class="section-eyebrow mb-2">Where to Eat</div>
+        <h2 class="section-title">Brunch is basically mandatory. Here's where to go.</h2>
+      </div>
+    </div>
+
+    <div class="spotlight mb-4">
+      <span class="badge-fave">Bride Tribe Favorite</span>
+      <h2>Sweet Palm Coffee &amp; Food</h2>
+      <p>The go-to King Street stop for a bachelorette morning — good coffee, easy brunch plates, and enough space to actually sit the whole group down before the day gets going. It's an easy first stop before you hit the rest of King Street.</p>
+      <div class="addr">471 King Street, Charleston, SC</div>
+      <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener" class="btn btn-gold">Visit Sweet Palm Coffee &rarr;</a>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="bite-card">
+          <h3>Poogan's Porch</h3>
+          <p>A historic Charleston house turned Southern dinner spot — classic pick for a bride tribe dinner reservation.</p>
+          <span class="bite-tag">Southern Dinner</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="bite-card">
+          <h3>The Ordinary</h3>
+          <p>A former bank building turned oyster hall and seafood spot, popular for a celebratory group dinner downtown.</p>
+          <span class="bite-tag">Seafood</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="bite-card">
+          <h3>Husk</h3>
+          <p>Ingredient-driven Southern cooking in a converted Victorian house — a favorite for a special-occasion table.</p>
+          <span class="bite-tag">Southern, Upscale</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="night-band" id="drink">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <div class="section-eyebrow mb-2" style="color:var(--gold);">Where to Drink</div>
+        <h2 class="section-title" style="color:#fff;">Rooftops, cocktails, and a toast to the bride.</h2>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="night-card">
+          <h3>The Vendue Rooftop</h3>
+          <p>Harbor views and sunset cocktails above the French Quarter — a natural spot for the group's first toast.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="night-card">
+          <h3>Pavilion Bar</h3>
+          <p>A longtime rooftop favorite atop the Market Pavilion Hotel, overlooking the historic district.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="night-card">
+          <h3>The Cocktail Club</h3>
+          <p>A speakeasy-style upstairs bar on Market Street known for craft cocktails and a lively late-night crowd.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="itinerary">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <div class="section-eyebrow mb-2">A Simple Framework</div>
+        <h2 class="section-title">One day, mapped out for the whole crew.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="itin-row">
+          <div class="itin-time">9:00 AM</div>
+          <div class="itin-text"><strong>Coffee &amp; brunch at Sweet Palm</strong><span>Get the group fed and caffeinated before the day gets going.</span></div>
+        </div>
+        <div class="itin-row">
+          <div class="itin-time">11:00 AM</div>
+          <div class="itin-text"><strong>Walk King Street</strong><span>Shops, photo spots, and easy people-watching between meals.</span></div>
+        </div>
+        <div class="itin-row">
+          <div class="itin-time">2:00 PM</div>
+          <div class="itin-text"><strong>Down time / spa or beach</strong><span>Build in a slower stretch before the night starts.</span></div>
+        </div>
+        <div class="itin-row">
+          <div class="itin-time">6:00 PM</div>
+          <div class="itin-text"><strong>Dinner reservation</strong><span>Book ahead for a group table at one of the sit-down spots above.</span></div>
+        </div>
+        <div class="itin-row">
+          <div class="itin-time">9:00 PM</div>
+          <div class="itin-text"><strong>Rooftop toast</strong><span>End the night with a view and a round for the bride.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <div class="display-font" style="color:#fff; font-size:1.1rem; font-weight:700;">Charleston Bachelorette Guide</div>
+        <p class="mt-2 mb-0">An independent guide to planning a bachelorette weekend in Charleston, SC.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <div>Featured stop: <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener">Sweet Palm Coffee &amp; Food</a></div>
+      </div>
+    </div>
+    <div class="disclaimer">
+      Restaurant and bar names are provided for planning purposes only; confirm hours, reservations, and availability directly with each venue before your visit.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

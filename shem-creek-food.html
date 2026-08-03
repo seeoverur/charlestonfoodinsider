@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shem Creek Food Guide | Best Waterfront Restaurants in Mount Pleasant</title>
+<meta name="description" content="A guide to the best places to eat on Shem Creek in Mount Pleasant, SC — waterfront seafood, sunset docks, and creekside dining.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  :root{
+    --marsh:#4B5842;
+    --creek:#25404D;
+    --creek-2:#2F5566;
+    --sunset:#E1793C;
+    --dock:#C9A66B;
+    --cream:#FAF6EE;
+    --ink:#1F2A24;
+    --line: rgba(31,42,36,0.12);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    margin:0;
+  }
+  h1,h2,h3,.display-font{
+    font-family:'Bitter', serif;
+    letter-spacing:-0.01em;
+  }
+  a{ text-decoration:none; }
+
+  /* plank divider - signature element */
+  .plank{
+    height:14px;
+    width:100%;
+    background: repeating-linear-gradient(90deg, var(--dock) 0px, var(--dock) 58px, #B8945A 58px, #B8945A 62px);
+    box-shadow: inset 0 3px 4px rgba(0,0,0,0.15);
+  }
+
+  /* Nav */
+  .navbar-creek{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    padding:1rem 0;
+  }
+  .navbar-creek .brand{
+    font-family:'Bitter', serif;
+    font-weight:700;
+    font-size:1.25rem;
+    color:var(--creek);
+  }
+  .navbar-creek .brand .dot{ color:var(--sunset); }
+  .navbar-creek .nav-link{
+    color:var(--ink) !important;
+    font-size:0.92rem;
+    font-weight:600;
+    margin-left:1.4rem;
+  }
+  .navbar-creek .nav-link:hover{ color:var(--sunset) !important; }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(31,42,36,0.15), rgba(31,42,36,0.55)),
+      linear-gradient(155deg, var(--sunset) 0%, #C9622F 35%, var(--creek-2) 75%, var(--creek) 100%);
+    padding:6.5rem 0 4rem;
+    overflow:hidden;
+  }
+  .hero .boat-row{
+    position:absolute;
+    bottom:0; left:0; right:0;
+    height:70px;
+    opacity:0.5;
+  }
+  .hero .eyebrow{
+    display:inline-block;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.35);
+    color:#fff;
+    font-weight:600;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:0.4rem 1rem;
+    border-radius:2px;
+    margin-bottom:1.25rem;
+  }
+  .hero h1{
+    color:#fff;
+    font-size:clamp(2.5rem, 5.4vw, 4.2rem);
+    font-weight:700;
+    line-height:1.06;
+    max-width:15ch;
+  }
+  .hero p.lead{
+    color:rgba(255,255,255,0.88);
+    font-size:1.12rem;
+    max-width:44ch;
+  }
+  .btn-dock{
+    background:var(--dock);
+    color:var(--ink);
+    font-weight:700;
+    padding:0.75rem 1.6rem;
+    border-radius:2px;
+    border:none;
+  }
+  .btn-dock:hover{ background:#D9B87E; color:var(--ink); }
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,0.55);
+    color:#fff;
+    padding:0.75rem 1.6rem;
+    border-radius:2px;
+    font-weight:600;
+  }
+  .btn-ghost:hover{ background:rgba(255,255,255,0.14); color:#fff; }
+
+  section{ padding:5rem 0; }
+  .section-eyebrow{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    color:var(--creek);
+    font-weight:700;
+  }
+  .section-title{
+    font-size:clamp(1.9rem, 3.2vw, 2.5rem);
+    font-weight:700;
+    color:var(--ink);
+    max-width:20ch;
+  }
+
+  /* Food cards */
+  .eat-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:4px solid var(--dock);
+    border-radius:2px;
+    padding:1.75rem;
+    height:100%;
+  }
+  .eat-card h3{ font-size:1.2rem; margin-bottom:0.3rem; color:var(--ink); }
+  .eat-card .addr-line{ font-size:0.82rem; color:var(--creek); font-weight:600; margin-bottom:0.6rem; }
+  .eat-card p{ color:#43524a; font-size:0.94rem; margin-bottom:0; }
+  .eat-tag{
+    display:inline-block;
+    margin-top:0.9rem;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--sunset);
+    font-weight:700;
+  }
+
+  /* Spotlight */
+  .spotlight{
+    background:linear-gradient(135deg, var(--creek) 0%, var(--creek-2) 100%);
+    color:#fff;
+    border-radius:2px;
+    padding:3rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .spotlight::after{
+    content:"";
+    position:absolute; right:-50px; bottom:-50px;
+    width:220px; height:220px;
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:50%;
+  }
+  .spotlight .badge-fave{
+    background:var(--sunset);
+    color:#fff;
+    font-weight:700;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    padding:0.35rem 0.85rem;
+    border-radius:2px;
+    display:inline-block;
+    margin-bottom:1rem;
+  }
+  .spotlight h2{ color:#fff; margin-bottom:0.75rem; }
+  .spotlight p{ color:rgba(255,255,255,0.88); max-width:52ch; }
+  .spotlight .addr{ font-size:0.88rem; color:rgba(255,255,255,0.7); margin-top:1rem; }
+
+  /* Tips band */
+  .tips-band{ background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .tip-card{
+    background:var(--cream);
+    border-left:3px solid var(--marsh);
+    padding:1.5rem;
+    height:100%;
+  }
+  .tip-card .k{ font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--marsh); font-weight:700; }
+  .tip-card .v{ font-size:1rem; margin-top:0.35rem; }
+
+  footer{ background:var(--ink); color:rgba(255,255,255,0.65); padding:3rem 0 2rem; font-size:0.9rem; }
+  footer a{ color:var(--dock); font-weight:600; }
+  footer .disclaimer{ border-top:1px solid rgba(255,255,255,0.12); margin-top:2rem; padding-top:1.5rem; font-size:0.82rem; color:rgba(255,255,255,0.45); }
+
+  @media (max-width:767px){
+    section{ padding:3.25rem 0; }
+    .spotlight{ padding:2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-creek navbar-expand-md">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a class="brand" href="#top">Shem Creek<span class="dot">.</span>Eats</a>
+    <div class="d-none d-md-flex">
+      <a class="nav-link" href="#eat">The Spots</a>
+      <a class="nav-link" href="#tips">Visitor Tips</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row">
+      <div class="col-lg-8">
+        <span class="eyebrow">Mount Pleasant, SC</span>
+        <h1 class="mb-3">The best places to eat on Shem Creek.</h1>
+        <p class="lead mb-4">Shrimp boats, marsh sunsets, and a boardwalk lined with waterfront seafood — here's where locals and visitors actually eat along historic Shem Creek.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#eat" class="btn btn-dock">See the Spots</a>
+          <a href="#tips" class="btn btn-ghost">Visitor Tips</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg class="boat-row" viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,60 L60,60 L75,45 L95,45 L100,60 L1440,60 L1440,70 L0,70 Z" fill="#1F2A24"></path>
+  </svg>
+</header>
+<div class="plank"></div>
+
+<section id="eat">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <div class="section-eyebrow mb-2">On the Water</div>
+        <h2 class="section-title">Six spots worth the drive across the bridge.</h2>
+      </div>
+    </div>
+
+    <div class="spotlight mb-4">
+      <span class="badge-fave">Creekside Favorite</span>
+      <h2>Saltwater Cowboys</h2>
+      <p>A longtime Shem Creek staple mixing fresh seafood with slow-smoked barbecue, cold cocktails, and some of the best sunset views on the creek. Expect live music and a lively, laid-back crowd most nights.</p>
+      <div class="addr">130 Mill Street, Mount Pleasant, SC</div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="eat-card">
+          <h3>Tavern &amp; Table</h3>
+          <div class="addr-line">100 Church Street</div>
+          <p>Easy to spot by its lighthouse landmark — a comfortable, well-loved gathering spot for Lowcountry classics right on the water.</p>
+          <span class="eat-tag">Lowcountry</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="eat-card">
+          <h3>Red's Ice House</h3>
+          <div class="addr-line">98 Church Street</div>
+          <p>A casual, no-frills spot for cold beer and fresh seafood while watching shrimp boats and dolphins work the creek.</p>
+          <span class="eat-tag">Casual Seafood</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="eat-card">
+          <h3>Vickery's Bar &amp; Grill</h3>
+          <div class="addr-line">Shem Creek Boardwalk</div>
+          <p>A relaxed waterfront bar-and-grill pick for a low-key lunch or happy hour with a view of the docks.</p>
+          <span class="eat-tag">Bar &amp; Grill</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="eat-card">
+          <h3>Water's Edge</h3>
+          <div class="addr-line">Shem Creek Boardwalk</div>
+          <p>A dependable choice for a sit-down seafood dinner with a straightforward view right onto the creek.</p>
+          <span class="eat-tag">Seafood Dinner</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="eat-card">
+          <h3>Sunsets Waterfront Dining</h3>
+          <div class="addr-line">Shem Creek Boardwalk</div>
+          <p>Named for exactly what it delivers — raw oysters, po'boys, and cold drinks timed for the evening view.</p>
+          <span class="eat-tag">Oysters &amp; Sunsets</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="eat-card">
+          <h3>NICO Oysters + Seafood</h3>
+          <div class="addr-line">Coleman Boulevard</div>
+          <p>A step up in polish — French-inflected seafood just off the creek, popular for a dressier brunch or dinner.</p>
+          <span class="eat-tag">Upscale, French</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tips-band" id="tips">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <div class="section-eyebrow mb-2">Before You Go</div>
+        <h2 class="section-title">A few things that make a Shem Creek trip easier.</h2>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="tip-card">
+          <div class="k">Best Time</div>
+          <div class="v">Arrive an hour before sunset to snag a dock-facing table before the evening rush.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="tip-card">
+          <div class="k">Parking</div>
+          <div class="v">Street parking along Mill Street and Church Street fills up fast on weekends — plan for a short walk.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="tip-card">
+          <div class="k">Wildlife</div>
+          <div class="v">Keep an eye on the water — dolphins and shrimp boats are a regular part of the Shem Creek view.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="tip-card">
+          <div class="k">Getting There</div>
+          <div class="v">Just across the bridge from downtown Charleston, making it an easy add-on to a day in the city.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <div class="display-font" style="color:#fff; font-size:1.1rem; font-weight:700;">Shem Creek Eats</div>
+        <p class="mt-2 mb-0">An independent guide to dining along Shem Creek in Mount Pleasant, SC.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <div>Historic Shem Creek Boardwalk, Mount Pleasant, SC</div>
+      </div>
+    </div>
+    <div class="disclaimer">
+      Restaurant names, addresses, and details are provided for planning purposes only; confirm hours and availability directly with each venue before visiting.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

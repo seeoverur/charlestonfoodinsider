@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charleston Aquarium Visitor Guide | Exhibits, Hours &amp; Tips</title>
+<meta name="description" content="An independent visitor guide to the South Carolina Aquarium in Charleston — exhibits, hours, ticket tips, parking, and the Sea Turtle Care Center.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  :root{
+    --deep:#0B2E3C;
+    --deep-2:#0D3B4C;
+    --teal:#1C7C8C;
+    --seafoam:#6FD8B5;
+    --sand:#E8B75C;
+    --mist:#F4F8F7;
+    --ink:#0D1B20;
+    --line: rgba(13,27,32,0.12);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background:var(--mist);
+    margin:0;
+  }
+  h1,h2,h3,.display-font{
+    font-family:'Fraunces', serif;
+    letter-spacing:-0.01em;
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em; }
+  a{ text-decoration:none; }
+
+  /* Nav */
+  .navbar-guide{
+    background:transparent;
+    position:absolute;
+    top:0; left:0; right:0;
+    z-index:20;
+    padding:1.25rem 0;
+  }
+  .navbar-guide.scrolled{
+    position:fixed;
+    background:rgba(11,46,60,0.92);
+    backdrop-filter:blur(6px);
+    padding:0.75rem 0;
+    transition:padding .2s ease;
+  }
+  .navbar-guide .brand{
+    color:#fff;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.25rem;
+  }
+  .navbar-guide .brand .tick{ color:var(--seafoam); }
+  .navbar-guide .nav-link{
+    color:rgba(255,255,255,0.85) !important;
+    font-size:0.92rem;
+    font-weight:500;
+    margin-left:1.5rem;
+  }
+  .navbar-guide .nav-link:hover{ color:#fff !important; }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    background:
+      radial-gradient(ellipse at 75% 20%, rgba(111,216,181,0.16), transparent 55%),
+      linear-gradient(160deg, var(--ink) 0%, var(--deep) 45%, var(--deep-2) 75%, var(--teal) 130%);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      repeating-radial-gradient(circle at 20% 30%, rgba(255,255,255,0.035) 0, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 60px);
+    opacity:.6;
+  }
+  .hero .eyebrow{
+    color:var(--seafoam);
+    font-size:0.82rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .hero h1{
+    color:#fff;
+    font-size:clamp(2.6rem, 6vw, 4.6rem);
+    font-weight:600;
+    line-height:1.03;
+    max-width:14ch;
+  }
+  .hero p.lead{
+    color:rgba(255,255,255,0.82);
+    font-size:1.15rem;
+    max-width:42ch;
+    font-weight:400;
+  }
+  .btn-current{
+    background:var(--seafoam);
+    color:var(--ink);
+    font-weight:600;
+    padding:0.75rem 1.6rem;
+    border-radius:2px;
+    border:none;
+  }
+  .btn-current:hover{ background:#8CE6C6; color:var(--ink); }
+  .btn-outline-current{
+    border:1px solid rgba(255,255,255,0.5);
+    color:#fff;
+    padding:0.75rem 1.6rem;
+    border-radius:2px;
+    font-weight:500;
+  }
+  .btn-outline-current:hover{ background:rgba(255,255,255,0.1); color:#fff; }
+
+  .wave-divider{ display:block; width:100%; line-height:0; position:relative; z-index:2; margin-top:-6px; }
+  .wave-divider svg{ width:100%; height:60px; display:block; }
+
+  /* Tide strip - signature element */
+  .tide-strip{
+    background:var(--ink);
+    color:rgba(255,255,255,0.9);
+    padding:1.75rem 0 2rem;
+  }
+  .tide-strip .label{
+    color:var(--seafoam);
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    margin-bottom:0.5rem;
+  }
+  .tide-track{
+    position:relative;
+    height:6px;
+    background:rgba(255,255,255,0.14);
+    border-radius:3px;
+    margin:1rem 0 0.6rem;
+  }
+  .tide-fill{
+    position:absolute; left:0; top:0; height:100%;
+    background:linear-gradient(90deg, var(--teal), var(--seafoam));
+    border-radius:3px;
+  }
+  .tide-marker{
+    position:absolute; top:-7px;
+    width:20px; height:20px;
+    background:var(--sand);
+    border:3px solid var(--ink);
+    border-radius:50%;
+    transform:translateX(-50%);
+  }
+  .tide-labels{ display:flex; justify-content:space-between; font-size:0.72rem; color:rgba(255,255,255,0.55); }
+
+  .fact-cols{ border-top:1px solid rgba(255,255,255,0.12); margin-top:1.75rem; padding-top:1.5rem; }
+  .fact-cols .fact-label{ color:rgba(255,255,255,0.5); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; }
+  .fact-cols .fact-value{ font-size:1rem; color:#fff; }
+
+  /* Section shared */
+  section{ padding:5.5rem 0; }
+  .section-eyebrow{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    color:var(--teal);
+    font-weight:600;
+  }
+  .section-title{
+    font-size:clamp(1.9rem, 3.4vw, 2.6rem);
+    font-weight:600;
+    color:var(--ink);
+    max-width:16ch;
+  }
+
+  /* Exhibit cards */
+  .exhibit-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:1.75rem;
+    height:100%;
+    position:relative;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .exhibit-card:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(11,46,60,0.1); }
+  .exhibit-num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--seafoam);
+    background:var(--ink);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:2.1rem; height:2.1rem;
+    border-radius:50%;
+    font-size:0.85rem;
+    margin-bottom:1rem;
+  }
+  .exhibit-card h3{ font-size:1.2rem; margin-bottom:0.5rem; }
+  .exhibit-card p{ color:#3d5158; font-size:0.94rem; margin-bottom:0; }
+  .exhibit-tag{
+    display:inline-block;
+    margin-top:0.9rem;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--teal);
+    font-weight:600;
+  }
+
+  /* Turtle spotlight */
+  .spotlight{
+    background:linear-gradient(135deg, var(--deep) 0%, var(--teal) 100%);
+    color:#fff;
+    border-radius:2px;
+    padding:3.5rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .spotlight::after{
+    content:"";
+    position:absolute; right:-60px; bottom:-60px;
+    width:240px; height:240px;
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:50%;
+  }
+  .spotlight h2{ color:#fff; }
+  .spotlight p{ color:rgba(255,255,255,0.85); max-width:48ch; }
+  .spotlight .stat-row{ display:flex; gap:2.5rem; margin-top:2rem; flex-wrap:wrap; }
+  .spotlight .stat-num{ font-family:'Fraunces', serif; font-size:2.1rem; font-weight:600; color:var(--seafoam); }
+  .spotlight .stat-label{ font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:rgba(255,255,255,0.7); }
+
+  /* Accordion tips */
+  .accordion-button{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--ink);
+    background:#fff;
+  }
+  .accordion-button:not(.collapsed){
+    color:var(--deep);
+    background:#fff;
+    box-shadow:none;
+  }
+  .accordion-button:focus{ box-shadow:none; border-color:var(--line); }
+  .accordion-item{ border-color:var(--line); }
+  .accordion-body{ color:#3d5158; }
+
+  /* Visit band */
+  .visit-band{ background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .visit-card{
+    background:var(--mist);
+    border-left:3px solid var(--seafoam);
+    padding:1.5rem;
+    height:100%;
+  }
+  .visit-card .k{ font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--teal); font-weight:600; }
+  .visit-card .v{ font-size:1.05rem; margin-top:0.35rem; }
+
+  footer{ background:var(--ink); color:rgba(255,255,255,0.65); padding:3rem 0 2rem; font-size:0.9rem; }
+  footer a{ color:var(--seafoam); }
+  footer .disclaimer{ border-top:1px solid rgba(255,255,255,0.12); margin-top:2rem; padding-top:1.5rem; font-size:0.82rem; color:rgba(255,255,255,0.45); }
+
+  @media (max-width:767px){
+    section{ padding:3.5rem 0; }
+    .spotlight{ padding:2rem; }
+    .spotlight .stat-row{ gap:1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-guide navbar-expand-md" id="mainNav">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a class="brand" href="#top">Charleston Aquarium<span class="tick">.</span>Guide</a>
+    <div class="d-none d-md-flex">
+      <a class="nav-link" href="#exhibits">Exhibits</a>
+      <a class="nav-link" href="#turtles">Sea Turtle Care</a>
+      <a class="nav-link" href="#visit">Plan a Visit</a>
+      <a class="nav-link" href="#tips">Tips</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="eyebrow mb-3">Independent Visitor Guide &middot; Liberty Square, Charleston</div>
+        <h1 class="mb-3">Everything below the waterline at Charleston&rsquo;s aquarium.</h1>
+        <p class="lead mb-4">From mountain streams to the open ocean, the South Carolina Aquarium traces the state&rsquo;s waters through nine galleries and more than 60 exhibits. Here&rsquo;s how to plan your visit, what to see first, and how the Sea Turtle Care Center works.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#visit" class="btn btn-current">Plan Your Visit</a>
+          <a href="#exhibits" class="btn btn-outline-current">See the Exhibits</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,20 C960,40 1200,10 1440,30 L1440,60 L0,60 Z" fill="#0D1B20"></path></svg>
+  </div>
+</header>
+
+<section class="tide-strip" style="padding-top:0;">
+  <div class="container">
+    <div class="label mono">Today&rsquo;s hours &middot; open daily, gates close at 5:00 PM</div>
+    <div class="tide-track">
+      <div class="tide-fill" style="width:100%;"></div>
+      <div class="tide-marker" style="left:58%;" title="Last entry 3:30 PM"></div>
+    </div>
+    <div class="tide-labels mono">
+      <span>9:00 AM open</span>
+      <span>3:30 PM last entry</span>
+      <span>5:00 PM close</span>
+    </div>
+    <div class="row fact-cols g-4">
+      <div class="col-6 col-md-3">
+        <div class="fact-label mono">Address</div>
+        <div class="fact-value">100 Aquarium Wharf, Charleston, SC 29401</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="fact-label mono">Phone</div>
+        <div class="fact-value">(843) 577-3474</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="fact-label mono">Parking</div>
+        <div class="fact-value">City garage, 24 Calhoun St, next to Liberty Square</div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="fact-label mono">Closed</div>
+        <div class="fact-value">Thanksgiving &amp; Dec 25 &middot; half-day Dec 24</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="exhibits">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <div class="section-eyebrow mb-2">The Nine Galleries</div>
+        <h2 class="section-title">A journey from the mountains to the sea, one tank at a time.</h2>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="exhibit-card">
+          <div class="exhibit-num mono">01</div>
+          <h3>Mountain Forest</h3>
+          <p>River otters, owls, and the headwaters of South Carolina&rsquo;s watersheds — the aquarium&rsquo;s journey starts inland, not at the coast.</p>
+          <span class="exhibit-tag">River Otters</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="exhibit-card">
+          <div class="exhibit-num mono">02</div>
+          <h3>Coastal Plain &amp; Salt Marsh</h3>
+          <p>Alligators, great blue herons, and the tidal marshes that make up most of the Lowcountry shoreline.</p>
+          <span class="exhibit-tag">Alligators</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="exhibit-card">
+          <div class="exhibit-num mono">03</div>
+          <h3>Great Ocean Tank</h3>
+          <p>A 385,000-gallon centerpiece with sharks, rays, and divers doing live feeds — the tank most guests remember longest.</p>
+          <span class="exhibit-tag">Sharks &amp; Rays</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="exhibit-card">
+          <div class="exhibit-num mono">04</div>
+          <h3>Touch Tank Pool</h3>
+          <p>Hands-on encounters with horseshoe crabs, whelks, and other tide-pool residents — a favorite for younger visitors.</p>
+          <span class="exhibit-tag">Hands-On</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="exhibit-card">
+          <div class="exhibit-num mono">05</div>
+          <h3>Bald Eagle Aviary</h3>
+          <p>A resident bald eagle overlooks the harbor from an open-air enclosure near the Great Ocean Tank.</p>
+          <span class="exhibit-tag">Birds of Prey</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="exhibit-card">
+          <div class="exhibit-num mono">06</div>
+          <h3>Sea Turtle Care Center&trade;</h3>
+          <p>A working rehabilitation hospital for injured and stranded sea turtles, visible to guests from an observation window.</p>
+          <span class="exhibit-tag">Conservation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="turtles" class="pt-0">
+  <div class="container">
+    <div class="spotlight">
+      <div class="section-eyebrow mb-2" style="color:var(--seafoam);">Behind the Glass</div>
+      <h2 class="mb-3">The Sea Turtle Care Center is a real hospital, not an exhibit.</h2>
+      <p>Injured and cold-stunned sea turtles are treated on-site, then released back into the ocean once they recover. Guests can watch the rehabilitation work through a viewing window — patients change throughout the year, so no two visits look the same.</p>
+      <div class="stat-row">
+        <div>
+          <div class="stat-num">5,000+</div>
+          <div class="stat-label">Animals across the building</div>
+        </div>
+        <div>
+          <div class="stat-num">60+</div>
+          <div class="stat-label">Exhibits in nine galleries</div>
+        </div>
+        <div>
+          <div class="stat-num">90 min</div>
+          <div class="stat-label">Recommended visit length</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit-band" id="visit">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <div class="section-eyebrow mb-2">Plan Ahead</div>
+        <h2 class="section-title">Tickets move like the tide — here&rsquo;s how to time it.</h2>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="visit-card">
+          <div class="k">Ticket Pricing</div>
+          <div class="v">Admission uses a dynamic calendar — prices shift by day, season, and demand, so booking earlier for a specific date usually costs less.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="visit-card">
+          <div class="k">Best Time to Go</div>
+          <div class="v">Weekday mornings before 11 AM or after 2 PM tend to be quieter than weekends and summer midday hours.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="visit-card">
+          <div class="k">Membership</div>
+          <div class="v">Frequent visitors can offset the cost with an annual membership, which includes unlimited admission and gift shop discounts.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="visit-card">
+          <div class="k">Getting There</div>
+          <div class="v">Most exhibits are indoors. The closest parking is the city garage on Calhoun Street, a short walk to Liberty Square.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tips">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <div class="section-eyebrow mb-2">Frequently Asked</div>
+        <h2 class="section-title">Questions first-time visitors usually ask.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="accordion" id="tipsAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tip1">
+                How long should I plan to stay?
+              </button>
+            </h2>
+            <div id="tip1" class="accordion-collapse collapse show" data-bs-parent="#tipsAccordion">
+              <div class="accordion-body">Most guests spend two or more hours exploring; the aquarium recommends setting aside at least 90 minutes to see all nine galleries without rushing. Guests may stay until closing regardless of entry time.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip2">
+                What time is last entry?
+              </button>
+            </h2>
+            <div id="tip2" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion">
+              <div class="accordion-body">Last entry is 3:30 PM daily, an hour and a half before the building closes at 5:00 PM, so there's still time to see the full route if you arrive by mid-afternoon.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip3">
+                Is the aquarium mostly indoors?
+              </button>
+            </h2>
+            <div id="tip3" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion">
+              <div class="accordion-body">Yes — the majority of galleries are indoors, so it's a solid option on a rainy Charleston afternoon. A few outdoor spaces, like the bald eagle aviary, connect between the indoor halls.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip4">
+                Is this the official aquarium website?
+              </button>
+            </h2>
+            <div id="tip4" class="accordion-collapse collapse" data-bs-parent="#tipsAccordion">
+              <div class="accordion-body">No — this is an independent visitor guide. For official tickets, current pricing, and any schedule changes, visit the aquarium's own site directly before you go.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <div class="display-font" style="color:#fff; font-size:1.1rem; font-weight:600;">Charleston Aquarium Guide</div>
+        <p class="mt-2 mb-0">An independent guide to visiting the South Carolina Aquarium in downtown Charleston.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <div>100 Aquarium Wharf, Charleston, SC 29401</div>
+        <div>(843) 577-3474</div>
+      </div>
+    </div>
+    <div class="disclaimer">
+      This is an independently produced visitor guide and is not affiliated with or operated by the South Carolina Aquarium. Hours, pricing, and exhibits are subject to change — confirm details on the aquarium's official website before visiting.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  window.addEventListener('scroll', function(){
+    var nav = document.getElementById('mainNav');
+    if (window.scrollY > 60) { nav.classList.add('scrolled'); }
+    else { nav.classList.remove('scrolled'); }
+  });
+</script>
+</body>
+</html>
